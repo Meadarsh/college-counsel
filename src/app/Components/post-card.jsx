@@ -12,12 +12,12 @@ import SvgColor from './svg-color';
 // ----------------------------------------------------------------------
 
 export default function PostCard({ post}) {
-  const {_id, path, title,subtitle, upload_time } = post;
-
+  const {_id,image,title,subtitle, upload_time } = post;
+ console.log(post);
   const renderAvatar = (
     <Avatar
       alt={'CC'}
-      src={'/favicon/cc.png'}
+      src={'/logo/cc.png'}
       sx={{
         zIndex: 9,
         width: 32,
@@ -31,7 +31,7 @@ export default function PostCard({ post}) {
   );
 
   const renderTitle = (
-    <Link className="w-full" href={`/blog/${post._id}`}><Typography
+    <Link className="w-full" href={`/blogs/${_id}`}><Typography
       color="inherit"
       variant="subtitle2"
       underline="hover"
@@ -49,7 +49,7 @@ export default function PostCard({ post}) {
     </Typography></Link>
   )
   const renderContent = (
-    <Link href={`/blog/${post._id}`}>
+    <Link href={`/blogs/${_id}`}>
     <Typography
       color="inherit"
       variant="p"
@@ -101,10 +101,10 @@ export default function PostCard({ post}) {
   // );
 
   const renderCover = (
-    <Link className="w-full" href={`/blog/${post._id}`}> <Box
+    <Link className="w-full" href={`/blogs/${_id}`}> <Box
       component="img"
       alt={title}
-      src={path}
+      src={image[5]?.url||'/image/default.jpg'}
       sx={{
         top: 0,
         width: 1,
@@ -147,12 +147,12 @@ export default function PostCard({ post}) {
   );
 
   return (
-    <Grid xs={12} sm={ 6} md={ 3}>
+    <Grid xs={12} sm={ 6} md={4}>
       <Card>
         <Box
           sx={{
             position: 'relative',
-            pt: 'calc(100% * 3 / 4)',
+            pt: 'calc(100% * 1/2)',
             
           }}
         >

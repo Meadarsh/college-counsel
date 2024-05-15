@@ -23,7 +23,7 @@ const WhyChooseus = () => {
           <p>
             Enjoy the convenience of learning on your own schedule with our
             flexible online platform designed for working professionals and busy
-            students.{" "}
+            students.
           </p>
         </div>
         <div className="lg:w-1/3 w-full lg:text-lg p-2 rounded-md border border-red-700">

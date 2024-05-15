@@ -19,7 +19,8 @@ export default function RootLayout({ children }) {
        </nav>
         <ThemeProvider>
           { children }
-          </ThemeProvider></body>
+          </ThemeProvider>
+          </body>
     </html>
   );
 }

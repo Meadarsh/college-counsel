@@ -9,26 +9,18 @@ import Avatar from '@mui/material/Avatar';
 import { alpha } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import ListItemButton from '@mui/material/ListItemButton';
-
-import { usePathname } from 'src/routes/hooks';
-import { RouterLink } from 'src/routes/components';
-
-import { useResponsive } from 'src/hooks/use-responsive';
-
-import { account } from 'src/_mock/account';
-
-import Logo from 'src/components/logo';
-import Scrollbar from 'src/components/scrollbar';
-
+import { usePathname } from 'next/navigation';
 import { NAV } from './config-layout';
 import navConfig from './config-navigation';
+import Scrollbar from '@/app/Components/scrollbar';
+import Logo from '@/app/Components/logo';
 
 // ----------------------------------------------------------------------
 
 export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
 
-  const upLg = useResponsive('up', 'lg');
+  const upLg ='lg'
 
   useEffect(() => {
     if (openNav) {
@@ -50,13 +42,15 @@ export default function Nav({ openNav, onCloseNav }) {
         bgcolor: (theme) => alpha(theme.palette.grey[500], 0.12),
       }}
     >
-      <Avatar src={account.photoURL} alt="photoURL" />
+      <Avatar src={''} alt="photoURL" />
 
       <Box sx={{ ml: 2 }}>
-        <Typography variant="subtitle2">{account.displayName}</Typography>
+        <Typography variant="subtitle2">{
+        'knk'
+        }</Typography>
 
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          {account.role}
+          {'kkn'}
         </Typography>
       </Box>
     </Box>
@@ -171,7 +165,7 @@ function NavItem({ item }) {
 
   return (
     <ListItemButton
-      component={RouterLink}
+      component={''}
       href={item.path}
       sx={{
         minHeight: 44,

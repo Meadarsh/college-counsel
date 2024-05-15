@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import { useTheme } from '@mui/material/styles';
 
-import { RouterLink } from 'src/routes/components';
 
 // ----------------------------------------------------------------------
 
@@ -49,7 +48,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
   }
 
   return (
-    <Link component={RouterLink} href="/" sx={{ display: 'contents' }}>
+    <Link component={''} href="/" sx={{ display: 'contents' }}>
       {logo}
     </Link>
   );

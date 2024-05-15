@@ -8,18 +8,19 @@ import Applyside from "../Components/Applyside";
 import PostCard from "../Components/post-card";
 import PostSearch from "../Components/post-search";
 import PostSort from "../Components/post-sort";
+import CCLoader from "../Components/CCLoader";
 
 const Blogs = () => {
   
-  const [blogs, setBlogs] = useState([1]);
-  const [Index, setIndex ] = useState(1);
+  
+  const [blogs, setBlogs] = useState([]);
   const [shortBlog,setShortBlog]=useState('latest')
-  const [expandBlog, setExpandBlog] = useState(false);
-
+  const [loading,setLoading]=useState(true)
   const GetBlogs =(async () => {
     try{
-      const response = await fetch(import.meta.env.VITE_BASE_URL+'/blogs');
+      const response = await fetch('api/blog/getBlog');
       const data = await response.json();
+      setLoading(false)
       return setBlogs(data);
     } catch (error) {
       console.error(error);
@@ -29,14 +30,12 @@ const Blogs = () => {
     GetBlogs()
   },[])
 
-  function ExpandBlog(Index){
-    setExpandBlog(true);
-    setIndex(Index);
-  }
+ 
  
   return (
-    <>
-     <Link href='apply'><Applyside/></Link>
+   
+     <>
+   {loading ? <CCLoader /> :<> <Link href='apply'><Applyside/></Link>
       <div className="w-full h-full relative pt-20">
         <Container>
         <div className="w-full flex flex-col ">
@@ -64,7 +63,7 @@ const Blogs = () => {
             />
           </Stack>
 
-          <Grid container spacing={3}>
+          {blogs&&<Grid container spacing={3}>
             {(shortBlog==='oldest')&&blogs.map((post, index) => (
              <PostCard key={post.id} post={post} index={index} />
             ))}
@@ -72,9 +71,11 @@ const Blogs = () => {
             {(shortBlog==='latest')&& [...blogs].reverse().map((post, index) => (
              <PostCard key={post.id} post={post} index={index} />
             ))}
-          </Grid>
+          </Grid>}
         </Container>
       </div>
+      </>
+} 
     </>
   );
 };
