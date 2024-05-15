@@ -29,13 +29,13 @@ const LandingCrausel = () => {
            <LandingPage/>
         </SwiperSlide>
         <SwiperSlide>
-            <Image width={1200} height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/manipalU.jpg" alt="N/a" />
+            <Image priority width={1200} height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/manipalU.jpg" alt="N/a" />
         </SwiperSlide>
         <SwiperSlide>
-            <Image width={1200} height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/jainU.jpg" alt="N/a" />
+            <Image priority width={1200} height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/jainU.jpg" alt="N/a" />
         </SwiperSlide>
         <SwiperSlide>
-            <Image width={1200} height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/uttranchalU.jpg" alt="N/a" />
+            <Image priority width={1200} height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/uttranchalU.jpg" alt="N/a" />
         </SwiperSlide>
         <SwiperSlide>
             <Image width={1200} height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/glaU.jpg" alt="N/a" />
