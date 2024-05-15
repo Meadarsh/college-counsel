@@ -4,6 +4,7 @@ import { CgDetailsMore } from "react-icons/cg";
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const NavBar = () => {
 
@@ -21,7 +22,7 @@ const NavBar = () => {
   })
   return (
    <div className={`bg-white  mainNav w-[100vw] left-0 lg:h-20 h-16 z-50 fixed top-0 flex justify-between items-center lg:px-10 px-6`}>
-    <div className='flex items-center gap-2'><img className='lg:h-32 h-24 rounded-full' src='/logo/logo.png' alt="N/A" /> <p className=' lg:text-md text-sm text-red-800'>
+    <div className='flex items-center gap-2'><Image width={70} height={50} className='lg:h-32 h-24 rounded-full' src='/logo/logo.png' alt="N/A" /> <p className=' lg:text-md text-sm text-red-800'>
     #shikshaSeMilegiNaiManzil
       </p> </div>
     <div className='lg:flex gap-5 hidden  min-w-[20%] '>

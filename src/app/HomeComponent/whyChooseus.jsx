@@ -30,7 +30,7 @@ const WhyChooseus = () => {
           <h1 className="text-xl font-bold">Cutting-Edge Curriculum</h1>
           <p>
             Stay ahead with a curriculum that evolves with industry trends,
-            providing you with relevant skills for today's dynamic job market.
+            providing you with relevant skills for today&apos;s dynamic job market.
           </p>
         </div>
       </div>

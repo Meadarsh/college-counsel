@@ -8,7 +8,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 export default function AccordionExpandIcon({data}) {
   return (
     <div className='lg:w-[93%]'>
-     {data?.map((e)=>( <Accordion>
+     {data?.map((e,ind)=>( <Accordion key={ind}>
         <AccordionSummary
           expandIcon={<ArrowDropDownIcon />}
           aria-controls="panel2-content"

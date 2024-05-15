@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import gsap from "gsap";
+import Image from "next/image";
 
 const LandingPage = () => {
   useEffect(() => {
@@ -13,9 +14,11 @@ const LandingPage = () => {
   }, []);
   return (
     <div className=" h-[100vh] overflow-hidden relative w-[100vw]">
-      <img
+      <Image
+      height={900}
+      width={1200}
         className=" brightness-90 w-full h-full object-cover"
-        src="home.webp"
+        src="/home.webp"
         alt=""
       />
       <div className="txt h-full w-full text-white lg:text-[5vw] text-[10vw] font-semibold absolute z-10 top-0 -left-10 lg:-left-28 flex  justify-center">

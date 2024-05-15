@@ -5,6 +5,7 @@ import { indianStates } from "../Data/data";
 import { RxCross1 } from "react-icons/rx";
 import { usePathname } from "next/navigation";
 import Loader from "./Loader";
+import Image from "next/image";
 
 const ApplyformComp = ({ handleClose }) => {
   const location = usePathname();
@@ -85,8 +86,10 @@ const ApplyformComp = ({ handleClose }) => {
   return (
     <div className="lg:w-2/3 mt-32 z-50 lg:mt-20 lg:h-[80vh] flex rounded-xl overflow-hidden shadow-xl">
       <div className="w-2/5 hidden lg:flex justify-center">
-        <img
-          className="h-full mx-auto object-cover"
+        <Image
+         height={700}
+         width={500}
+          className="h-full w-full mx-auto object-cover"
           src="/image/formImg.png"
           alt=""
         />
@@ -99,7 +102,7 @@ const ApplyformComp = ({ handleClose }) => {
           />
         )}
         <div className="text-2xl font-semibold">
-          Oh NO!! You're Missing The Best Carrier Guidance
+          Oh NO!! You&apos;re Missing The Best Carrier Guidance
         </div>
 
         <form
