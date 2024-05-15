@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const CCLoader = () => {
@@ -6,7 +7,7 @@ const CCLoader = () => {
    <div className='w-20 h-20 relative flex items-center justify-center'>
    <div className="ccloader absolute ">
     </div>
-    <img src="/logo/cc.png" className='absolute h-14 w-14 ' alt="Loading" />
+    <Image width={50} height={50} src="/logo/cc.png" className='absolute h-14 w-14 ' alt="Loading" />
    </div>
     </div>
   )

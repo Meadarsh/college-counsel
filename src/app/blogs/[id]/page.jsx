@@ -43,7 +43,7 @@ const Blogpage = ({ params }) => {
       }
     }
     fetchh();
-  }, []);
+  }, [params.id]);
   return (
     <>
       {loading ? (
@@ -120,7 +120,7 @@ const Blogpage = ({ params }) => {
                     </TableHead>
                     <TableBody>
                     {tableData &&
-              tableData?.keys.map((key,index) => (<TableRow> <TableCell sx={{ borderTop: "1px solid gray" }}>
+              tableData?.keys.map((key,index) => (<TableRow key={index}> <TableCell sx={{ borderTop: "1px solid gray" }}>
                         {key}
                       </TableCell>
                       <TableCell sx={{ borderTop: "1px solid gray" }}>

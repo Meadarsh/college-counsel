@@ -7,7 +7,6 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 import { fDate } from '../utils/format-time';
-import SvgColor from './svg-color';
 
 // ----------------------------------------------------------------------
 
@@ -131,7 +130,7 @@ export default function PostCard({ post}) {
   );
 
   const renderShape = (
-    <SvgColor
+    <Box
       color="paper"
       src="/assets/icons/shape-avatar.svg"
       sx={{
