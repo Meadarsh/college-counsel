@@ -9,17 +9,14 @@ cloudinary.config({
   api_key: "144754317187248",
   api_secret: "OoO5TQ4ERiM54dcBuQjdicyizkg",
 });
-export const config = {
-  api: {
-    bodyParser: false,
-  },
+export const api = {
+  bodyParser: false,
 };
 
 export async function POST(req, res) {
   try {
     connectDb();
     const data = await req.formData();
-    console.log(data);
     const title = data.get("title");
     const subtitle = data.get("subtitle");
     const content = data.get("content");
@@ -43,7 +40,6 @@ export async function POST(req, res) {
     const tablekeyhead = data.get("keyhead");
     const tablekey = data.get("fields[keys]");
     const tablevalue = data.get("fields[values]");
-    console.log(tablekey);
     const subcontent =[subcontent1,subcontent2,subcontent3,subcontent4,subcontent5]
     const subheading= [subheading1,subheading2,subheading3,subheading4,subheading5]
     let images = [];
