@@ -5,7 +5,7 @@ import { RiTwitterXLine } from 'react-icons/ri'
 const Footer = () => {
   return (
     <div>
-    <div className=' select-text h-[30vh] lg:h-[25vh] pt-3 text-white flex w-full lg:flex-row flex-col gap-4 lg:gap-0 items-center bg-red-950 mt-8'>
+    <div className=' select-text h-[30vh] lg:h-[25vh] pt-3 text-white flex w-full lg:flex-row flex-col gap-4 lg:gap-0 items-center bg-primary mt-8'>
     <div className='logo lg:w-1/3  lg:h-[80%] flex items-center pl-3'>
       <h1 className=' text-3xl lg:text-[2.5vw]'>Collegecounsel.co.in</h1>
     </div>
@@ -27,7 +27,7 @@ const Footer = () => {
         Email: mail@collegecounsel.co.in
     </div>
 </div>
-<p className='text-center text-white bg-red-950 px-3 pb-5'>all rights reserved. © copyright 2024 collegecounsel.co.in </p>
+<p className='text-center text-white bg-primary px-3 pb-5'>all rights reserved. © copyright 2024 collegecounsel.co.in </p>
 </div>
   )
 }

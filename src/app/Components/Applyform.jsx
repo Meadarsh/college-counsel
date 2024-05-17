@@ -1,5 +1,5 @@
 "use client";
-import { Autocomplete, Button, TextField } from "@mui/material";
+import { Autocomplete, Badge, Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { indianStates } from "../Data/data";
 import { RxCross1 } from "react-icons/rx";
@@ -77,11 +77,16 @@ const ApplyformComp = ({ handleClose }) => {
     const result = await Send.json();
     if (result.status) {
       setFormData(InitialState);
+      StoreInLocal()
       alert("Submited successfully.");
     } else {
       alert("Unable to submit.");
     }
   };
+  function StoreInLocal (){
+    const date = new Date()
+    localStorage.setItem('Applied',date)
+  }
 
   return (
     <div className="lg:w-2/3 mt-32 z-50 lg:mt-20 lg:h-[80vh] flex rounded-xl overflow-hidden shadow-xl">
@@ -121,7 +126,7 @@ const ApplyformComp = ({ handleClose }) => {
               error={errors.name}
               helperText={errors.name && "Name is required"}
             />
-            <TextField
+              <TextField
               sx={{ width: "100%" }}
               id="email"
               type="email"
@@ -132,6 +137,7 @@ const ApplyformComp = ({ handleClose }) => {
               error={errors.email}
               helperText={errors.email && "Email is required"}
             />
+          
           </div>
           <div className="flex w-full lg:flex-row flex-col items-center gap-3">
             <TextField

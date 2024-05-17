@@ -59,13 +59,13 @@ function Selection(e){
      </div>
       <div className="lg:mt-[10vh] mt-[10vh]">
         <div className="flex justify-center   items-center mt-[10vh] lg:h-[10vh]">
-          <h1 className="lg:text-[2.5vw] font-bold text-3xl text-center text-red-800">
+          <h1 className="lg:text-[2.5vw] font-bold text-3xl text-center text-primary">
             Browse Courses
           </h1>
         </div>
         <div className='lg:min-h-[10vh] h-[7vh] w-full justify-center lg:gap-7 gap-2 items-center flex-wrap flex mt-[1vh]'>
     {homePageCourcesList.map((data,index)=>(
-    <div key={index} onClick={()=>Selection(data)} className={`button font-semibold ${selectedCourse===data&&'bg-red-800 text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-red-800  lg:hover:text-white  border-red-800  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-full `}>
+    <div key={index} onClick={()=>Selection(data)} className={`button font-semibold ${selectedCourse===data&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-full `}>
         <p>{data}</p>
      </div>)) }
     

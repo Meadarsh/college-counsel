@@ -12,7 +12,6 @@ import { fDate } from '../utils/format-time';
 
 export default function PostCard({ post}) {
   const {_id,image,title,subtitle, upload_time } = post;
- console.log(post);
   const renderAvatar = (
     <Avatar
       alt={'CC'}

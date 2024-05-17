@@ -12,14 +12,34 @@ import Link from 'next/link'
 
 
 const Home = () => {
+  const EXPIRATION_DAYS = 10;
+const MILLISECONDS_IN_A_DAY = 86400000;
+  function parseDateString(dateString) {
+    return new Date(dateString);
+  }
+  
+  // Check if the date is expired
+  function isExpired(storedDateString, currentDate = new Date()) {
+    const storedDate = parseDateString(storedDateString);
+    const expirationDate = new Date(storedDate.getTime() + EXPIRATION_DAYS * MILLISECONDS_IN_A_DAY);
+    return currentDate > expirationDate;
+  }
 
-  const [showForm,setShowForm]=useState(false)
-
+const [showForm,setShowForm]=useState(false)
+const currentDate = new Date();
 useEffect(()=>{
   setTimeout(()=>{
-    setShowForm(true)
-  },3000)
-},[])
+    if(!showForm){
+      const data = localStorage.getItem('Applied')
+      if (isExpired(data, currentDate)) {
+        setShowForm(true)
+      } 
+      return;
+    }
+    return;
+  },5000)
+},[showForm])
+
   return (
     <>
     {showForm&&<ApplyForm handleClose={()=>setShowForm(false)}/>}
