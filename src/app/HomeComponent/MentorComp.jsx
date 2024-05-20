@@ -27,7 +27,7 @@ const MentorComp = () => {
             spaceBetween: 30,
           },
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 5,
             spaceBetween: 10,
           },
         }}
