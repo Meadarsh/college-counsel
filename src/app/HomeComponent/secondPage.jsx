@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 import { Pagination, Navigation,Autoplay } from 'swiper/modules';
 import { HomepageCrausel, homePageCourcesList } from "../Data/data";
 import CourseSelection from "./courseSelection";
+import { Badge } from "@mui/material";
 const SecondPage = () => {
 
 const [selectedCourse,setSelectedCourse]=useState('UG Courses')
@@ -64,13 +65,21 @@ function Selection(e){
           </h1>
         </div>
         <div className='lg:min-h-[10vh] h-[7vh] w-full justify-center lg:gap-7 gap-2 items-center flex-wrap flex mt-[1vh]'>
-    {homePageCourcesList.map((data,index)=>(
-    <div key={index} onClick={()=>Selection(data)} className={`button font-semibold ${selectedCourse===data&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-full `}>
-        <p>{data}</p>
-     </div>)) }
+    <div onClick={()=>Selection('UG Courses')} className={`button font-semibold ${selectedCourse==='UG Courses'&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-full `}>
+        <p>UG Courses</p>
+     </div>
+    <div onClick={()=>Selection('PG Courses')} className={`button font-semibold ${selectedCourse==='PG Courses'&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-full `}>
+        <p>PG Courses</p>
+     </div>
+     {/*onClick={()=>Selection(data)}*/}
+     <Badge badgeContent={'Comming soon'} color="primary">
+    <div  className={`button font-semibold ${selectedCourse==='Other Courses'&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-full `}>
+        <p>Other Courses</p>
+     </div>
+     </Badge>
     
     </div> 
-    <div className="lg:h-[45vh] lg:mt-[5vh]">
+    <div className="lg:h-auto lg:mt-[5vh]">
   <CourseSelection course={selectedCourse} />
   
 

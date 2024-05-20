@@ -37,14 +37,14 @@ const CourseSelection = ({ course }) => {
             onClick={() => SelectCourse(key)}
             className={`flex items-center ${
               selectedKey === key && "bg-primary text-white"
-            } font-bold border-primary justify-center rounded-3xl w-16 lg:w-36 border py-1 lg:py-3`}
+            } font-bold border-primary cursor-pointer justify-center rounded-3xl w-16 lg:w-36 border py-1 lg:py-3`}
           >
             <h1>{key}</h1>
           </div>
         ))}
       </div>
       <div
-        className="lg:h-full h-[40vh] w-[100%] lg:w-[60%] overflow-y-auto  rounded-xl border ">
+        className="lg:h-[45vh] h-[40vh] w-[100%] lg:w-[60%] overflow-y-auto  rounded-xl border ">
         <OfferingCollegesLIst college={selectedCourse} />
       </div>
     </div>

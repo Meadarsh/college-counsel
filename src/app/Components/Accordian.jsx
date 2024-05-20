@@ -14,7 +14,7 @@ export default function AccordionExpandIcon({data}) {
           aria-controls="panel2-content"
           id="panel2-header"
         >
-          <Typography sx={{ fontWeight:700}}>{e.Question}</Typography>
+          <Typography sx={{ fontWeight:700}}>{`${++ind}. ${e.Question}`}</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
