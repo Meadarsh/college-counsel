@@ -8,7 +8,7 @@ import { AboutCollege } from "@/app/Data/aboutCollege";
 import ListWithStar from "@/app/Components/ListWithStar";
 import Footer from "@/app/Components/Footer";
 
-const page = ({params}) => {
+const Page = ({params}) => {
   const [data,setData]=useState(AboutCollege?.[params.id])
   return (
     <>
@@ -83,4 +83,4 @@ const page = ({params}) => {
   );
 };
 
-export default page;
+export default Page;
