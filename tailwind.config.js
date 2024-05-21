@@ -15,10 +15,10 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: '#0056D1',
+          DEFAULT: '#0069FF ',
         },
         hover:{
-          DEFAULT: '#0069FF',
+          DEFAULT: '#0056D1',
         }
       }
     },

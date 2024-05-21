@@ -1,16 +1,15 @@
 import { List, ListItem, ListItemIcon } from "@mui/material";
-import DoneRoundedIcon from "@mui/icons-material/DoneRounded";
-
+import StarPurple500OutlinedIcon from '@mui/icons-material/StarPurple500Outlined';
 import React from "react";
 
-const ListWithBlueTick = ({ data }) => {
+const ListWithStar = ({ data }) => {
   return (
     <List>
       {data &&
         data.map((txt, index) => (
           <ListItem key={index}>
             <ListItemIcon>
-              <DoneRoundedIcon sx={{ color: "blue" }} />
+              <StarPurple500OutlinedIcon sx={{ color: "#FFD700" }} />
             </ListItemIcon>
             {txt}
           </ListItem>
@@ -19,4 +18,4 @@ const ListWithBlueTick = ({ data }) => {
   );
 };
 
-export default ListWithBlueTick;
+export default ListWithStar;
