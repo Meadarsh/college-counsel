@@ -61,7 +61,7 @@ const Page = ({params}) => {
               dangerouslySetInnerHTML={{ __html: `${data.AdmissionProcess.paragraph}` }}
             />
             {data&&data?.AdmissionProcess?.steps.map((text,index)=>(
-              <p className="mt-3"><span className="font-semibold">Step {++index}:</span> {text}</p>
+              <p key={index} className="mt-3"><span className="font-semibold">Step {++index}:</span> {text}</p>
             ))}
         </div>
         <div className="h-[100vh] sticky px-2 top-0 right-0 lg:w-[400px]">
