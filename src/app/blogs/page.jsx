@@ -9,7 +9,7 @@ import PostCard from "../Components/post-card";
 import PostSearch from "../Components/post-search";
 import PostSort from "../Components/post-sort";
 import CCLoader from "../Components/CCLoader";
-export const dynamic='force-dynamic'
+
 const Blogs = () => {
   
   
@@ -79,5 +79,4 @@ const Blogs = () => {
     </>
   );
 };
-
 export default Blogs;
