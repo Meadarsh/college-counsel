@@ -6,9 +6,14 @@ export async function GET(req){
     try{
         await connectDb()
         const Blog=await Blogs.find({},'title subtitle image upload_time')
-        const response = NextResponse.json(Blog);
-        response.headers.set('Cache-Control', 'no-store');        
-        return response;
+        const response = new NextResponse(JSON.stringify(Blog), {
+            headers: {
+              'Content-Type': 'application/json',
+              'Cache-Control': 'no-store',
+            },
+          });
+          
+          return response;
     }   
     catch (err) {
     console.log(err);
