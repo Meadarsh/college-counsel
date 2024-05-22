@@ -6,7 +6,7 @@ export async function GET(req){
     try{
         await connectDb()
         const Blog=await Blogs.find({},'title subtitle image upload_time')
-        const response = new NextResponse(JSON.stringify(blogs), {
+        const response = new NextResponse(JSON.stringify(Blog), {
             headers: {
               'Content-Type': 'application/json',
               'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
