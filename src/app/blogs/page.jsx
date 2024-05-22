@@ -81,3 +81,4 @@ const Blogs = () => {
 };
 
 export default Blogs;
+export const revalidate =600;

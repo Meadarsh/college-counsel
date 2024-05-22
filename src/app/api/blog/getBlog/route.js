@@ -2,7 +2,7 @@ import connectDb from "@/databaseConnection/connect";
 import Blogs from "@/models/blog.model";
 import { NextResponse } from "next/server";
 
-export async function GET(req,res){
+export async function GET(req){
     try{
         await connectDb()
         const Blog=await Blogs.find({},'title subtitle image upload_time')
