@@ -6,10 +6,13 @@ export async function GET(req){
     try{
         await connectDb()
         const Blog=await Blogs.find({},'title subtitle image upload_time')
-        const response = new NextResponse(JSON.stringify(Blog), {
+        const response = new NextResponse(JSON.stringify(blogs), {
             headers: {
               'Content-Type': 'application/json',
-              'Cache-Control': 'no-store',
+              'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+              'Pragma': 'no-cache',
+              'Expires': '0',
+              'Surrogate-Control': 'no-store'
             },
           });
           
@@ -17,7 +20,14 @@ export async function GET(req){
     }   
     catch (err) {
     console.log(err);
-    return NextResponse.json({ err,message: "Internal server error" });
-    }
+    return new NextResponse(JSON.stringify({ err, message: "Internal server error" }), {
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0',
+          'Surrogate-Control': 'no-store'
+        },
+      });    }
 
 } 
