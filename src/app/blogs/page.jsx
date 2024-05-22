@@ -18,7 +18,9 @@ const Blogs = () => {
   const [loading,setLoading]=useState(true)
   const GetBlogs =(async () => {
     try{
-      const response = await fetch('api/blog/getBlog');
+      const response = await fetch('api/blog/getBlog',{next:{
+        revalidate: 60
+      }});
       const data = await response.json();
       setLoading(false)
       return setBlogs(data);
@@ -81,4 +83,3 @@ const Blogs = () => {
 };
 
 export default Blogs;
-export const revalidate =600;
