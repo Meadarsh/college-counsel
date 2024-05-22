@@ -18,9 +18,7 @@ const Blogs = () => {
   const [loading,setLoading]=useState(true)
   const GetBlogs =(async () => {
     try{
-      const response = await fetch('api/blog/getBlog',{next:{
-        revalidate: 60
-      }});
+      const response = await fetch('api/blog/getBlog',{cache:'no-store'});
       const data = await response.json();
       setLoading(false)
       return setBlogs(data);
