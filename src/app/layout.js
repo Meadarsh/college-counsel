@@ -14,13 +14,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+     <head>
         <Script
           id="messenger-widget-b"
           src="https://cdn.botpenguin.com/website-bot.js"
+          defer
           strategy="afterInteractive"
-          data-bot-id="6647981f07af820cc774bacd,664797f8881a65150d0aa425"
+          onLoad={() => {
+            const scriptContent = document.createTextNode("6647981f07af820cc774bacd,664797f8881a65150d0aa425");
+            const scriptElement = document.getElementById("messenger-widget-b");
+            if (scriptElement) {
+              scriptElement.appendChild(scriptContent);
+            }
+          }}
         />
-      {/* <script id="messenger-widget-b" src="https://cdn.botpenguin.com/website-bot.js" defer>6647981f07af820cc774bacd,664797f8881a65150d0aa425</script> */}
+      </head>
       <body className={frankRuhlLibre.className}>
        <nav>
         <NavBar/>
