@@ -1,10 +1,10 @@
-import { Inter } from "next/font/google";
+import { Frank_Ruhl_Libre } from "next/font/google";
 import "./globals.css";
 import NavBar from "./Components/navBar";
 import ThemeProvider from "./theme";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"] });
+const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata = {
   title: "College Counsel",
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {/* <script id="messenger-widget-b" src="https://cdn.botpenguin.com/website-bot.js" defer>6647981f07af820cc774bacd,664797f8881a65150d0aa425</script> */}
-      <body className={inter.className}>
+      <body className={frankRuhlLibre.className}>
        <nav>
         <NavBar/>
        </nav>

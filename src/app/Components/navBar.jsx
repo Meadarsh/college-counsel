@@ -22,8 +22,8 @@ const NavBar = () => {
   })
   return (
    <div className={`bg-white  mainNav w-[100vw] left-0 lg:h-20 h-16 z-50 fixed top-0 flex justify-between items-center lg:px-10 px-6`}>
-    <div className='flex items-center gap-2'><Image width={120} height={70} className='w-auto h-auto rounded-full' src='/logo/College counsel.png' alt="N/A" /> <p className=' lg:text-md text-sm '>
-    #shikshaSeMilegiNaiManzil
+    <div className='flex items-center gap-1'><Image width={120} height={70} className='w-auto h-auto rounded-full' src='/logo/College counsel.png' alt="N/A" /> <p className=' lg:text-md text-sm '>
+    #ShikshaSeHiMilegiManzil
       </p> </div>
     <div className='lg:flex gap-5 hidden  min-w-[20%] '>
     <Link href='/'><button className='text-white w-24 font-semibold cursor-pointer rounded-full px-3 py-1 bg-primary lg:hover:bg-hover'>Home</button></Link>
