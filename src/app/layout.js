@@ -14,7 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <script id="messenger-widget-b" src="https://cdn.botpenguin.com/website-bot.js" defer>6647981f07af820cc774bacd,664797f8881a65150d0aa425</script> */}
+     <head>
+     <script id="messenger-widget-b" src="https://cdn.botpenguin.com/website-bot.js" defer>6647981f07af820cc774bacd,664797f8881a65150d0aa425</script>
+      </head>
       <body className={frankRuhlLibre.className}>
        <nav>
         <NavBar/>
