@@ -1,7 +1,7 @@
-"use client"
+
 import { Button, Card} from "@mui/material";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CustomTable from "@/app/Components/CustomTable";
 import ListWithBlueTick from "@/app/Components/ListWithBlueTick";
 import { AboutCollege } from "@/app/Data/aboutCollege";
@@ -9,7 +9,7 @@ import ListWithStar from "@/app/Components/ListWithStar";
 import Footer from "@/app/Components/Footer";
 
 const Page = ({params}) => {
-  const [data,setData]=useState(AboutCollege?.[params.id])
+  const data= AboutCollege?.[params.id]
   return (
     <>
    {data?<div className="mt-20 bg-slate-50">
@@ -82,5 +82,17 @@ const Page = ({params}) => {
     </>
   );
 };
-
+export async function generateMetadata({ params }) {
+  const data= AboutCollege?.[params.id]
+    return {
+      title: `${data?.name} - College Counsel`,
+      description: data?.about,
+      openGraph: {
+        title:` ${data?.name} -  College Counsel`,
+  
+        description: data?.about,
+        url: `${process.env.BASE_URL}/university/${params.id}`,
+      },
+    };
+  }
 export default Page;

@@ -9,7 +9,6 @@ import ApplyForm from './apply/page'
 import Applyside from './Components/Applyside'
 import Link from 'next/link'
 import MentorComp from './HomeComponent/MentorComp'
-import CursorFollower from './Components/CursorFollower'
 
 
 
@@ -44,7 +43,6 @@ useEffect(()=>{
 
   return (
     <>
-    <CursorFollower/>
     {showForm&&<ApplyForm handleClose={()=>setShowForm(false)}/>}
     <Link href='apply'><Applyside/></Link>
     <LandingCrausel/>

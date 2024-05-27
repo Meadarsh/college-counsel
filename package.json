@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },
@@ -24,6 +24,7 @@
     "gsap": "^3.12.5",
     "mongoose": "^8.3.3",
     "next": "14.2.3",
+    "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-creative-cursor": "^1.2.7",
     "react-dom": "^18",
