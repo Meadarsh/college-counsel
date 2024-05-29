@@ -38,7 +38,7 @@ const Page = ({params}) => {
               dangerouslySetInnerHTML={{ __html: `${data.about}` }}
             />
           <h1 className="text-2xl font-bold mt-16">
-            Benefits of Manipal University{" "}
+            Benefits of {data.name}
           </h1>
          <ListWithBlueTick data={data.BenifitsList}/>
           <h1 className="text-2xl font-bold mt-16">Course Wise Fees</h1>

@@ -49,9 +49,9 @@ export const ugCourseData = {
     },
     {
       name: "DY Patil University",
-      img: "/collegeLogoimage/collegelogo14.webp",
+      img: "/collegeLogoimage/collegelogo5.webp",
     },
-    { name: "UPES University", img: "/collegeLogoimage/collegelogo14.webp" },
+    { name: "UPES University", img: "/collegeLogoimage/collegelogo16.webp" },
     { name: "Amrita University", img: "/collegeLogoimage/collegelogo2.webp" },
   ],
   BA: [
@@ -73,9 +73,9 @@ export const ugCourseData = {
     { name: "Amrita University", img: "/collegeLogoimage/collegelogo2.webp" },
     {
       name: "DY Patil University",
-      img: "/collegeLogoimage/collegelogo14.webp",
+      img: "/collegeLogoimage/collegelogo5.webp",
     },
-    { name: "UPES University", img: "/collegeLogoimage/collegelogo14.webp" },
+    { name: "UPES University", img: "/collegeLogoimage/collegelogo16.webp" },
   ],
   BBA: [
     { name: "Manipal University", img: "/collegeLogoimage/collegelogo14.webp" },
@@ -90,7 +90,7 @@ export const ugCourseData = {
     },
     { name: "Jain University", img: "/collegeLogoimage/collegelogo12.webp" },
     { name: "Amity University", img: "/collegeLogoimage/collegelogo1.webp" },
-    { name: "Vignan University", img: "/collegeLogoimage/collegelogo1.webp" },
+    { name: "Vignan University", img: "/collegeLogoimage/collegelogo25.webp" },
     { name: "Shoolini	University", img: "/collegeLogoimage/collegelogo15.webp" },
     {
       name: "Chandigarh University",
@@ -99,9 +99,9 @@ export const ugCourseData = {
     { name: "Amrita University", img: "/collegeLogoimage/collegelogo2.webp" },
     {
       name: "DY Patil University",
-      img: "/collegeLogoimage/collegelogo14.webp",
+      img: "/collegeLogoimage/collegelogo5.webp",
     },
-    { name: "UPES University", img: "/collegeLogoimage/collegelogo14.webp" },
+    { name: "UPES University", img: "/collegeLogoimage/collegelogo16.webp" },
   ],
   BCA: [
     { name: "Manipal University", img: "/collegeLogoimage/collegelogo14.webp" },
@@ -114,7 +114,7 @@ export const ugCourseData = {
       name: "Lovely Professional University",
       img: "/collegeLogoimage/collegelogo13.webp",
     },
-    { name: "Vignan University", img: "/collegeLogoimage/collegelogo1.webp" },
+    { name: "Vignan University", img: "/collegeLogoimage/collegelogo25.webp" },
     { name: "Shoolini	University", img: "/collegeLogoimage/collegelogo15.webp" },
     {
       name: "Chandigarh University",
@@ -123,9 +123,9 @@ export const ugCourseData = {
     { name: "Amrita University", img: "/collegeLogoimage/collegelogo2.webp" },
     {
       name: "DY Patil University",
-      img: "/collegeLogoimage/collegelogo14.webp",
+      img: "/collegeLogoimage/collegelogo5.webp",
     },
-    { name: "UPES University", img: "/collegeLogoimage/collegelogo14.webp" },
+    { name: "UPES University", img: "/collegeLogoimage/collegelogo16.webp" },
     { name: "Amity University", img: "/collegeLogoimage/collegelogo1.webp" },
   ],
 };
@@ -144,9 +144,9 @@ export const pgCourseData = {
     { name: "Amrita University", img: "/collegeLogoimage/collegelogo2.webp" },
     {
       name: "DY Patil University",
-      img: "/collegeLogoimage/collegelogo14.webp",
+      img: "/collegeLogoimage/collegelogo5.webp",
     },
-    { name: "UPES University", img: "/collegeLogoimage/collegelogo14.webp" },
+    { name: "UPES University", img: "/collegeLogoimage/collegelogo16.webp" },
     { name: "Amity University", img: "/collegeLogoimage/collegelogo1.webp" },
     { name: "Jain University", img: "/collegeLogoimage/collegelogo12.webp" },
   ],
@@ -164,9 +164,9 @@ export const pgCourseData = {
     { name: "Amrita University", img: "/collegeLogoimage/collegelogo2.webp" },
     {
       name: "DY Patil University",
-      img: "/collegeLogoimage/collegelogo14.webp",
+      img: "/collegeLogoimage/collegelogo5.webp",
     },
-    { name: "UPES University", img: "/collegeLogoimage/collegelogo14.webp" },
+    { name: "UPES University", img: "/collegeLogoimage/collegelogo16.webp" },
     { name: "Amity University", img: "/collegeLogoimage/collegelogo1.webp" },
   ],
   MBA: [
@@ -183,12 +183,12 @@ export const pgCourseData = {
     { name: "Amrita University", img: "/collegeLogoimage/collegelogo2.webp" },
     {
       name: "DY Patil University",
-      img: "/collegeLogoimage/collegelogo14.webp",
+      img: "/collegeLogoimage/collegelogo5.webp",
     },
-    { name: "UPES University", img: "/collegeLogoimage/collegelogo14.webp" },
+    { name: "UPES University", img: "/collegeLogoimage/collegelogo16.webp" },
     { name: "Amity University", img: "/collegeLogoimage/collegelogo1.webp" },
     { name: "Jain University", img: "/collegeLogoimage/collegelogo12.webp" },
-    { name: "Vignan University", img: "/collegeLogoimage/collegelogo1.webp" },
+    { name: "Vignan University", img: "/collegeLogoimage/collegelogo25.webp" },
     {
       name: "Uttaranchal University",
       img: "/collegeLogoimage/collegelogo13.webp",
@@ -209,12 +209,12 @@ export const pgCourseData = {
     { name: "Amrita University", img: "/collegeLogoimage/collegelogo2.webp" },
     {
       name: "DY Patil University",
-      img: "/collegeLogoimage/collegelogo14.webp",
+      img: "/collegeLogoimage/collegelogo5.webp",
     },
-    { name: "UPES University", img: "/collegeLogoimage/collegelogo14.webp" },
+    { name: "UPES University", img: "/collegeLogoimage/collegelogo16.webp" },
     { name: "Amity University", img: "/collegeLogoimage/collegelogo1.webp" },
     { name: "Jain University", img: "/collegeLogoimage/collegelogo12.webp" },
-    { name: "Vignan University", img: "/collegeLogoimage/collegelogo1.webp" },
+    { name: "Vignan University", img: "/collegeLogoimage/collegelogo25.webp" },
     {
       name: "Uttaranchal University",
       img: "/collegeLogoimage/collegelogo13.webp",
@@ -235,12 +235,12 @@ export const pgCourseData = {
     { name: "Amrita University", img: "/collegeLogoimage/collegelogo2.webp" },
     {
       name: "DY Patil University",
-      img: "/collegeLogoimage/collegelogo14.webp",
+      img: "/collegeLogoimage/collegelogo5.webp",
     },
-    { name: "UPES University", img: "/collegeLogoimage/collegelogo14.webp" },
+    { name: "UPES University", img: "/collegeLogoimage/collegelogo16.webp" },
     { name: "Amity University", img: "/collegeLogoimage/collegelogo1.webp" },
     { name: "Jain University", img: "/collegeLogoimage/collegelogo12.webp" },
-    { name: "Vignan University", img: "/collegeLogoimage/collegelogo1.webp" },
+    { name: "Vignan University", img: "/collegeLogoimage/collegelogo25.webp" },
     {
       name: "Uttaranchal University",
       img: "/collegeLogoimage/collegelogo13.webp",
