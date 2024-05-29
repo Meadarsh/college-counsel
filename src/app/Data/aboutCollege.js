@@ -1,5 +1,5 @@
 export const AboutCollege = {
-  1: {
+  Manipal_University: {
     name: "Manipal University",
     about: `The college began offering online courses around 2021. The
      University Grants Commission (UGC) has authorised Online Manipal
@@ -33,8 +33,9 @@ export const AboutCollege = {
      outstanding scholarship opportunities for government officials,
      defense personnel, deserving students, and those with disabilities.
  `,
+    Eligibility_criteria: `The minimum qualification required to apply for is a pass in the 10+2 examination in Science / Commerce / Arts from PUC / ISC / CBSE or equivalent board. A course recognized as equivalent thereto by the University.`,
     CourseTable: [
-       {
+      {
         name: "Online B.Com",
         fees: "99,000",
         duration: "3 Years",
@@ -47,6 +48,89 @@ export const AboutCollege = {
       {
         name: "Online BBA",
         fees: "1,35,000",
+        duration: "3 Years",
+      },
+    ],
+    BenifitsList: [
+      "100+ recruiters from Fortune 500 organisations.",
+      "No-Cost EMI & attractive scholarships",
+      "Real-World Faculty",
+      "Jobs that fits the student’s profile",
+    ],
+    FactAboutUniversity: [
+      `Jain Online is approved by UGC-DEB to offer courses in online mode.`,
+      `Jain University is one of the best colleges in Bangalore for MBA`,
+      `Jain online has collaborations with 7+ leading global professional bodies from the UK and the US to teach some professional courses.`,
+      `Jain is counted among the top ten engineering colleges in Bangalore`,
+      `Jain University has 2000+ hiring companies like Infosys, Facebook, Google and Flipkart.`,
+      `There are also provisions for international study tours for global exposure so that students can grow exponentially.`,
+    ],
+    OnlineCertificates: [
+      "Earn a UGC-accredited degree, accepted globally",
+      "Degree is recognised and certified",
+      "Degrees accredited by NAAC and AICTE ",
+      "Degree is recognised in public as well as private industries",
+      "Equivalence with an on-campus degree",
+    ],
+    AdmissionProcess: {
+      paragraph: `The process for applying at Manipal University is conducted online. New admissions begin in January of each year. <br/><br/>
+      There are direct admissions, and no entrance exams are required for admission. Follow this process to get Admission in Online Manipal University’s Online Courses:
+      `,
+      steps: [
+        `Go to Online Manipal University's official website and apply online by clicking on "Enroll Now".`,
+        `Upload documents and then submit the application.`,
+        `Pay the application fees. This cost is later reflected in Semester I fees.`,
+      ],
+    },
+  },
+  Jain_University: {
+    name: "Jain University",
+    about: ` Welcome to Jain University Bangalore! <br/><br/>
+    It is counted among the top 10 universities in Bangalore. The Jain University Team has 30 years of expertise and reputation for offering excellent education, a vibrant campus life and real world industry exposure. In addition to teaching, the university specializes in research and entrepreneurship.<br/>
+    Jain University, in addition, has some of the top ten engineering colleges in Bangalore!<br/><br/>
+    
+    It has been listed among the top 100 Indian Universities by QS World Ranking and has received five stars in the Young Universities category program. The NIRF has also placed Jain Deemed To Be University among the top 100 Indian universities.
+ `,
+    Eligibility_criteria: `The minimum qualification required to apply for is a pass in the 10+2 examination in Science / Commerce / Arts from PUC / ISC / CBSE or equivalent board. A course recognized as equivalent thereto by the University.`,
+    CourseTable: [
+      {
+        name: "Online B.Com",
+        fees: "1,27,000",
+        duration: "3 Years",
+      },
+      {
+        name: "Online B.Com hons",
+        fees: "1,27,000",
+        duration: "3 Years",
+      },
+      {
+        name: "Online MA",
+        fees: "90,000",
+        duration: "3 Years",
+      },
+      {
+        name: "Online M.Com",
+        fees: "1,57,500",
+        duration: "2 Years",
+      },
+      {
+        name: "Online BBA",
+        fees: "1,65,000",
+        duration: "3 Years",
+      },
+      {
+        name: "Online MCA",
+        fees: "1,35,000",
+        duration: "3 Years",
+      },
+      {
+        name: "Online MBA",
+        fees: "1,60,000",
+        duration: "3 Years",
+      },
+      {
+        name: "Online MBA (dual)",
+        fees: "1,80,000",
         duration: "3 Years",
       },
     ],
@@ -82,18 +166,4 @@ export const AboutCollege = {
       ],
     },
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 };
