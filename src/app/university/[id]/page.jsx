@@ -7,6 +7,8 @@ import ListWithBlueTick from "@/app/Components/ListWithBlueTick";
 import { AboutCollege } from "@/app/Data/aboutCollege";
 import ListWithStar from "@/app/Components/ListWithStar";
 import Footer from "@/app/Components/Footer";
+import ApplyformComp from "@/app/Components/Applyform";
+import ApplyFormWIthoutImgH from "@/app/Components/ApplyFormWIthoutImgH";
 
 const Page = ({params}) => {
   const data= AboutCollege?.[params.id]
@@ -32,36 +34,36 @@ const Page = ({params}) => {
       </div>
       <div className="flex">
         <div className="mt-1 p-10  md:w-[calc(100vw-230px)]">
-          <h1 className="text-2xl font-bold">About </h1>
+          <h1 className="text-3xl font-bold">About </h1>
           <div
-              className="mt-5"
+              className="mt-5 text-xl"
               dangerouslySetInnerHTML={{ __html: `${data.about}` }}
             />
-          <h1 className="text-2xl font-bold mt-16">
+          <h1 className="text-3xl font-bold mt-16">
             Benefits of {data.name}
           </h1>
          <ListWithBlueTick data={data.BenifitsList}/>
-          <h1 className="text-2xl font-bold mt-16">Course Wise Fees</h1>
-          <div className="w-[80%]">
+          <h1 className="text-3xl font-bold mt-16">Course Wise Fees</h1>
+          <div className="w-[80%] mt-10">
           <CustomTable data={data.CourseTable}/>
           </div>
-          <h1 className="text-2xl font-bold mt-16">
+          <h1 className="text-3xl font-bold mt-16">
           Facts about {data.name}
           </h1>
          <ListWithBlueTick data={data.FactAboutUniversity}/>
-          <h1 className="text-2xl font-bold mt-16">
+          <h1 className="text-3xl font-bold mt-16">
           {data.name} online certificates
           </h1>
          <ListWithStar data={data.OnlineCertificates}/>
-         <h1 className="text-2xl font-bold mt-16">
+         <h1 className="text-3xl font-bold mt-16">
         {data.name} admission process
           </h1>
           <div
-              className="mt-5 mb-5"
+              className="mt-5 mb-5 text-xl"
               dangerouslySetInnerHTML={{ __html: `${data.AdmissionProcess.paragraph}` }}
             />
             {data&&data?.AdmissionProcess?.steps.map((text,index)=>(
-              <p key={index} className="mt-3"><span className="font-semibold">Step {++index}:</span> {text}</p>
+              <p key={index} className="mt-3 font-medium"><span className="font-semibold text-blue-600">Step {++index}:</span> {text}</p>
             ))}
         </div>
         <div className="h-[100vh] hidden md:block sticky px-2 top-0 right-0 lg:w-[400px]">
@@ -77,6 +79,9 @@ const Page = ({params}) => {
           </Card>
         </div>
       </div>
+      <div className='w-full flex items-center justify-center'>
+     <ApplyFormWIthoutImgH />
+    </div>
       <Footer/>
     </div>:<></>}
     </>

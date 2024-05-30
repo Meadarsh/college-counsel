@@ -12,7 +12,7 @@ const ListWithBlueTick = ({ data }) => {
             <ListItemIcon>
               <DoneRoundedIcon sx={{ color: "blue" }} />
             </ListItemIcon>
-            {txt}
+            <p className="font-semibold">{txt}</p>
           </ListItem>
         ))}
     </List>
