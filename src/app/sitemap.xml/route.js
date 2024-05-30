@@ -6,7 +6,6 @@ import { AboutCollege } from '../Data/aboutCollege';
 export async function GET() {
     await connectDb();
     const blogs = await Blogs.find({}, 'id, upload_time')
-    console.log(blogs);
   const staticRoutes = [
     {
       url: 'https://collegecounsel.co.in',
