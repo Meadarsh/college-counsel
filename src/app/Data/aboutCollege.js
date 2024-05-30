@@ -85,11 +85,11 @@ export const AboutCollege = {
   },
   Jain_University: {
     name: "Jain University",
-    about: ` Welcome to Jain University Bangalore! <br/><br/>
+    about: `<p> Welcome to Jain University Bangalore! <br/><br/>
     It is counted among the top 10 universities in Bangalore. The Jain University Team has 30 years of expertise and reputation for offering excellent education, a vibrant campus life and real world industry exposure. In addition to teaching, the university specializes in research and entrepreneurship.<br/>
     Jain University, in addition, has some of the top ten engineering colleges in Bangalore!<br/><br/>
     
-    It has been listed among the top 100 Indian Universities by QS World Ranking and has received five stars in the Young Universities category program. The NIRF has also placed Jain Deemed To Be University among the top 100 Indian universities.
+    It has been listed among the top 100 Indian Universities by QS World Ranking and has received five stars in the Young Universities category program. The NIRF has also placed Jain Deemed To Be University among the top 100 Indian universities.</p>
  `,
     Eligibility_criteria: `The minimum qualification required to apply for is a pass in the 10+2 examination in Science / Commerce / Arts from PUC / ISC / CBSE or equivalent board. A course recognized as equivalent thereto by the University.`,
     CourseTable: [
@@ -157,11 +157,11 @@ export const AboutCollege = {
       `Degree equivalent to on-campus degree`,
     ],
     AdmissionProcess: {
-      paragraph: `Fresh admissions usually begin in January and July of each year. Admissions are granted on a direct basis, which means there is no need to take an entrance exam to apply for admission at Jain University.
+      paragraph: `<p>Fresh admissions usually begin in January and July of each year. Admissions are granted on a direct basis, which means there is no need to take an entrance exam to apply for admission at Jain University.
       <br/><br/>
      <b> For admissions to regular UG/PG courses students are required to take up a Jain Entrance Test (JET), which includes a written test, group discussion followed by a personal interview.</b> 
       <br/><br/>To begin your Jain University course admissions, follow these steps:
-      `,
+     </p> `,
       steps: [
         `Visit Jain Online official website at https://www.jainuniversity.ac.in/  and click on the "Apply Now" button.`,
         `Register yourself with your details for verification of email and mobile number.`,
@@ -173,12 +173,12 @@ export const AboutCollege = {
   },
   Amity_University: {
     name: "Amity University",
-    about: `Welcome to Amity University Noida! <br/><br/>
+    about: `<p>Welcome to Amity University Noida! <br/><br/>
     NIRF has ranked Amity University as one of the top private universities in India. It is known for its premium and world-class online education.<br/>
     UGC-DEB has approved the University to offer UG, PG, and Diploma level degree courses in an online mode. <br/>
     Its online MBA courses have been ranked as the best in Asia by QS Global Ranking. The Amity University MBA courses are considered as one of the top job-oriented courses offered.<br/><br/>
     The university provides online undergraduate, graduate, certificate, and diploma courses in management, IT, arts and humanities, commerce and journalism. 
-    `,
+   </p> `,
     Eligibility_criteria: `The minimum qualification required to apply for is a pass in the 10+2 examination in Science / Commerce / Arts from PUC / ISC / CBSE or equivalent board. A course recognized as equivalent thereto by the University.`,
     CourseTable: [
       {
@@ -249,12 +249,12 @@ export const AboutCollege = {
       `Rank 1 in India in the QS World Ranking`,
     ],
     AdmissionProcess: {
-      paragraph: `The admission procedure for Amity Online takes place two times a year. The first admission phase takes place between 1st Jan to 28th/29th Feb.
+      paragraph: `<p>The admission procedure for Amity Online takes place two times a year. The first admission phase takes place between 1st Jan to 28th/29th Feb.
       <br/><br/>
       The second admission phase takes place between 1st July to 31st August.  No entrance exam is required for taking admission in the university.</br>
       No entrance exam is required for taking admission in the university.
     <br/><br/>To begin your Amity University course admissions, follow these steps:
-      `,
+     </p> `,
       steps: [
         `Go to the official website of Amity Online https://amityonline.com (Note- there are separate websites for online and on- campus programs).`,
         `Click on the "Apply Now" in the top right corner.`,

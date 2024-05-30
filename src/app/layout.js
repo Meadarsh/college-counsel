@@ -2,8 +2,8 @@ import { Frank_Ruhl_Libre } from "next/font/google";
 import "./globals.css";
 import NavBar from "./Components/navBar";
 import ThemeProvider from "./theme";
-import Script from "next/script";
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata = {
@@ -21,6 +21,7 @@ export default function RootLayout({ children }) {
        <nav>
         <NavBar/>
        </nav>
+       <ToastContainer/>
         <ThemeProvider>
           { children }
           </ThemeProvider>

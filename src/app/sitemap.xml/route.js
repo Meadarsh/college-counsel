@@ -1,6 +1,7 @@
 import connectDb from '@/databaseConnection/connect';
 import Blogs from '@/models/blog.model';
 import { NextResponse } from 'next/server';
+import { AboutCollege } from '../Data/aboutCollege';
 
 export async function GET() {
     await connectDb();
@@ -33,8 +34,14 @@ export async function GET() {
     changeFrequency: 'daily',
     priority: 0.5,
   }));
+  const dynamicCollegeRoutes = Object.keys(AboutCollege).map((key) => ({
+    url: `https://collegecounsel.co.in/university/${key}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'daily',
+    priority: 0.5,
+  }));
 
-  const allRoutes = [...staticRoutes, ...dynamicRoutes];
+  const allRoutes = [...staticRoutes, ...dynamicRoutes,...dynamicCollegeRoutes];
 
   // Generate XML for sitemap
   const sitemap = `

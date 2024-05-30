@@ -31,7 +31,7 @@ const Page = ({params}) => {
 
       </div>
       <div className="flex">
-        <div className="mt-1 p-10  w-[calc(100vw-230px)]">
+        <div className="mt-1 p-10  md:w-[calc(100vw-230px)]">
           <h1 className="text-2xl font-bold">About </h1>
           <div
               className="mt-5"
@@ -64,7 +64,7 @@ const Page = ({params}) => {
               <p key={index} className="mt-3"><span className="font-semibold">Step {++index}:</span> {text}</p>
             ))}
         </div>
-        <div className="h-[100vh] sticky px-2 top-0 right-0 lg:w-[400px]">
+        <div className="h-[100vh] hidden md:block sticky px-2 top-0 right-0 lg:w-[400px]">
           <Card className="flex flex-col mt-24 p-2 gap-2">
             <Button className="text-lg font-light" variant="contained">
               About

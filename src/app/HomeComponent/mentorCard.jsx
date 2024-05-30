@@ -1,50 +1,72 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Chip from '@mui/material/Chip';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import SvgIcon from '@mui/material/SvgIcon';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import Typography from "@mui/material/Typography";
+import { Badge } from "@mui/material";
+import Image from "next/image";
+import { toast } from 'react-toastify';
 
-export default function MentorCard() {
+
+export default function MentorCard({ data }) {
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(data.number)
+      .then(() => {
+        toast.success('Number copied to clipboard!', {
+          autoClose: 2000, 
+        });
+      })
+      .catch((err) => {
+        console.error('Failed to copy number: ', err);
+      });
+  };
   return (
     <Card
       sx={{
         width: 320,
-        maxWidth: '100%',
+        maxWidth: "100%",
         boxShadow: 3,
       }}
     >
-      <Box sx={{display:'flex',flexDirection:'column',alignItems:'center', textAlign: 'center',mt:2 }}>
-        <Avatar src="/static/images/avatar/1.jpg" sx={{ width: 100, height: 100 }} />
-        <Chip
-          size="small"
-          variant="outlined"
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+          
+        }}
+      >
+        <div className="h-32 overflow-hidden">
+        <Image width={300} height={100} alt="University Image" src={data.img || "/static/images/avatar/1.jpg"}></Image>
+        </div>
+        <Badge
+          sx={{ "& .MuiBadge-badge": { fontSize: ".6rem" } }}
           color="primary"
-          sx={{
-            mt: -1,
-            mb: 1,
-            border: '3px solid',
-            borderColor: 'background.paper',
-          }}
-          label="PRO"
-        />
-        <Typography variant="h6">Josephine Blanton</Typography>
-        <Typography variant="body2" sx={{ maxWidth: '24ch' }}>
-          Hello, this is my bio and I am a PRO member of MUI. I am a developer and I
-          love to code.
+          badgeContent={`${data.exp} year`}
+        >
+          <Typography variant="h6">{data.name}</Typography>
+        </Badge>
+        <Typography sx={{ color: "#0069FF" }} variant="p">
+          {data.university}
         </Typography>
-       
+        <Typography variant="body2" sx={{ maxWidth: "24ch" }}>
+          Discover your dream university with tailored advice. Make the right
+          choice for your future!
+        </Typography>
       </Box>
-      <Box sx={{display:'flex',justifyContent:'right', bgcolor: 'background.default' }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "right",
+          bgcolor: "background.default",
+        }}
+      >
         <CardActions>
-          <ButtonGroup variant="outlined" sx={{ bgcolor: 'background.paper' }}>
-            <Button>Message</Button>
+          <ButtonGroup variant="outlined" sx={{ bgcolor: "background.paper" }}>
+            <Button onClick={copyToClipboard}>+91 {data.number}</Button>
           </ButtonGroup>
         </CardActions>
       </Box>

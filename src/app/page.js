@@ -43,7 +43,8 @@ useEffect(()=>{
 
   return (
     <>
-    {showForm&&<ApplyForm handleClose={()=>setShowForm(false)}/>}
+    
+    <div className={`${showForm?'block':'hidden'}`}><ApplyForm handleClose={()=>setShowForm(false)}/></div>
     <Link href='apply'><Applyside/></Link>
     <LandingCrausel/>
     <SecondPage/>

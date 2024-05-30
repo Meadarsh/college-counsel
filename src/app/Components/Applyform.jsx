@@ -78,9 +78,11 @@ const ApplyformComp = ({ handleClose }) => {
     if (result.status) {
       setFormData(InitialState);
       StoreInLocal()
-      alert("Submited successfully.");
+      toast.success('Submitted successfully', {
+        autoClose: 2000, 
+      });
     } else {
-      alert("Unable to submit.");
+      toast.error("Unable to submit.");
     }
   };
   function StoreInLocal (){
@@ -104,7 +106,7 @@ const ApplyformComp = ({ handleClose }) => {
         {!(location == "/apply") && (
           <RxCross1
             onClick={handleClose}
-            className=" text-2xl absolute text-black right-8 top-8"
+            className=" text-3xl font-bold cursor-pointer absolute text-black right-8 top-8"
           />
         )}
         <div className="text-2xl font-semibold">
