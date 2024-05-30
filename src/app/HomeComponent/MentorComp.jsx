@@ -42,7 +42,7 @@ const MentorComp = () => {
         modules={[Pagination,Autoplay, Navigation]}
         className="lg:mt-20 mt-10 w-[90%] px-20 flex justify-center">
         
-     {mentorDetail.map((e)=>(<SwiperSlide><MentorCard data={e}/></SwiperSlide> ))}     
+     {mentorDetail.map((e,ind)=>(<SwiperSlide key={ind}><MentorCard data={e}/></SwiperSlide> ))}     
       </Swiper>
       </div>
     </div>

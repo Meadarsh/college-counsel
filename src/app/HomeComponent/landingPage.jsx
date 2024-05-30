@@ -19,7 +19,7 @@ const LandingPage = () => {
       width={1200}
         className=" brightness-90 w-full h-full object-cover"
         src="/home.webp"
-        alt=""
+        alt="College Image"
         priority
       />
       <div className="txt h-full w-full text-white lg:text-[5vw] text-[10vw] font-semibold absolute z-10 top-0 -left-10 lg:-left-28 flex  justify-center">
