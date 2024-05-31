@@ -1,8 +1,8 @@
+import { NextResponse } from 'next/server';
 import connectDb from '@/databaseConnection/connect';
 import Blogs from '@/models/blog.model';
-import { NextResponse } from 'next/server';
-import { AboutCollege } from '../Data/aboutCollege';
-
+import { AboutCollege } from '@/app/Data/aboutCollege';
+export const dynamic='force-dynamic'
 export async function GET() {
     await connectDb();
     const blogs = await Blogs.find({}, 'id, upload_time')

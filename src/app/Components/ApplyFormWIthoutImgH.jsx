@@ -95,8 +95,7 @@ const ApplyFormWIthoutImgH = () => {
      
         
         <div className="text-2xl font-semibold">
-          Oh NO!! You&apos;re Missing The Best Carrier Guidance
-        </div>
+        Welcome to College Counsel- Fill this Application Form to Assist you better        </div>
 
         <form
           className="w-full mt-4 lg:mt-10 flex flex-col gap-3"

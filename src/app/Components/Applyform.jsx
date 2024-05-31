@@ -110,7 +110,7 @@ const ApplyformComp = ({ handleClose }) => {
           />
         )}
         <div className="text-2xl font-semibold">
-          Oh NO!! You&apos;re Missing The Best Carrier Guidance
+        Welcome to College Counsel- Fill this Application Form to Assist you better
         </div>
 
         <form

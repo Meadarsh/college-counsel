@@ -73,7 +73,7 @@ const mentorDetail=[
   {
   name:'Kamlesh Pandey',
   university:'Amity University',
-  number:9310902587,
+  number:9560673252,
   exp:2,
   img:'/mentorImg/amity.png'
 },
@@ -87,7 +87,7 @@ const mentorDetail=[
   {
   name:'Akash Sharma',
   university:'Jain University',
-  number:9310902587,
+  number:9560673252,
   exp:3,
   img:'/mentorImg/jain.png'
 },
