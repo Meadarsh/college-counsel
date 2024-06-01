@@ -1,16 +1,16 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import LandingCrausel from './HomeComponent/landingCrausel'
-import SecondPage from './HomeComponent/secondPage'
-import CollegeBoard from './HomeComponent/CollegeBoard'
-import WhyChooseus from './HomeComponent/whyChooseus'
-import Footer from './Components/Footer'
 import ApplyForm from './apply/page'
 import Applyside from './Components/Applyside'
 import Link from 'next/link'
-import MentorComp from './HomeComponent/MentorComp'
+import dynamic from 'next/dynamic'
 
-
+const SecondPage = dynamic(()=>import('./HomeComponent/secondPage'))
+const CollegeBoard = dynamic(()=>import('./HomeComponent/CollegeBoard'))
+const Footer = dynamic(()=>import('@/app/Components/Footer'))
+const WhyChooseus = dynamic(()=>import('./HomeComponent/whyChooseus'))
+const MentorComp = dynamic(()=>import('./HomeComponent/MentorComp'))
 
 const Home = () => {
   const EXPIRATION_DAYS = 10;

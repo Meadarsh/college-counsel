@@ -97,7 +97,7 @@ const ApplyformComp = ({ handleClose }) => {
          height={700}
          width={500}
           className="h-full w-full mx-auto object-cover"
-          src="/image/formImg.png"
+          src="/image/formFillingImg.png"
           alt=""
           priority
         />

@@ -1,5 +1,5 @@
-import ApplyformComp from "../Components/Applyform";
-
+import dynamic from "next/dynamic";
+const ApplyformComp = dynamic(()=>import('../Components/Applyform'))
 
 const ApplyForm = ({handleClose}) => {
  

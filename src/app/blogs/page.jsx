@@ -35,7 +35,7 @@ const Blogs = () => {
   return (
    
      <>
-   {loading ? <CCLoader /> :<> <Link href='apply'><Applyside/></Link>
+    <Link href='apply'><Applyside/></Link>
       <div className="w-full h-full relative pt-20">
         <Container>
         <div className="w-full flex flex-col ">
@@ -63,7 +63,7 @@ const Blogs = () => {
             />
           </Stack>
 
-          {blogs&&<Grid container spacing={3}>
+          {loading ? <CCLoader /> :<> {blogs&&<Grid container spacing={3}>
             {(shortBlog==='oldest')&&blogs.map((post, index) => (
              <PostCard key={post.id} post={post} index={index} />
             ))}
@@ -71,12 +71,11 @@ const Blogs = () => {
             {(shortBlog==='latest')&& [...blogs].reverse().map((post, index) => (
              <PostCard key={post.id} post={post} index={index} />
             ))}
-          </Grid>}
+          </Grid>}</>}
         </Container>
       </div>
       </>
-} 
-    </>
+
   );
 };
 export default Blogs;

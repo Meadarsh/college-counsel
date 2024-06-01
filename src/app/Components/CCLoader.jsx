@@ -3,7 +3,7 @@ import React from 'react'
 
 const CCLoader = () => {
   return (
-    <div className=" flex items-center justify-center h-screen w-screen">
+    <div className=" h-full w-full flex items-center justify-center">
    <div className='w-20 h-20 relative flex items-center justify-center'>
    <div className="ccloader absolute ">
     </div>

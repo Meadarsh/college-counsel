@@ -1,67 +1,17 @@
-"use client";
-"@/app/global.css";
-import CCLoader from "@/app/Components/CCLoader";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from 'react'
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-} from "@mui/material";
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+  } from "@mui/material";
 
-const Blogpage = ({ params }) => {
-  const [blog, setBlog] = useState();
-  const [loading, setLoading] = useState(true);
-  const [tableData, setTableData] = useState({
-    keys: [],
-    values: [],
-  });
-  useEffect(() => {
-    async function fetchh() {
-      try {
-        const blogdata = await fetch(`/api/blog/${params.id}`);
-        const data = await blogdata.json();
-        if(blogdata.ok){
-        setLoading(false);
-        setBlog(data);
-        setTableData({
-          ...tableData,
-          keys: JSON.parse(data?.table.keys),
-          values: JSON.parse(data?.table.values),
-        });
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchh();
-  }, [params.id]);
+const BlogPageBottom = ({blog=false,tableData=false}) => {
   return (
     <>
-      {loading ? (
-        <CCLoader />
-      ) : (
-        <div className=" blogpage flex flex-col w-full mt-20  p-2 lg:py-10 lg:px-20 gap-10 bg-white ">
-          <div className="w-[75%]">
-            <Image
-              width={1200}
-              height={200}
-              priority
-              className="h-auto w-full object-cover  rounded-xl"
-              src={blog?.image[5].url || "/image/default.jpg"}
-              alt="N/a"
-            />
-
-            <h1 className="text-3xl mt-16 font-semibold">{blog?.title} </h1>
-            <h2 className="text-2xl mt-8 font-semibold">{blog?.subtitle} </h2>
-            <div
-              className="mt-5"
-              dangerouslySetInnerHTML={{ __html: `${blog?.content}` }}
-            />
-            {blog?.image[0].url && (
+     {blog?.image[0].url && (
               <Image
                 width={1000}
                 height={100}
@@ -76,8 +26,8 @@ const Blogpage = ({ params }) => {
               {blog?.subheading[0]}
             </h1>
             <div
-              className="mt-5"
-              dangerouslySetInnerHTML={{ __html: `${blog?.subcontent[0]}` }}
+              className="mt-5 text-lg"
+              dangerouslySetInnerHTML={{ __html: `<p>${blog?.subcontent[0]}</p>` }}
             />
             {blog?.image[1].url && (
               <Image
@@ -131,8 +81,8 @@ const Blogpage = ({ params }) => {
               {blog?.subheading[1]}
             </h1>
             <div
-              className="mt-5"
-              dangerouslySetInnerHTML={{ __html: `${blog?.subcontent[1]}` }}
+              className="mt-5 text-lg"
+              dangerouslySetInnerHTML={{ __html: `<p>${blog?.subcontent[1]}</p>` }}
             />
             {blog?.image[2].url && (
               <Image
@@ -149,8 +99,8 @@ const Blogpage = ({ params }) => {
               {blog?.subheading[2]}
             </h1>
             <div
-              className="mt-5"
-              dangerouslySetInnerHTML={{ __html: `${blog?.subcontent[2]}` }}
+              className="mt-5 text-lg"
+              dangerouslySetInnerHTML={{ __html: `<p>${blog?.subcontent[2]}</p>` }}
             />
             {blog?.image[3].url && (
               <Image
@@ -167,8 +117,8 @@ const Blogpage = ({ params }) => {
               {blog?.subheading[3]}
             </h1>
             <div
-              className="mt-5"
-              dangerouslySetInnerHTML={{ __html: `${blog?.subcontent[3]}` }}
+              className="mt-5 text-lg"
+              dangerouslySetInnerHTML={{ __html: `<p>${blog?.subcontent[3]}</p>` }}
             />
             {blog?.image[4].url && (
               <Image
@@ -185,15 +135,12 @@ const Blogpage = ({ params }) => {
               {blog?.subheading[4]}
             </h1>
             <div
-              className="mt-5"
-              dangerouslySetInnerHTML={{ __html: `${blog?.subcontent[4]}` }}
+              className="mt-5 text-lg"
+              dangerouslySetInnerHTML={{ __html: `<p>${blog?.subcontent[4]}</p>` }}
             />
-          </div>
-        </div>
-      )}
-    </>
-  );
-};
+           
+            </>
+  )
+}
 
-
-export default Blogpage;
+export default BlogPageBottom
