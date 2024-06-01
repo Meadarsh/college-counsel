@@ -7,6 +7,7 @@ import {
     TableHead,
     TableRow,
   } from "@mui/material";
+import Image from 'next/image';
 
 const BlogPageBottom = ({blog=false,tableData=false}) => {
   return (
