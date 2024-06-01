@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import LandingCrausel from './HomeComponent/landingCrausel'
-import ApplyForm from './apply/page'
 import Applyside from './Components/Applyside'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
@@ -11,6 +10,7 @@ const CollegeBoard = dynamic(()=>import('./HomeComponent/CollegeBoard'))
 const Footer = dynamic(()=>import('@/app/Components/Footer'))
 const WhyChooseus = dynamic(()=>import('./HomeComponent/whyChooseus'))
 const MentorComp = dynamic(()=>import('./HomeComponent/MentorComp'))
+const ApplyForm = dynamic(()=>import('./Components/Applyside'))
 
 const Home = () => {
   const EXPIRATION_DAYS = 10;
@@ -39,7 +39,7 @@ useEffect(()=>{
     }
     return;
   },20000)
-},[showForm])
+},[showForm,currentDate,isExpired])
 
   return (
     <>
