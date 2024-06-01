@@ -36,11 +36,11 @@ const Blogs = () => {
    
      <>
     <Link href='apply'><Applyside/></Link>
-      <div className="w-full h-full relative pt-20">
+      <div className="w-full h-full relative pt-24">
         <Container>
         <div className="w-full flex flex-col ">
         <h1 className="text-3xl font-semibold">Our blogs</h1>
-        <p className="text-red-800">
+        <p className="text-primary">
           Unlocking Boundless Opportunities: Your Path to Online Degrees with
           College counsel
         </p>
