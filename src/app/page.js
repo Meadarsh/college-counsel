@@ -4,8 +4,8 @@ import LandingCrausel from './HomeComponent/landingCrausel'
 import Applyside from './Components/Applyside'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
+import SecondPage from './HomeComponent/secondPage'
 
-const SecondPage = dynamic(()=>import('./HomeComponent/secondPage'))
 const CollegeBoard = dynamic(()=>import('./HomeComponent/CollegeBoard'))
 const Footer = dynamic(()=>import('@/app/Components/Footer'))
 const WhyChooseus = dynamic(()=>import('./HomeComponent/whyChooseus'))
