@@ -19,9 +19,9 @@ function Selection(e){
   return (
     <div className=" w-full">
       <div className="flex justify-evenly items-center h-[20vh]">
-       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image width={60} height={60} className="w-12" src="/icons/student.png" alt="Student" /> <h1>Trusted by student</h1> </div>
-       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image width={60} height={60} className="w-12" src="/icons/call-agent.png" alt="Mentor" /> <h1>Expert mentors</h1> </div>
-       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image width={60} height={60} className="w-12" src="/icons/secure.png" alt="Secure" /> <h1>Secure</h1> </div>
+       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image priority width={60} height={60} className="w-12" src="/icons/student.png" alt="Student" /> <h1>Trusted by student</h1> </div>
+       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image priority width={60} height={60} className="w-12" src="/icons/call-agent.png" alt="Mentor" /> <h1>Expert mentors</h1> </div>
+       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image priority width={60} height={60} className="w-12" src="/icons/secure.png" alt="Secure" /> <h1>Secure</h1> </div>
       </div>
      <div className="carausel flex justify-center">
      <Swiper
@@ -55,7 +55,7 @@ function Selection(e){
         modules={[Pagination,Autoplay, Navigation]}
         className="mySwiper w-[80%] flex justify-center"
       >
-        {HomepageCrausel.map((url,index)=>(<SwiperSlide  key={index}><Image width={600} height={400} src={url} alt="Benifits of  cc" /></SwiperSlide>))}
+        {HomepageCrausel.map((url,index)=>(<SwiperSlide priority={index==0}  key={index}><Image width={600} height={400} src={url} alt="Benifits of  cc" /></SwiperSlide>))}
         
       </Swiper>
      </div>

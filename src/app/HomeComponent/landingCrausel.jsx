@@ -27,10 +27,10 @@ const LandingCrausel = () => {
             <Image priority alt="College counsel Image" width={1900} height={600}  src="/homePage/landingCrausel/1.png"  />
         </SwiperSlide>
         <SwiperSlide>
-            <Image priority alt="About cc Image" width={1900} height={600}  src="/homePage/landingCrausel/2.webp"  />
+            <Image  alt="About cc Image" width={1900} height={600}  src="/homePage/landingCrausel/2.webp"  />
         </SwiperSlide>
         <SwiperSlide>
-            <Image priority alt="University Image" width={1900} height={600}  src="/homePage/landingCrausel/3.webp"  />
+            <Image  alt="University Image" width={1900} height={600}  src="/homePage/landingCrausel/3.webp"  />
         </SwiperSlide>
       </Swiper>
   )
