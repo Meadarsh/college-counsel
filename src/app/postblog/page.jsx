@@ -91,13 +91,15 @@ const PostBlogs = () => {
     Object.entries(image).forEach(([key, value]) => {
       formData.append(key, value);
     });
+   
+
+   if(table?.keyhead){ 
     formData.append('keyhead', table.keyhead);
     formData.append('valuehead', table.valuehead);
-
     const keys = table.fields.map(field => field.key);
     const values = table.fields.map(field => field.value);
     formData.append('fields[keys]', JSON.stringify(keys));
-    formData.append('fields[values]', JSON.stringify(values));
+    formData.append('fields[values]', JSON.stringify(values));}
    
 
     
