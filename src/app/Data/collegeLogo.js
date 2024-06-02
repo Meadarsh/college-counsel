@@ -3,7 +3,7 @@ export const collegeLogo = [
     logoimg: "/collegeLogoimage/collegelogo1.webp",
     collegename: "Amity University",
     Offeredcourse: 39,
-    route:'university/Amity_University'
+    route:'about-university/Amity_University'
   },
   {
     logoimg: "/collegeLogoimage/collegelogo2.webp",
@@ -59,7 +59,7 @@ export const collegeLogo = [
     logoimg: "/collegeLogoimage/collegelogo12.webp",
     collegename: "JAIN University",
     Offeredcourse: 48,
-    route:'university/Jain_University'
+    route:'about-university/Jain_University'
   },
   {
     logoimg: "/collegeLogoimage/collegelogo13.webp",
@@ -70,7 +70,7 @@ export const collegeLogo = [
     logoimg: "/collegeLogoimage/collegelogo14.webp",
     collegename: "ONLINE MANIPAL",
     Offeredcourse: 27,
-    route:'university/Manipal_University'
+    route:'about-university/Manipal_University'
   },
   {
     logoimg: "/collegeLogoimage/collegelogo15.webp",

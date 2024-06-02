@@ -28,13 +28,13 @@ export async function GET() {
   ];
 
   const dynamicRoutes = blogs.map((blog) => ({
-    url: `https://collegecounsel.co.in/blog/${blog.id}`,
+    url: `https://collegecounsel.co.in/blogs/${blog.id}`,
     lastModified: new Date(blog.upload_time).toISOString(),
     changeFrequency: 'daily',
     priority: 0.5,
   }));
   const dynamicCollegeRoutes = Object.keys(AboutCollege).map((key) => ({
-    url: `https://collegecounsel.co.in/university/${key}`,
+    url: `https://collegecounsel.co.in/about-university/${key}`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'daily',
     priority: 0.5,
