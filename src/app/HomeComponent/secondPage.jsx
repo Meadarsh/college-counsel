@@ -19,9 +19,9 @@ function Selection(e){
   return (
     <div className=" w-full">
       <div className="flex justify-evenly items-center h-[20vh]">
-       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><img className="w-12" src="/icons/student.png" alt="" /> <h1>Trusted by student</h1> </div>
-       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><img className="w-12" src="/icons/call-agent.png" alt="" /> <h1>Expert mentors</h1> </div>
-       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><img className="w-12" src="/icons/secure.png" alt="" /> <h1>Secure</h1> </div>
+       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image width={60} height={60} className="w-12" src="/icons/student.png" alt="Student" /> <h1>Trusted by student</h1> </div>
+       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image width={60} height={60} className="w-12" src="/icons/call-agent.png" alt="Mentor" /> <h1>Expert mentors</h1> </div>
+       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image width={60} height={60} className="w-12" src="/icons/secure.png" alt="Secure" /> <h1>Secure</h1> </div>
       </div>
      <div className="carausel flex justify-center">
      <Swiper
