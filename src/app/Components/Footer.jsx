@@ -14,9 +14,10 @@ const Footer = () => {
         <div className='flex text-white text-3xl gap-3'>
            <a href="https://wa.me/+916392832171" target="_blank">
            <FaWhatsapp/>
+           <p className='hidden'>click here for whatsapp account</p>
            </a>
             <FaFacebook/>
-            <a href="https://www.instagram.com/college_counsel/" target="_blank"><FaInstagram/></a>
+            <a href="https://www.instagram.com/college_counsel/" target="_blank"><p className='hidden'>click here for instagram account</p><FaInstagram/></a>
             <RiTwitterXLine/>
         </div>
 

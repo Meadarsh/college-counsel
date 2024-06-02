@@ -7,6 +7,7 @@ import { Pagination, Navigation,Autoplay } from 'swiper/modules';
 import { HomepageCrausel} from "../Data/data";
 import CourseSelection from "./courseSelection";
 import { Badge } from "@mui/material";
+import Image from "next/image";
 const SecondPage = () => {
 
 const [selectedCourse,setSelectedCourse]=useState('UG Courses')
@@ -54,7 +55,7 @@ function Selection(e){
         modules={[Pagination,Autoplay, Navigation]}
         className="mySwiper w-[80%] flex justify-center"
       >
-        {HomepageCrausel.map((url,index)=>(<SwiperSlide  key={index}><img src={url} alt="n/a" /></SwiperSlide>))}
+        {HomepageCrausel.map((url,index)=>(<SwiperSlide  key={index}><Image width={600} height={400} src={url} alt="Benifits of  cc" /></SwiperSlide>))}
         
       </Swiper>
      </div>

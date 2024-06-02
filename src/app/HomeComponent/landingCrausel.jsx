@@ -24,13 +24,13 @@ const LandingCrausel = () => {
         className="mySwiper w-[100%] relative mt-20 mb-12 flex justify-center"
       >
         <SwiperSlide>
-            <Image priority alt="College counsel Image" width={1900} height={600} className=' object-cover' src="/homePage/landingCrausel/1.png"  />
+            <Image priority alt="College counsel Image" width={1900} height={600}  src="/homePage/landingCrausel/1.png"  />
         </SwiperSlide>
         <SwiperSlide>
-            <Image priority alt="About cc Image" width={1900} height={600} className=' object-cover' src="/homePage/landingCrausel/2.webp"  />
+            <Image priority alt="About cc Image" width={1900} height={600}  src="/homePage/landingCrausel/2.webp"  />
         </SwiperSlide>
         <SwiperSlide>
-            <Image priority alt="University Image" width={1900} height={600} className=' object-cover' src="/homePage/landingCrausel/3.webp"  />
+            <Image priority alt="University Image" width={1900} height={600}  src="/homePage/landingCrausel/3.webp"  />
         </SwiperSlide>
       </Swiper>
   )

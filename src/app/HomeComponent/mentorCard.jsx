@@ -47,7 +47,7 @@ export default function MentorCard({ data }) {
           color="primary"
           badgeContent={`${data.exp} year`}
         >
-          <Typography variant="h6">{data.name}</Typography>
+          <h1 className="text-xl font-bold">{data.name}</h1>
         </Badge>
         <Typography sx={{ color: "#0069FF" }} variant="p">
           {data.university}
