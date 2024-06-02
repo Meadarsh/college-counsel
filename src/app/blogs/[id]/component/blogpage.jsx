@@ -22,7 +22,6 @@ const Blogpage = ({ params }) => {
         setLoading(false);
         setBlog(data);
         setTableData({
-          ...tableData,
           keys: JSON.parse(data?.table.keys),
           values: JSON.parse(data?.table.values),
         });
