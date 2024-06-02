@@ -166,6 +166,7 @@ const PostBlogs = () => {
               <Avatar
                 src={imagePreview.image6}
                 sx={{ width: 100, height: 100 }}
+                alt="n/a"
               >
                 <input
                   className="h-full w-full opacity-0"
@@ -223,6 +224,7 @@ const PostBlogs = () => {
                   <Avatar
                     src={imagePreview[`image${index + 1}`]}
                     sx={{ width: 100, height: 100 }}
+                    alt="n/a"
                   >
                     <input
                       className="h-full w-full opacity-0"

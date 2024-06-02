@@ -46,7 +46,8 @@ const Blogpage = ({ params }) => {
               priority
               className="h-auto w-full object-cover  rounded-xl"
               src={blog?.image[5].url || "/image/default.jpg"}
-              alt="N/a"
+              alt={`${blog?.title} image`}
+
             />
 
             <h1 className="text-3xl mt-16 font-semibold">{blog?.title} </h1>

@@ -2,10 +2,8 @@
 import { Autocomplete, Badge, Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { indianStates } from "../Data/data";
-import { RxCross1 } from "react-icons/rx";
 import { usePathname } from "next/navigation";
 import Loader from "./Loader";
-import Image from "next/image";
 
 const ApplyFormWIthoutImgH = () => {
   const location = usePathname();

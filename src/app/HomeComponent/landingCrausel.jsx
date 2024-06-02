@@ -29,16 +29,16 @@ const LandingCrausel = () => {
            <LandingPage/>
         </SwiperSlide>
         <SwiperSlide>
-            <Image priority width={1200} height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/manipalU.jpg" alt="N/a" />
+            <Image priority alt="University Image" width={1200} height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/manipalU.jpg"  />
         </SwiperSlide>
         <SwiperSlide>
-            <Image priority width={1200} height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/jainU.jpg" alt="N/a" />
+            <Image priority alt="University Image" width={1200} height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/jainU.jpg"  />
         </SwiperSlide>
         <SwiperSlide>
-            <Image priority width={1200} height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/uttranchalU.jpg" alt="N/a" />
+            <Image priority alt="University Image" width={1200} height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/uttranchalU.jpg"  />
         </SwiperSlide>
         <SwiperSlide>
-            <Image width={1200} height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/glaU.jpg" alt="N/a" />
+            <Image width={1200} alt="University Image" height={900} className='h-full w-full object-cover' src="/homePage/landingCrausel/glaU.jpg" />
         </SwiperSlide>
         <div className="absolute z-50 top-[80%] w-[100vw] overflow-hidden flex  h-10 lg:h-20 items-center">
         <div className=" bg-white flex items-center px-2 lg:px-3 h-10 lg:h-20">

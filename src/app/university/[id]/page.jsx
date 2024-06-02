@@ -19,6 +19,7 @@ const Page = ({params}) => {
         <Image
           width={1400}
           height={300}
+          alt="University Image"
           className="w-full h-auto"
           src={"/CollegeImage/manipal.jpeg"}
         ></Image>
@@ -27,7 +28,7 @@ const Page = ({params}) => {
           {data.name}
         </h1>
         <div className="flex rounded-lg min-w-56 mt-6 bg-white p-1">
-          <Image width={60} height={60} src={'/image/certificateimg/aiu.jpg'}></Image>
+          <Image alt="University certificates Image" width={60} height={60} src={'/image/certificateimg/aiu.jpg'}></Image>
         </div>
        </div>
 

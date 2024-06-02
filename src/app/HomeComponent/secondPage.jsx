@@ -4,7 +4,7 @@ import "swiper/css";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Pagination, Navigation,Autoplay } from 'swiper/modules';
-import { HomepageCrausel, homePageCourcesList } from "../Data/data";
+import { HomepageCrausel} from "../Data/data";
 import CourseSelection from "./courseSelection";
 import { Badge } from "@mui/material";
 const SecondPage = () => {
