@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import LandingCrausel from './HomeComponent/landingCrausel'
 import Applyside from './Components/Applyside'
 import Link from 'next/link'
@@ -14,33 +14,37 @@ const ApplyForm = dynamic(()=>import('./Components/Applyside'))
 
 const Home = () => {
   const EXPIRATION_DAYS = 10;
-const MILLISECONDS_IN_A_DAY = 86400000;
+  const MILLISECONDS_IN_A_DAY = 86400000;
+  
   function parseDateString(dateString) {
     return new Date(dateString);
   }
   
-  // Check if the date is expired
-  function isExpired(storedDateString, currentDate = new Date()) {
+  const [showForm, setShowForm] = useState(false);
+  
+  const isExpired = useCallback((storedDateString, currentDate) => {
     const storedDate = parseDateString(storedDateString);
     const expirationDate = new Date(storedDate.getTime() + EXPIRATION_DAYS * MILLISECONDS_IN_A_DAY);
     return currentDate > expirationDate;
-  }
-
-const [showForm,setShowForm]=useState(false)
-const currentDate = new Date();
-useEffect(()=>{
-  setTimeout(()=>{
-    if(!showForm){
-      const data = localStorage.getItem('Applied')
-      if (isExpired(data, currentDate)) {
-        setShowForm(true)
-      } 
-      return;
-    }
-    return;
-  },15000)
-},[showForm,currentDate,isExpired])
-
+  }, []);
+  
+  const currentDate = useMemo(() => new Date(), []);
+  
+  useEffect(() => {
+    const checkExpiration = () => {
+      if (!showForm) {
+        const data = localStorage.getItem('Applied');
+        if (isExpired(data, currentDate)) {
+          setShowForm(true);
+        }
+      }
+    };
+  
+    const timer = setTimeout(checkExpiration, 15000);
+  
+    return () => clearTimeout(timer);
+  }, [showForm, currentDate, isExpired]);
+  
   return (
     <>
     
