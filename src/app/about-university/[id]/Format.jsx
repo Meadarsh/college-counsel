@@ -60,8 +60,8 @@ const FormatOfUniPage = ({params}) => {
             Placement partners of {data.name}
           </h1>
         <div className="flex gap-4">
-        {data.placementPartner.map((data, index)=> <div className="border mt-5 rounded-xl shadow overflow-hidden py-1 px-4 bg-white flex flex-col justify-between items-center text-lg font-medium">
-          <Image key={index} width={100} height={100} src={data.url} alt={data.name}  />
+        {data.placementPartner.map((data, index)=> <div key={index} className="border mt-5 rounded-xl shadow overflow-hidden py-1 px-4 bg-white flex flex-col justify-between items-center text-lg font-medium">
+          <Image  width={100} height={100} src={data.url} alt={data.name}  />
           <p>{data.name}</p>
          </div>)}</div></>}
           <h1 className="text-3xl font-bold mt-16">Course Wise Fees</h1>
