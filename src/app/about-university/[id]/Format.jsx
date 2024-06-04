@@ -39,7 +39,7 @@ const FormatOfUniPage = ({params}) => {
           {data.name}
         </h1>
         <div className="flex justify-evenly rounded-lg min-w-56 mt-6 bg-white p-1">
-         {data.Approvals.map((url,ind)=>( <Image key={ind} alt="University certificates Image" width={60} height={60} src={url}></Image>))}
+         {data?.Approvals?.map((url,ind)=>( <Image key={ind} alt="University certificates Image" width={60} height={60} src={url}></Image>))}
         </div>
        </div>
 
@@ -60,40 +60,40 @@ const FormatOfUniPage = ({params}) => {
             Placement partners of {data.name}
           </h1>
         <div className="flex gap-4">
-        {data.placementPartner.map((data, index)=> <div key={index} className="border mt-5 rounded-xl shadow overflow-hidden py-1 px-4 bg-white flex flex-col justify-between items-center text-lg font-medium">
+        {data?.placementPartner?.map((data, index)=> <div key={index} className="border mt-5 rounded-xl shadow overflow-hidden py-1 px-4 bg-white flex flex-col justify-between items-center text-lg font-medium">
           <Image  width={100} height={100} src={data.url} alt={data.name}  />
           <p>{data.name}</p>
          </div>)}</div></>}
           <h1 className="text-3xl font-bold mt-16">Course Wise Fees</h1>
           <div className="w-[80%] mt-10">
-          <CustomTable data={data.CourseTable}/>
+          <CustomTable data={data?.CourseTable}/>
           </div>
           <h1 className="text-3xl font-bold mt-16">
           Facts about {data.name}
           </h1>
-         <ListWithBlueTick data={data.FactAboutUniversity}/>
-         {data.Evaluation&&<>
+         <ListWithBlueTick data={data?.FactAboutUniversity}/>
+         {data?.Evaluation&&<>
          <h1 className="text-3xl font-bold mt-16">Examination  and Evaluation</h1>
          <div
               className="mt-5 mb-5 text-xl"
-              dangerouslySetInnerHTML={{ __html: `${data.Evaluation.paragraph}` }}
+              dangerouslySetInnerHTML={{ __html: `${data?.Evaluation?.paragraph}` }}
             />
-          <h2 className="text-2xl font-bold mt-8">{data.Evaluation.heading1}</h2>
+          <h2 className="text-2xl font-bold mt-8">{data?.Evaluation?.heading1}</h2>
           <p className="text-xl">
             {data?.Evaluation?.paragraph1}
             </p>  
-          <h2 className="text-2xl font-bold mt-8">{data.Evaluation.heading2}</h2>
+          <h2 className="text-2xl font-bold mt-8">{data?.Evaluation?.heading2}</h2>
           <p className="text-xl">
             {data?.Evaluation?.paragraph2}
             </p>  
          </>}
-         {data?.marksTable&&<TableForMarksTable data={data.marksTable}/>}
+         {data?.marksTable&&<TableForMarksTable data={data?.marksTable}/>}
           <h1 className="text-3xl font-bold mt-16">
           {data?.name} online certificates
           </h1>
         <div className="flex pr-16 justify-between">
-        <ListWithStar data={data.OnlineCertificates}/>
-        {data?.CerificateImage&&<Image width={200} height={180} className=" cursor-pointer w-auto h-auto object-cover" onClick={()=>Expand(data.url)} src={data.CerificateImage} alt={"University certificate"} />}
+        <ListWithStar data={data?.OnlineCertificates}/>
+        {data?.CerificateImage&&<Image width={200} height={180} className=" cursor-pointer w-auto h-auto object-cover" onClick={()=>Expand(data.url)} src={data?.CerificateImage} alt={"University certificate"} />}
 
         </div>
          <h1 className="text-3xl font-bold mt-16">
@@ -112,7 +112,7 @@ const FormatOfUniPage = ({params}) => {
           </h1>
           <div
               className="mt-5 mb-5 text-xl"
-              dangerouslySetInnerHTML={{ __html: `${data.PaymentMode.paragraph}` }}
+              dangerouslySetInnerHTML={{ __html: `${data?.PaymentMode?.paragraph}` }}
             />
              {data&&data?.PaymentMode?.steps.map((text,index)=>(
               <p key={index} className="mt-3 font-medium"><span className="font-semibold text-blue-600">{++index}:</span> {text}</p>
