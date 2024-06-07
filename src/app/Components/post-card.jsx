@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Avatar from '@mui/material/Avatar';
@@ -15,7 +14,7 @@ export default function PostCard({ post}) {
   const renderAvatar = (
     <Avatar
       alt={'CC'}
-      src={'/logo/cc.png'}
+      src={'/logo/cc-bg.png'}
       sx={{
         zIndex: 9,
         width: 32,
@@ -23,7 +22,7 @@ export default function PostCard({ post}) {
         position: 'absolute',
         left: (theme) => theme.spacing(3),
         bottom: (theme) => theme.spacing(-2),
-      
+        borderRadius:'50%'
       }}
     />
   );
