@@ -13,7 +13,7 @@ const Page = () => {
 
     <h1 className='text-4xl font-semibold mt-6'>All About College Counsel You Need To Know!</h1>
     <h2 className='text-2xl font-semibold mt-6'>Finding yourself confused in a sea of college choices? College Counsel is here to help you!    </h2>
- <p>Hello there, the future grads! Are you feeling entirely burdened by the effort of selecting a college course? Navigating the world of higher education may be a stressful task, with many university choices. But don't worry, College Counsel is here to be your friendly guide!<br/><br/>
+ <p>Hello there, the future grads! Are you feeling entirely burdened by the effort of selecting a college course? Navigating the world of higher education may be a stressful task, with many university choices. But don&apos;t worry, College Counsel is here to be your friendly guide!<br/><br/>
 College Counsel is a one-stop shop for all things undergraduate (BA, BCom, BBA, BCA) and postgraduate (MA, MCA, MBA, MSc). We provide professional courses to assist you make educated choices regarding your academic career.<br/><br/>
 College Counsel is more than just a mere website. Here at College Counsel we provide <u>courses designed for students as well as for working professionals</u>.
 </p>
@@ -25,12 +25,12 @@ Why to Choose College Counsel as your Career Guide?
 <ListWithStar data={CollegeList}/>
 <p>Lost in a sea of universities? We understand it! College Counsel allows you to research many colleges and their courses all in one spot. <br/><br/>
 
-We'll provide you the information you need for analysing courses, faculty skills, and campus culture, making your final decision simple. <br/><br/>
+We&apos;ll provide you the information you need for analysing courses, faculty skills, and campus culture, making your final decision simple. <br/><br/>
 
 So what are you waiting for? Visit College Counsel <a className='text-blue-700' href="http://collegecounsel.co.in">http://collegecounsel.co.in</a> today and let us guide you on your path to academic success! <br/><br/>
 
 Remember that with the correct assistance and resources, you can navigate through the web of college choices and discover the ideal course to kick-start your future!
-P.S. Stay tuned for our next blog post, where we'll go further into individual courses and help you find your perfect academic match!
+P.S. Stay tuned for our next blog post, where we&apos;ll go further into individual courses and help you find your perfect academic match!
 </p>
     </div>
     <Footer/>
