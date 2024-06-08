@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
             src="https://www.googletagmanager.com/gtag/js?id=G-9CP19VTW20"
             strategy="lazyOnload"
           />
-<Script id="gtm-script" strategy="lazyOnload">
+         <Script id="gtm-script" strategy="lazyOnload">
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}

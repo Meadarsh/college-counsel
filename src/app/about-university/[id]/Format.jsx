@@ -92,7 +92,7 @@ const FormatOfUniPage = ({params}) => {
           {data?.name} online certificates
           </h1>
         <div className="flex pr-16 justify-between">
-        <ListWithStar data={data?.OnlineCertificates}/>
+        <ListWithStar heading={false} data={data?.OnlineCertificates}/>
         {data?.CerificateImage&&<Image width={200} height={180} className=" cursor-pointer w-auto h-auto object-cover" onClick={()=>Expand(data.url)} src={data?.CerificateImage} alt={"University certificate"} />}
 
         </div>

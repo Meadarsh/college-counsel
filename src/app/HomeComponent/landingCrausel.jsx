@@ -23,8 +23,8 @@ const LandingCrausel = () => {
         modules={[Pagination,Autoplay, Navigation]}
         className="mySwiper w-[100%] relative mt-20 mb-12 flex justify-center"
       >
-        <SwiperSlide>
-            <Image priority alt="College counsel Image" width={1900} height={600}  src="/homePage/landingCrausel/1.png"  />
+        <SwiperSlide className='w-[100vw]'>
+            <Image className='w-[100vw]' priority alt="College counsel Image" width={1900} height={600}  src="/homePage/landingCrausel/1.webp"  />
         </SwiperSlide>
         <SwiperSlide>
             <Image  alt="About cc Image" width={1900} height={600}  src="/homePage/landingCrausel/2.webp"  />
