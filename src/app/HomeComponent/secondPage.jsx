@@ -19,9 +19,9 @@ function Selection(e){
   return (
     <div className=" w-full">
       <div className="flex justify-evenly items-center h-[20vh]">
-       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image priority width={60} height={60} className="w-12" src="/icons/student.png" alt="Student" /> <h1>Trusted by student</h1> </div>
-       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image priority width={60} height={60} className="w-12" src="/icons/call-agent.png" alt="Mentor" /> <h1>Expert mentors</h1> </div>
-       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image priority width={60} height={60} className="w-12" src="/icons/secure.png" alt="Secure" /> <h1>Secure</h1> </div>
+       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image priority width={60} height={60} className="w-12" src="/icons/student.png" alt="Student" /> <h4>Trusted by student</h4> </div>
+       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image priority width={60} height={60} className="w-12" src="/icons/call-agent.png" alt="Mentor" /> <h4>Expert mentors</h4> </div>
+       <div className="flex gap-2 lg:flex-row flex-col justify-center items-center text-sm lg:text-lg lg:w-52"><Image priority width={60} height={60} className="w-12" src="/icons/secure.png" alt="Secure" /> <h4>Secure</h4> </div>
       </div>
      <div className="carausel flex justify-center">
      <Swiper
@@ -67,15 +67,15 @@ function Selection(e){
         </div>
         <div className='lg:min-h-[10vh] h-[7vh] w-full justify-center lg:gap-7 gap-2 items-center flex-wrap flex mt-[1vh]'>
     <div onClick={()=>Selection('UG Courses')} className={`button font-semibold ${selectedCourse==='UG Courses'&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-full `}>
-        <p>UG Courses</p>
+        <h2>UG Courses</h2>
      </div>
     <div onClick={()=>Selection('PG Courses')} className={`button font-semibold ${selectedCourse==='PG Courses'&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-full `}>
-        <p>PG Courses</p>
+        <h1>PG Courses</h1>
      </div>
      {/*onClick={()=>Selection(data)}*/}
      <Badge badgeContent={'Comming soon'} color="primary">
     <div  className={`button font-semibold ${selectedCourse==='Other Courses'&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-full `}>
-        <p>Other Courses</p>
+        <h2>Other Courses</h2>
      </div>
      </Badge>
     

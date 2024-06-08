@@ -39,7 +39,7 @@ const CourseSelection = ({ course }) => {
               selectedKey === key && "bg-primary text-white"
             } font-bold border-primary cursor-pointer justify-center rounded-3xl w-16 lg:w-36 border py-1 lg:py-3`}
           >
-            <h1>{key}</h1>
+            <h3>{key}</h3>
           </div>
         ))}
       </div>
