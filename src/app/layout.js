@@ -19,18 +19,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
        <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-674393N9L0"
-        strategy="afterInteractive"
-      />
-
-      <Script id="gtm-script" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-674393N9L0');
-        `}
-      </Script>
+            src="https://www.googletagmanager.com/gtag/js?id=G-9CP19VTW20"
+            strategy="lazyOnload"
+          />
+<Script id="gtm-script" strategy="lazyOnload">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-9CP19VTW20');
+            `}
+          </Script>
      <Script id="messenger-widget-b" defer src="https://cdn.botpenguin.com/website-bot.js" >6647981f07af820cc774bacd,664797f8881a65150d0aa425</Script>
     
       <body className={frankRuhlLibre.className}>
