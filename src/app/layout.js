@@ -18,12 +18,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Script
+       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-674393N9L0"
         strategy="afterInteractive"
       />
 
-      <Script strategy="afterInteractive">
+      <Script id="gtm-script" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
