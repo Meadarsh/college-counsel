@@ -5,6 +5,10 @@ mongoose.Promise = global.Promise;
 const BlogModel= new Schema({
     uploaded_by:String||'',
     title: String, 
+    url: {
+        type: String,
+        required: true
+    },
     subtitle:String,
     content:String,
     subheading: Array,

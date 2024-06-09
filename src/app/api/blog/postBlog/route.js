@@ -61,9 +61,13 @@ export async function POST(req, res) {
     const uploadPromises = [file1, file2, file3, file4, file5, file6].map(
       uploadToCloudinary
     );
+    function createUrlRoute(title) {
+      return title.toLowerCase().replace(/ /g, "_");
+  }
     images = await Promise.all(uploadPromises);
     const created = await Blogs.create({
       title: title,
+      url:createUrlRoute(title),
       subtitle: subtitle,
       content: content,
       subheading:subheading,

@@ -30,7 +30,7 @@ const Blogs = () => {
     GetBlogs()
   },[])
 
- 
+ console.log(blogs);
  
   return (
    

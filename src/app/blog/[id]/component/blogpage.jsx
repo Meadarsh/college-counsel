@@ -32,6 +32,7 @@ const Blogpage = ({ params }) => {
     }
     fetchh();
   }, [params.id]);
+  console.log();
   return (
     <>
       {loading ? (
@@ -44,7 +45,7 @@ const Blogpage = ({ params }) => {
               height={200}
               priority
               className="h-auto w-full object-cover  rounded-xl"
-              src={blog?.image[5].url || "/image/default.jpg"}
+              src={blog?.image[5]?.url || "/image/default.jpg"}
               alt={`${blog?.title} image`}
 
             />

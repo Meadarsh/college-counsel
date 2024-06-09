@@ -6,7 +6,7 @@ export const dynamic='force-dynamic'
 export async function GET() {
   try {
     await connectDb();
-    const blogs = await Blogs.find({}, 'title subtitle image upload_time');
+    const blogs = await Blogs.find({}, 'url title subtitle image upload_time');
     const response = new NextResponse(JSON.stringify(blogs), {
       headers: {
         'Content-Type': 'application/json',

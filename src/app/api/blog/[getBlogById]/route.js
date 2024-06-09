@@ -4,9 +4,9 @@ import { NextResponse } from "next/server";
 
 export async function GET(res,{params}){
     try{
-        const id= params.getBlogById
+        const url = params.getBlogById;
         await connectDb()
-        const Blog=await Blogs.findById(id)
+        const Blog=await Blogs.findOne({ url: url });
         return NextResponse.json(Blog)
     }   
     catch (err) {

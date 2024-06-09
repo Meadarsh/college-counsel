@@ -31,7 +31,7 @@ const NavBar = () => {
     <Link href='/apply'> <button className='text-white w-24 font-semibold cursor-pointer rounded-full px-3 py-1 bg-primary lg:hover:bg-hover'>UG</button></Link>
     <Link href='/apply'> <button className='text-white w-24 font-semibold cursor-pointer rounded-full px-3 py-1 bg-primary lg:hover:bg-hover'>PG</button></Link>
     <Link href='/about'  prefetch={true} > <button className='text-white w-24 font-semibold cursor-pointer rounded-full px-3 py-1 bg-primary lg:hover:bg-hover'>About us</button></Link>
-    <Link href='/blogs'  prefetch={true} > <button className='text-white w-24 font-semibold cursor-pointer rounded-full px-3 py-1 bg-primary lg:hover:bg-hover'>Blogs</button></Link>
+    <Link href='/blog'  prefetch={true} > <button className='text-white w-24 font-semibold cursor-pointer rounded-full px-3 py-1 bg-primary lg:hover:bg-hover'>Blogs</button></Link>
      {/* <button className='text-white w-24 font-semibold cursor-pointer rounded-full px-3 py-1 bg-red-800 lg:hover:bg-red-500'>College</button> */}
     </div>
     <CgDetailsMore className='text-4xl lg:hidden'/>

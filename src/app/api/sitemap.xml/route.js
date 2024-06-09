@@ -5,8 +5,8 @@ import { AboutCollege } from '@/app/Data/aboutCollege';
 export const dynamic='force-dynamic'
 export async function GET() {
     await connectDb();
-    const blogs = await Blogs.find({}, 'id, upload_time')
-  const staticRoutes = [
+    const blog = await Blogs.find({}, 'url upload_time')
+    const staticRoutes = [
     {
       url: 'https://collegecounsel.co.in',
       lastModified: new Date().toISOString(),
@@ -20,24 +20,30 @@ export async function GET() {
       priority: 0.8,
     },
     {
-      url: 'https://collegecounsel.co.in/blogs',
+      url: 'https://collegecounsel.co.in/apply',
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: 'https://collegecounsel.co.in/blog',
       lastModified: new Date().toISOString(),
       changeFrequency: 'weekly',
       priority: 0.5,
     },
   ];
 
-  const dynamicRoutes = blogs.map((blog) => ({
-    url: `https://collegecounsel.co.in/blogs/${blog.id}`,
+  const dynamicRoutes = blog.map((blog) => ({
+    url: `https://collegecounsel.co.in/blog/${blog.url}`,
     lastModified: new Date(blog.upload_time).toISOString(),
     changeFrequency: 'daily',
-    priority: 0.5,
+    priority: 1,
   }));
   const dynamicCollegeRoutes = Object.keys(AboutCollege).map((key) => ({
     url: `https://collegecounsel.co.in/about-university/${key}`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'daily',
-    priority: 0.5,
+    priority: 1,
   }));
 
   const allRoutes = [...staticRoutes, ...dynamicRoutes,...dynamicCollegeRoutes];
