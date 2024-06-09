@@ -14,6 +14,12 @@ export async function GET() {
       priority: 1,
     },
     {
+      url: 'https://collegecounsel.co.in/sitemap.xml',
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'hourly',
+      priority: 1,
+    },
+    {
       url: 'https://collegecounsel.co.in/about',
       lastModified: new Date().toISOString(),
       changeFrequency: 'monthly',
