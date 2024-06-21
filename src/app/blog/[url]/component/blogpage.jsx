@@ -4,27 +4,20 @@ import CCLoader from "@/app/Components/CCLoader";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-const BlogPageBottom = dynamic(()=>import('./BlogPageBottom'))
+import { ImageFormat, ListFormat, TableField } from "@/app/Components/Formats";
 const Footer = dynamic (()=>import('@/app/Components/Footer'))
 const Blogpage = ({ params }) => {
   const [blog, setBlog] = useState();
   const [loading, setLoading] = useState(true);
-  const [tableData, setTableData] = useState({
-    keys: [],
-    values: [],
-  });
+
   useEffect(() => {
     async function fetchh() {
       try {
-        const blogdata = await fetch(`/api/blog/${params.id}`);
+        const blogdata = await fetch(`/api/blog/${params.url}`);
         const data = await blogdata.json();
         if(blogdata.ok){
         setLoading(false);
         setBlog(data);
-        setTableData({
-          keys: JSON.parse(data?.table.keys),
-          values: JSON.parse(data?.table.values),
-        });
         }
       } catch (error) {
         console.error(error);
@@ -32,7 +25,7 @@ const Blogpage = ({ params }) => {
     }
     fetchh();
   }, [params.id]);
-  console.log();
+
   return (
     <>
       {loading ? (
@@ -45,19 +38,27 @@ const Blogpage = ({ params }) => {
               height={200}
               priority
               className="h-auto w-full object-cover  rounded-xl"
-              src={blog?.image[5]?.url || "/image/default.jpg"}
+              src={blog?.imageUrl || "/image/default.jpg"}
               alt={`${blog?.title} image`}
 
             />
 
-            <h1 className="text-3xl mt-16 font-semibold">{blog?.title} </h1>
-            <h2 className="text-2xl mt-8 font-semibold">{blog?.subtitle} </h2>
-            <div
-              className="mt-5 text-lg"
-              dangerouslySetInnerHTML={{ __html: `<p>${blog?.content}</p>` }}
-            />
-           <BlogPageBottom blog={blog} tableData={tableData}/>
-          </div>
+            <h1 className="text-4xl mt-16 font-semibold">{blog?.title}</h1>
+          {
+            blog?.sequence?.map((data)=>(
+              <div key={data.id}>
+               {(data.type==='img')&&<Image className="mt-10 rounded-lg"  width={1200}
+                height={200} src={data.url}/>}
+                {data.type === "text" && <ParagraphField data={data} />}
+                {data.type === "list" && <ListFormat data={data}/>}
+                {data.type === "table" && <TableField data={data}/>} 
+                {data.type === "img" && <ImageFormat data={data}/>} 
+
+              </div>
+            ))
+          }
+
+         </div>
         </div>
       )}
       <Footer/>
@@ -67,3 +68,14 @@ const Blogpage = ({ params }) => {
 
 
 export default Blogpage;
+const ParagraphField=({data})=>{
+  return(
+      <div>
+          <h1 className="text-3xl mt-16 font-semibold">{data.heading}</h1>
+          <div
+            className="mt-5 leading-sung text-xl"
+            dangerouslySetInnerHTML={{ __html: `${data?.paragraph}` }}
+          />
+      </div>
+  )
+}

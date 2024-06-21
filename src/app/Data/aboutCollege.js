@@ -169,6 +169,175 @@ Note:<br/>
     </p>`,
     },
   },
+  Manipal_University: {
+    name: "Manipal University",
+    about: `<p>The college began offering online courses around 2021. The University Grants Commission (UGC) has authorised Online Manipal University to provide undergraduate and graduate programmes. <br/><br/>
+    The university provides a modernised digital learning environment where you may access all course materials and advanced seminars. This LMS is used by the University for conducting online exams. The LMS even allows students to study on their own through a variety of practice tests and online quizzes. <br/><br/>
+    The online Manipal courses aim to offer complete educational experiences that will help students learn skill sets useful for careers in a variety of fields. 
+The curriculum and learning techniques were developed not only by professors, but also by experts in relevant industry.
+ </p>`,
+    Approvals: ["/image/certificateimg/ugc.jpg", "/image/certificateimg/aicte.jpg", "/image/certificateimg/naac-a-plus.jpg", "/image/certificateimg/nirf-logo.jpg", "/image/certificateimg/wes.jpg"],
+    Eligibility_criteria: `The minimum qualification required to apply for is a pass in the 10+2 examination in Science / Commerce / Arts from PUC / ISC / CBSE or equivalent board. A course recognized as equivalent thereto by the University.`,
+    CourseTable: [
+      {
+        name: "Online B.Com",
+        fees: "99,000",
+        duration: "3 Years",
+      },
+      {
+        name: "Online M.Com",
+        fees: "1,08,000",
+        duration: "2 Years",
+      },
+      {
+        name: "Online BBA",
+        fees: "1,35,000",
+        duration: "3 Years",
+      },
+      {
+        name: "Online BCA",
+        fees: "1,35,000",
+        duration: "3 Years",
+      },
+      {
+        name: "Online MCA",
+        fees: "1,58,000",
+        duration: "2 Years",
+      },
+      {
+        name: "Online MA",
+        fees: "1,40,000",
+        duration: "2 Years",
+      },
+      {
+        name: "Online MBA",
+        fees: "1,75,000",
+        duration: "2 Years",
+      },
+    ],
+    BenifitsList: [
+      "100+ recruiters from Fortune 500 organisations.",
+      "No-Cost EMI & attractive scholarships",
+      "Real-World Faculty",
+      "Diverse Jobs for Manipal University students.",
+    ],
+    FactAboutUniversity: [
+      "Manipal University offers over ten completely online, certified degree and certification courses.",
+      "All courses have been authorised by the UGC to be provided online. ",
+      "The college provides online undergraduate degree courses such as BCA, BBA, and B.Com, as well as MCA, MBA, M.Com, and MA JMC postgraduate degree courses.",
+      "To get admission to MAHE, candidates must appear for the MAHE Manipal entrance exam.",
+      "To gain admission to MIT, candidates must appear for the MIT Manipal entrance exam, which is a highly competitive exam that tests their aptitude and knowledge in various subjects.",
+      "The exams are carried out online and remotely checked via the LMS.",
+      "The university provides no-cost EMI options for easy payment. ",
+      "The institution has its own LMS with a variety of unique and personalized features, involving self-learning activities such as online tests, mock examinations, and lectures.",
+      "There are scholarships available for government officials, defense personnel, deserving students, and persons with disabilities.",
+      "The last date to apply has been extended upto 31st May,2024",
+    ],
+    OnlineCertificates: [
+      "Earn a UGC-accredited degree, accepted globally",
+      "Degree is recognised and certified",
+      "NAAC and AICTE accredited degree",
+      "Degree is recognised in public as well as private industries",
+      "Equivalence with an on-campus degree",
+    ],
+    CerificateImage:'/CollegesCertificateSample/manipal-university.webp',
+    AdmissionProcess: {
+      paragraph: `The process for applying at Manipal University is conducted online. New admissions begin in January of each year. <br/><br/>
+      There are direct admissions, and no entrance exams are required for admission. Follow this process to get Admission in Online Manipal University’s Online Courses:
+      `,
+      steps: [
+        `Go to Online Manipal University's official website and apply online by clicking on "Enroll Now".`,
+        `Upload documents and then submit the application.`,
+        `Pay the application fees. This cost is later reflected in Semester I fees.`,
+        `If any further procedure is remaining, an admission counselor will contact you and support you until it is completed.`,
+      ],
+    },
+    PaymentMode: {
+      paragraph: `Open the payment link given in their official website`,
+      steps: [
+        "Manipal Academy Of Higher Education Students can pay all academic-related fees online.",
+        "Students and parents can register on the Student Portal to pay their fees online.",
+        "Once enrolled, students/parents can pay the course cost (General Category only)/examination/re-registration/casual/internal improvement/certificate/transcript charge online.",
+        `The receipt will be created online and delivered to the student/parent's registered email address.`,
+      ],
+    },
+    Evaluation: {
+      paragraph: `Internal assignments, student response sheets, and semester end exams would be utilised to evaluate students' learning in a particular course.
+      Examinations will be held to examine the knowledge gained during the course.<b> There will be two types of examinations: internal and external.</b>`,
+      heading1: `Passing Minimum`,
+      paragraph1: `The students are considered as passed in a course if they score 40% marks in the Continuous Evaluation (IA) and Term-End Examinations (TEE) individually. If a student fails in any one component (failure to get 40% marks either in IA or TEE), then he/she will be required to re- appear for that component only (IA or TEE as the case may be)`,
+      heading2: `Marks and Grades`,
+      paragraph2: `Based on the total marks obtained for each course in Internal Assessment and Term End examinations, student will be awarded grade for that course. The following table gives the marks, grade points, letter, grades and classification to indicate the performance of the candidate.`,
+    },
+    marksTable: {
+      tableHead: ["Marks range", "Grade Points", "Letter Grade", "Discription"],
+      tableBody: [
+        [">=90 to <=100", 10, "A+", "Outstanding"],
+        [">=80 to <=90", 9, "A", "Excellent"],
+        [">=75 to <=80", 8, "B+", "Distinction"],
+        [">=70 to <=75", 7, "B", "Very Good"],
+        [">=60 to <=70", 6, "C+", "Good"],
+        [">=50 to <=60", 5, "C", "Average"],
+        [">=40 to <=50", 4, "D+", "Below Average"],
+        ["<40", 0, "F", "Re-appear"],
+        ["Absent", 0, "AAA", "ABSENT"],
+      ],
+    },
+    placementPartner: [
+      { name: "Byjus", url: "/placementPartnersImg/byjus.webp" },
+      { name: "IBM", url: "/placementPartnersImg/ibm.webp" },
+      { name: "Infosys", url: "/placementPartnersImg/infosys.webp" },
+      { name: "KPMG", url: "/placementPartnersImg/kpmg.webp" },
+      { name: "Samsung", url: "/placementPartnersImg/samsung.webp" },
+      { name: "Genpact", url: "/placementPartnersImg/genpact.webp" },
+    ],
+    refundProcess: `<p>A refund claim can be admitted on merits, after due consideration of the request, by the University. If approved, the amount to be refunded shall be as per the following guidelines:<br/><br/>
+    **A 5% of the aggregate fee or Rs. 5,000/- (whichever is lower) shall be deducted as processing charges from the refundable amount.</p>
+    <a target="#" href="https://res.cloudinary.com/dkfnivsuv/image/upload/f_auto,q_auto/jnr4ldorypyycokqe1tv"> More about refund policy</a>
+   `,
+    internationalAdmission: {
+      heading1: `International Admissions 2024`,
+      paragraph1: `<p>MAHE admits candidates under Indian / Domestic (General) or Foreign / NRI category (International), on fulfilling the eligibility requirements. All admissions are done on the basis of merit.
+    <br/><br/>
+    Foreign / NRI category seats are available only for:<br/>
+    1. Foreign Nationals<br/>
+2. Candidates with NRI status<br/>
+3. Candidates sponsored by relatives with NRI status<br/>
+4. Overseas Citizen of India (OCI)<br/>
+5. Person of Indian Origin (PIO) <br/>
+
+    </p>`,
+      heading2: `Foreign / NRI / NRI Sponsored Category Admissions:`,
+      paragraph2: `<p>Manipal Academy of Higher Education (MAHE) allocates 15 % of seats under the Foreign / NRI category. This includes Foreign Nationals, Person of Indian Origin (PIO) Card Holders, Overseas Citizen of India (OCI), Non-Resident Indian (NRI) and NRI Sponsored candidates (sponsored by parents OR brother / sister of parents* OR brother / sister of the candidate* OR grandparents of the candidate* OR spouse of the candidate*).<br/><br/>
+    <b>* The sponsorer must be a foreign national or hold NRI status.</b><br/><br/>All Foreign / NRI / NRI Sponsored admissions to UG & PG programs (other than those listed in the note below), will be on a first-cum-first-serve merit basis, subject to the candidate’s performance in the 10+2 (for UG programs) / Bachelor Degree (for PG programs) or equivalent examination in addition to meeting the various eligibility requirements of respective programs as stipulated by the regulatory bodies. There will be NO entrance examinations. Candidates who have confirmed their admission under the Foreign / NRI category, by paying the full first year program fee CANNOT take an admission under the General category.</p>`,
+      heading3: `Qualifications`,
+      paragraph3: `Candidates seeking admissions to Under Graduate (UG) / Post Graduate (PG) / Super Specialty (SS) should have obtained their qualifications from a recognized Board / University. For PG programs, the candidates MUST have a Bachelor’s degree of minimum 3 years’ duration from a recognized University as per program requirement. Candidates with Foreign qualifications must submit equivalency certificate from the Association of Indian Universities (AIU), New Delhi, as per program requirements.`,
+      heading4: `Under Graduate (UG) Admission:`,
+      paragraph4: `<p>
+    MAHE considers candidates with the following Boards / qualifications <br/><br/>
+    1. 10+2 of India obtained from recognized Central (CBSE / ISC) or State Boards<br/>
+    2. GCE ‘A’ Levels<br/>
+    3. International Baccalaureate (IB)<br/>
+    4. Others like 12 Year High School Diploma from accredited Schools of USA; 12 years General Secondary Education Certificate of the Ministry of Education Bahrain, Egypt, Jordan, Kuwait, Oman, Saudi Arabia, United Arab Emirates and other Gulf countries; Intermediate / Senior Secondary / Higher Secondary examinations of the approved Boards in Bangladesh, Bhutan and Nepal etc.<br/><br/>
+    <b>Candidate seeking admission to the Undergraduate (UG) programs offered by MAHE should have completed:</b><br/><br/>
+    1. Minimum 5 (Five) passes at IGCSE / GCSE / GCE ‘O’ Levels including English<br/>
+    2. Minimum 2/3 (Two / Three) subjects at GCE Advanced Level (‘A’ Levels), depending on the program requirement<br/>
+    3. Average of ‘D’ grade in 2/3 subjects at GCE Advanced Level (‘A’ Levels), depending on the program requirement<br/>
+    4. Should meet subject-wise eligibility as laid down by the respective statutory bodies /council / university
+    </p>`,
+      heading5: `Post Graduate (PG) Admission:`,
+      paragraph5: `<p>
+    Candidate shall be eligible for admission to a Master's degree program on successfully completing the prescribed Under Graduate (UG) program of minimum three years’ duration from a recognized University and is eligible for the award of degree.
+ <br/><br/>
+Note:<br/>
+1. All General / Foreign / NRI admissions to <span>UG (MBBS / BDS), PG (MD / MS / MDS )</span> and <span>SS (DM / MCh)</span> programs will be based on the rank obtained in National Eligibility Cum Entrance Test (NEET) and online counseling & seat allotment by <span>Directorate General of Health Services (DGHS) / Medical Counseling Committee (MCC) / Karnataka Examinations Authority (KEA) / Jharkhand State Counseling Authority (JCECEB)</span> (wherever applicable)<br/>
+2. All General / Foreign / NRI Candidates seeking admission to UG (BArch) MUST qualify through a recognized aptitude test in Architecture i.e. <span>NATA (National Aptitude Test in Architecture)</span> conducted by Council of Architecture (COA). * There are NO NRI sponsored seats (sponsored by NRI relatives as mentioned above).<br/>
+3. All admissions are subject to fulfilment of all eligibility conditions by the candidate. If it is found at a later stage, during active verification, that the candidate has given false information / certificate(s) / eligibility documents from non-recognized Board / University or is found to have concealed some Information, his / her admission will be cancelled without any notice and the fee paid by the candidate shall be forfeited. It is the responsibility of the candidate to ensure that they fulfill all the eligibility requirements for the program applied.
+  <br/>
+  4. All applicants / parents MUST read Public Advisory before applying for any program.
+    </p>`,
+    },
+  },
   Jain_University: {
     name: "Jain University",
     about: `<p> Welcome to Jain University Bangalore! <br/><br/>
@@ -192,7 +361,7 @@ Note:<br/>
       {
         name: "Online MA",
         fees: "90,000",
-        duration: "3 Years",
+        duration: "2 Years",
       },
       {
         name: "Online M.Com",
@@ -207,17 +376,17 @@ Note:<br/>
       {
         name: "Online MCA",
         fees: "1,50,000",
-        duration: "3 Years",
+        duration: "2 Years",
       },
       {
         name: "Online MBA",
         fees: "1,60,000",
-        duration: "3 Years",
+        duration: "2 Years",
       },
       {
         name: "Online MBA (dual)",
         fees: "1,80,000",
-        duration: "3 Years",
+        duration: "2 Years",
       },
     ],
     BenifitsList: [
@@ -252,8 +421,8 @@ Note:<br/>
         `Visit Jain Online official website at https://www.jainuniversity.ac.in/  and click on the "Apply Now" button.`,
         `Register yourself with your details for verification of email and mobile number.`,
         `After email verification, you will receive login details.`,
-        `Login and fill out the online enrollment form and upload the required documents.        `,
-        `Pay the fee using either Net Banking or Credit/Debit card. There are easy EMI options as well with 0% interest.        `,
+        `Login and fill out the online enrollment form and upload the required documents.`,
+        `Pay the fee using either Net Banking or Credit/Debit card. There are easy EMI options as well with 0% interest.`,
       ],
     },
   },

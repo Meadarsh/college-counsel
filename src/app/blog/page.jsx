@@ -30,7 +30,6 @@ const Blogs = () => {
     GetBlogs()
   },[])
 
- console.log(blogs);
  
   return (
    
@@ -65,11 +64,11 @@ const Blogs = () => {
 
           {loading ? <CCLoader /> :<> {blogs&&<Grid container spacing={3}>
             {(shortBlog==='oldest')&&blogs.map((post, index) => (
-             <PostCard key={post.id} post={post} index={index} />
+             <PostCard key={post.id} post={post}  />
             ))}
 
             {(shortBlog==='latest')&& [...blogs].reverse().map((post, index) => (
-             <PostCard key={post.id} post={post} index={index} />
+             <PostCard key={post.id} post={post} />
             ))}
           </Grid>}</>}
         </Container>

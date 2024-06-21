@@ -10,7 +10,7 @@ const CollegeBoard = dynamic(()=>import('./HomeComponent/CollegeBoard'))
 const Footer = dynamic(()=>import('@/app/Components/Footer'))
 const WhyChooseus = dynamic(()=>import('./HomeComponent/whyChooseus'))
 const MentorComp = dynamic(()=>import('./HomeComponent/MentorComp'))
-const ApplyForm = dynamic(()=>import('./Components/Applyside'))
+const ApplyForm = dynamic(()=>import('./Components/Applyform'))
 
 const Home = () => {
   const EXPIRATION_DAYS = 10;
@@ -20,7 +20,7 @@ const Home = () => {
     return new Date(dateString);
   }
   
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(true);
   
   const isExpired = useCallback((storedDateString, currentDate) => {
     const storedDate = parseDateString(storedDateString);
@@ -34,13 +34,14 @@ const Home = () => {
     const checkExpiration = () => {
       if (!showForm) {
         const data = localStorage.getItem('Applied');
+
         if (isExpired(data, currentDate)) {
           setShowForm(true);
         }
       }
     };
   
-    const timer = setTimeout(checkExpiration, 15000);
+    const timer = setTimeout(checkExpiration, 10000);
   
     return () => clearTimeout(timer);
   }, [showForm, currentDate, isExpired]);
@@ -48,7 +49,7 @@ const Home = () => {
   return (
     <>
     
-    <div className={`${showForm?'block':'hidden'}`}><ApplyForm handleClose={()=>setShowForm(false)}/></div>
+    <div className={`${showForm?'block':'hidden'} fixed top-4 flex justify-center w-screen z-20`}><ApplyForm handleClose={()=>setShowForm(false)}/></div>
     <Link href='apply'><p className='hidden'>click here to apply</p><Applyside/></Link>
     <LandingCrausel/>
     <SecondPage/>

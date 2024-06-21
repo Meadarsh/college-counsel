@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(res,{params}){
     try{
-        const url = params.getBlogById;
+        const url = params.getBlogByUrl;
         await connectDb()
         const Blog=await Blogs.findOne({ url: url });
         return NextResponse.json(Blog)

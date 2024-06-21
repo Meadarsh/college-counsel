@@ -10,7 +10,7 @@ import { fDate } from '../utils/format-time';
 // ----------------------------------------------------------------------
 
 export default function PostCard({ post}) {
-  const {url,image,title,subtitle, upload_time } = post;
+  const {url,imageUrl,title,upload_time } = post;
   const renderAvatar = (
     <Avatar
       alt={'CC'}
@@ -45,24 +45,24 @@ export default function PostCard({ post}) {
       {title}
     </Typography></Link>
   )
-  const renderContent = (
-    <Link href={`/blogs/${url}`}>
-    <Typography
-      color="inherit"
-      variant="p"
-      sx={{
-        height: 30,
-        width:'90%',
-        overflow: 'hidden',
-        WebkitLineClamp: 2,
-        display: '-webkit-box',
-        WebkitBoxOrient: 'vertical',
-      }}
-    >
-     {subtitle}
-     </Typography>
-    </Link>
-  );
+  // const renderContent = (
+  //   <Link href={`/blogs/${url}`}>
+  //   <Typography
+  //     color="inherit"
+  //     variant="p"
+  //     sx={{
+  //       height: 30,
+  //       width:'90%',
+  //       overflow: 'hidden',
+  //       WebkitLineClamp: 2,
+  //       display: '-webkit-box',
+  //       WebkitBoxOrient: 'vertical',
+  //     }}
+  //   >
+  //    {subtitle}
+  //    </Typography>
+  //   </Link>
+  // );
 
   // const renderInfo = (
   //   <Stack
@@ -101,7 +101,7 @@ export default function PostCard({ post}) {
     <Link className="w-full" href={`/blog/${url}`}> <Box
       component="img"
       alt={title}
-      src={image[5]?.url||'/image/default.jpg'}
+      src={imageUrl||'/image/default.jpg'}
       sx={{
         top: 0,
         width: 1,
@@ -168,7 +168,7 @@ export default function PostCard({ post}) {
           {renderDate}
 
           {renderTitle}
-          {renderContent}
+          {/* {renderContent} */}
           {/* {renderInfo} */}
         </Box>
       </Card>

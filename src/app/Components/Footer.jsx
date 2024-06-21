@@ -24,7 +24,7 @@ const Footer = () => {
     </div>
     <div className='logo pb-4 lg:text-xl text-sm lg:w-1/3 lg:border-l lg:h-[80%] flex flex-col items-center lg:items-start lg:justify-center pl-3'>
    
-       <p> Phone no: +916392832171 <br/>
+       <p> Phone no: +919569822903, +916392832171 <br/>
        Email: mail@collegecounsel.co.in</p>
     </div>
 </div>

@@ -5,7 +5,6 @@ import ThemeProvider from "./theme";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Script from "next/script";
-import Head from "next/head";
 const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata = {
@@ -16,6 +15,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  
   return (
     <html lang="en">
        <Script

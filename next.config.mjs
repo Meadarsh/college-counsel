@@ -12,6 +12,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'collegecounsel.co.in',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   async rewrites() {
