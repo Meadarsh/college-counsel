@@ -15,7 +15,7 @@ export const PlacementPartners = ({ data, name }) => {
   return (
     <>
       <h2>Placement partners of {name}</h2>
-      <div className="flex gap-4">
+      <div className="flex flex-wrap gap-4">
         {data?.list?.map((data, index) => (
           <div
             key={index}
@@ -53,7 +53,7 @@ export const CertifiedBy = ({ data, name, Expand }) => {
   return (
     <>
       <h2>{data?.title || `${data?.name} online certificates`}</h2>
-      <div className="flex pr-16 justify-between">
+      <div className="flex lg:flex-row flex-col-reverse items-center pr-16 justify-between">
         <ListWithStar heading={false} data={data?.list} />
         {data?.url && (
           <Image
@@ -75,19 +75,20 @@ export const ListFormat = ({ data }) => {
     <div>
       {data.style === "star" && (
         <>
-          <h2>{data.title}</h2>
+          {data.title&&<h2>{data.title}</h2>}
           <ListWithStar data={data.list} />
         </>
       )}
       {data.style === "tick" && (
         <>
-          <h2>{data.title}</h2>
+          {data.title&&<h2>{data.title}</h2>}
           <ListWithBlueTick data={data.list} />
         </>
       )}
       {data.style === "step" && (
         <>
-          <h2>{data.title}</h2> <ListWithStep data={data.list} />
+          {data.title&&<h2>{data.title}</h2>}
+           <ListWithStep data={data.list} />
         </>
       )}
     </div>
@@ -97,7 +98,7 @@ export const ListFormat = ({ data }) => {
 export const TableField = ({ data }) => {
   return (
     <>
-      <h2>{data?.title}</h2>
+      {data?.title&&<h2>{data?.title}</h2>}
       <TableContainer className="bg-white mt-10 text-black rounded-xl border">
         <Table className="bg-white">
           <TableHead>

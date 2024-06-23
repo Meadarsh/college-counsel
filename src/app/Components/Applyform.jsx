@@ -6,6 +6,7 @@ import { RxCross1 } from "react-icons/rx";
 import { usePathname } from "next/navigation";
 import Loader from "./Loader";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 const ApplyformComp = ({ handleClose }) => {
   const location = usePathname();

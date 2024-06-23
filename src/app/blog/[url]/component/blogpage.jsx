@@ -31,7 +31,7 @@ const Blogpage = ({ params }) => {
       {loading ? (
         <CCLoader />
       ) : (
-        <div className=" blogpage flex flex-col w-full mt-20  p-2 lg:py-10 lg:px-20 gap-10 bg-white ">
+        <div className=" university-ab blogpage flex flex-col w-full mt-20  p-2 lg:py-10 lg:px-20 gap-10 bg-white ">
           <div className="w-[75%]">
             <Image
               width={1200}

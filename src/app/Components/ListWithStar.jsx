@@ -11,7 +11,7 @@ const ListWithStar = ({data}) => {
             <ListItemIcon>
               <StarPurple500OutlinedIcon sx={{ color: "#FFD700" }} />
             </ListItemIcon>
-           <p className="font-medium  text-xl">{txt.value||txt}</p>
+           <p className="font-medium text-md md:text-lg lg:text-xl">{txt.value||txt}</p>
           </ListItem>
         ))}
     </List>

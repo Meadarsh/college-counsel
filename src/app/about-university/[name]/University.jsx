@@ -54,14 +54,15 @@ const Page = ({params}) => {
               width={1400}
               height={600}
               alt="University Image"
-              className="w-full h-auto"
+              className="w-full h-[50vh] lg:h-[100vh]"
               src={data?.detail?.imageUrl}
+              objectFit="cover"
             ></Image>
-            <div className="absolute flex flex-col bottom-[20%] left-14">
-              <h1 className=" text-6xl font-bold text-white">
+            <div className="absolute flex flex-col bottom-[20%] left-4 lg:left-14">
+              <h1 className="text-3xl lg:text-6xl font-bold text-white">
                 {data?.detail?.title}
               </h1>
-              <div className="flex justify-evenly rounded-lg min-w-56 mt-6 bg-white p-1">
+              <div className="flex overflow-clip justify-evenly max-w-[80%] rounded-lg lg:min-w-56 mt-6 bg-white p-1">
                 {data?.detail?.certificates?.map((url, ind) => (
                   <Image
                     key={ind}
@@ -75,7 +76,7 @@ const Page = ({params}) => {
             </div>
           </div>
           <div className="flex">
-            <div className="mt-1 p-10  md:w-[calc(100vw-230px)]">
+            <div className="mt-1 p-4 lg:p-10  md:w-[calc(100vw-230px)]">
              {data?.sequence?.map((value)=>(<>
               {value.type === "text" && <ParagraphField data={value} />}
               {value.type === "certificate" && <CertifiedBy data={value} name={data?.detail.title} Expand={Expand}/>}
