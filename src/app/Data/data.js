@@ -38,7 +38,7 @@ export const ugCourseData = {
     { name: "GLA University", img: "/collegeLogoimage/gla.webp" },
     {
       name: "Lovely Professional University",
-      img: "/collegeLogoimage/collegelogo13.webp",
+      img: "/collegeLogoimage/lpu.webp",
     },
     { name: "Jain University", img: "/collegeLogoimage/jain.webp" },
     { name: "Amity University", img: "/collegeLogoimage/amity.webp" },
