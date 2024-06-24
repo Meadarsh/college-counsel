@@ -10,7 +10,6 @@ export async function GET(res,{params}){
         return NextResponse.json(Blog)
     }   
     catch (err) {
-    console.log(err);
     return NextResponse.json({ err,message: "Internal server error" });
     }
 } 

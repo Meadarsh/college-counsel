@@ -10,15 +10,24 @@ const Page = async ({ params }) => {
 }
 
 export async function generateMetadata({ params }) {
-  const data= AboutCollege?.[params.id]
-    return {
-      title: `${data?.name} - College Counsel`,
-      description: data?.about,
-      openGraph: {
-        title:` ${data?.name} -  College Counsel`,
+  let university
+   try {
+     const res = await fetch(`${process.env.BASE_URL}/api/university/${params?.name}`);
+     const data = await res.json();
+     university= data.meta
+   } catch (error) {
+    console.log(error);
+   }
   
-        description: data?.about,
-        url: `${process.env.BASE_URL}/university/${params.id}`,
+    return {
+      title: `${university?.title} - College Counsel`,
+      description: university?.description,
+      keywords:university?.keywords,
+      openGraph: {
+        title:` ${university?.title} -  College Counsel`,
+  
+        description: university?.description,
+        url: `${process.env.BASE_URL}/about-university/${params.name}`,
       },
     };
   }
