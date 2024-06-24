@@ -24,6 +24,7 @@ export const collegeLogo = [
     logoimg: "/collegeLogoimage/amrita.webp",
     collegename: "Amrita online university",
     Offeredcourse: 2,
+    route:'about-university/Amrita_university_online'
   },
   {
     logoimg: "/collegeLogoimage/manipal.webp",

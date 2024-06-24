@@ -27,6 +27,12 @@ export async function GET() {
       priority: 0.8,
     },
     {
+      url: 'https://collegecounsel.co.in/about-university',
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: 'https://collegecounsel.co.in/apply',
       lastModified: new Date().toISOString(),
       changeFrequency: 'monthly',
