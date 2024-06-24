@@ -4,7 +4,7 @@ import CCLoader from "@/app/Components/CCLoader";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import { ImageFormat, ListFormat, TableField } from "@/app/Components/Formats";
+import { ImageFormat, ListFormat, ParagraphField, TableField } from "@/app/Components/Formats";
 const Footer = dynamic (()=>import('@/app/Components/Footer'))
 const Blogpage = ({ params }) => {
   const [blog, setBlog] = useState();
@@ -47,8 +47,6 @@ const Blogpage = ({ params }) => {
           {
             blog?.sequence?.map((data)=>(
               <div key={data.id}>
-               {(data.type==='img')&&<Image className="mt-10 rounded-lg"  width={1200}
-                height={200} src={data.url}/>}
                 {data.type === "text" && <ParagraphField data={data} />}
                 {data.type === "list" && <ListFormat data={data}/>}
                 {data.type === "table" && <TableField data={data}/>} 
@@ -68,14 +66,3 @@ const Blogpage = ({ params }) => {
 
 
 export default Blogpage;
-const ParagraphField=({data})=>{
-  return(
-      <div>
-          <h1 className="text-3xl mt-16 font-semibold">{data.heading}</h1>
-          <div
-            className="mt-5 leading-sung text-xl"
-            dangerouslySetInnerHTML={{ __html: `${data?.paragraph}` }}
-          />
-      </div>
-  )
-}
