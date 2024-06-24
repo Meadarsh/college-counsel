@@ -3,7 +3,7 @@ export const collegeLogo = [
     logoimg: "/collegeLogoimage/amity.webp",
     collegename: "Amity online university",
     Offeredcourse: 39,
-    route:'about-university/amity_university_online'
+    route:'about-university/Amity_University'
   },
   {
     logoimg: "/collegeLogoimage/manipal.webp",
