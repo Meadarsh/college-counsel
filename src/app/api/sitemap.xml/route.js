@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server';
 import connectDb from '@/databaseConnection/connect';
 import Blogs from '@/models/blog.model';
-import { AboutCollege } from '@/app/Data/aboutCollege';
+import Universities from '@/models/university.model';
 export const dynamic='force-dynamic'
 export async function GET() {
     await connectDb();
     const blog = await Blogs.find({}, 'url upload_time')
+    const university = await Universities.find({}, 'url upload_time')
     const staticRoutes = [
     {
       url: 'https://collegecounsel.co.in',
@@ -45,9 +46,9 @@ export async function GET() {
     changeFrequency: 'daily',
     priority: 1,
   }));
-  const dynamicCollegeRoutes = Object.keys(AboutCollege).map((key) => ({
-    url: `https://collegecounsel.co.in/about-university/${key}`,
-    lastModified: new Date().toISOString(),
+  const dynamicCollegeRoutes = university.map((university) => ({
+    url: `https://collegecounsel.co.in/about-university/${university.url}`,
+    lastModified: new Date(university.upload_time).toISOString(),
     changeFrequency: 'daily',
     priority: 1,
   }));
