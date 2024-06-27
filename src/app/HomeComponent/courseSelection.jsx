@@ -19,7 +19,7 @@ const CourseSelection = ({ course }) => {
     if (course === "Other Courses") {
       setSelected([]);
     }
-    const keys = Object.keys(selected); // Get all keys of the object
+    const keys = Object.keys(selected); 
     const firstKey = keys[0];
     setSelectedCourse(selected[firstKey]);
     setSelectedKey(firstKey);
@@ -37,7 +37,7 @@ const CourseSelection = ({ course }) => {
             onClick={() => SelectCourse(key)}
             className={`flex items-center ${
               selectedKey === key && "bg-primary text-white"
-            } font-bold border-primary cursor-pointer justify-center rounded-3xl w-16 lg:w-36 border py-1 lg:py-3`}
+            } font-bold border-primary cursor-pointer justify-center rounded-e-full rounded-ss-full w-16 lg:w-36 border py-1 lg:py-3`}
           >
             <h3>{key}</h3>
           </div>

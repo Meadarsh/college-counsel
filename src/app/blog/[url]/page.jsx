@@ -7,7 +7,11 @@ const Page = ({ params }) => {
   )
 }
 export async function generateMetadata({ params }) {
-let blog
+  let blog={
+    title: "",
+    description: "",
+    keywords: "",}
+    
  try {
    const res = await fetch(`${process.env.BASE_URL}/api/blog/${params?.url}`);
    const data = await res.json();

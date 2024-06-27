@@ -60,21 +60,21 @@ function Selection(e){
       </Swiper>
      </div>
       <div className="lg:mt-[10vh] mt-[10vh]">
-        <div className="flex justify-center   items-center mt-[10vh] lg:h-[10vh]">
+        <div className="flex justify-center items-center mt-[10vh] lg:h-[10vh]">
           <h1 className="lg:text-[2.5vw] font-bold text-3xl text-center text-primary">
             Browse Courses
           </h1>
         </div>
         <div className='lg:min-h-[10vh] h-[7vh] w-full justify-center lg:gap-7 gap-2 items-center flex-wrap flex mt-[1vh]'>
-    <div onClick={()=>Selection('UG Courses')} className={`button font-semibold ${selectedCourse==='UG Courses'&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-full `}>
+    <div onClick={()=>Selection('UG Courses')} className={`button font-semibold ${selectedCourse==='UG Courses'&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-e-full rounded-ss-full `}>
         <h2>UG Courses</h2>
      </div>
-    <div onClick={()=>Selection('PG Courses')} className={`button font-semibold ${selectedCourse==='PG Courses'&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-full `}>
+    <div onClick={()=>Selection('PG Courses')} className={`button font-semibold ${selectedCourse==='PG Courses'&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-e-full rounded-ss-full `}>
         <h1>PG Courses</h1>
      </div>
      {/*onClick={()=>Selection(data)}*/}
      <Badge badgeContent={'Comming soon'} color="primary">
-    <div  className={`button font-semibold ${selectedCourse==='Other Courses'&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-full `}>
+    <div  className={`button font-semibold ${selectedCourse==='Other Courses'&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-e-full rounded-ss-full `}>
         <h2>Other Courses</h2>
      </div>
      </Badge>

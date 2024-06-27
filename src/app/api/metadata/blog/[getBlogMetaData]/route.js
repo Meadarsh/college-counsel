@@ -5,18 +5,13 @@ import { NextResponse } from "next/server";
 export async function GET(req, { params }) {
     try {
         const url = params.getBlogMetaData;
-        console.log("URL: ", url); 
+          if (!url) {
+            return NextResponse.json({ message: "URL parameter is missing" });
+        }
         await connectDb();
         const blog = await Blogs.findOne({ url: url });
-        console.log(blog); 
-        if (blog && blog.meta) {
-            return new NextResponse.json(blog.meta, {
-                headers: {
-                    'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
-                    'Pragma': 'no-cache',
-                    'Expires': '0',
-                },
-            });
+        if (blog) {
+            return NextResponse.json({meta:blog.meta});
         } else {
             return NextResponse.json({ message: "Meta data not found" });
         }

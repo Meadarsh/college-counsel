@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation";
 import Loader from "./Loader";
 import Image from "next/image";
 import { toast } from "react-toastify";
+import { InputStyle } from "./Styled/inputField";
+import { Countries } from "../Data/countrieslist";
 
 const ApplyformComp = ({ handleClose }) => {
   const location = usePathname();
@@ -51,6 +53,14 @@ const ApplyformComp = ({ handleClose }) => {
     setFormData({ ...formData, state: value });
     setErrors({ ...errors, state: !value });
   };
+  const handleCountryChange = (_, value) => {
+    setFormData({ ...formData, country: value });
+    setErrors({ ...errors, country: !value });
+  };
+  const handleCourseChange = (_, value) => {
+    setFormData({ ...formData, course: value });
+    setErrors({ ...errors, course: !value });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -92,45 +102,44 @@ const ApplyformComp = ({ handleClose }) => {
   }
 
   return (
-    <div className="lg:w-2/3 mt-32 z-50 lg:mt-20 lg:h-[80vh] flex rounded-xl overflow-hidden shadow-xl">
-      <div className="w-2/5 hidden lg:flex justify-center">
+    <div className="lg:w-2/3 w-[90%] mt-24  z-50 h-[70vh] lg:mt-32 lg:h-[60vh] flex rounded-e-full  bg-slate-100  overflow-hidden rounded-ss-full shadow-xl">
+      <div className="w-[40%] hidden lg:flex justify-center">
         <Image
          height={700}
          width={500}
           className="h-full w-full mx-auto object-cover"
-          src="/image/formFillingImg.png"
+          src="/image/formFillingImg.webp"
           alt="Form Image"
-          priority
+          priority="true"
         />
       </div>
-      <div className="lg:w-3/5 w-full relative h-full items-center justify-center flex flex-col gap-6 p-5 lg:p-10 bg-slate-100  ">
+      <div className="lg:w-[60%] w-full relative h-full justify-center py-5 px-10 flex flex-col gap-2 lg:pl-10 lg:pr-20">
         {!(location == "/apply") && (
           <RxCross1
             onClick={handleClose}
-            className=" text-3xl font-bold cursor-pointer absolute text-black right-8 top-8"
+            className=" text-3xl font-bold cursor-pointer absolute text-black lg:right-28 top-10 left-[47%] lg:left-auto lg:top-12"
           />
         )}
-        <div className="text-2xl font-semibold">
-        Welcome to College Counsel- Fill this Application Form to Assist you better
+        <div className="text-xl font-semibold w-[90%]">
+       <span className="hidden md:block"> Welcome to College Counsel-</span> Fill this Application Form <span className="hidden md:block">to Assist you better</span>
         </div>
-
         <form
-          className="w-full mt-4 lg:mt-10 flex flex-col gap-3"
+          className="w-full lg:h-[60%] h-[60%] lg:w-[90%] mt-1 lg:mt-3 flex flex-col gap-2"
           onSubmit={handleSubmit}
         >
-          <div className="flex w-[100%] lg:flex-row flex-col gap-3">
+          <div className="flex h-40 lg:h-20 w-[100%] lg:flex-row flex-col gap-3">
             <TextField
-              sx={{ width: "100%" }}
+               sx={InputStyle}
               id="name"
               label="Name"
               variant="outlined"
               value={formData.name}
+              
               onChange={handleChange}
               error={errors.name}
-              helperText={errors.name && "Name is required"}
             />
               <TextField
-              sx={{ width: "100%" }}
+              sx={InputStyle}
               id="email"
               type="email"
               label="Email"
@@ -138,13 +147,12 @@ const ApplyformComp = ({ handleClose }) => {
               value={formData.email}
               onChange={handleChange}
               error={errors.email}
-              helperText={errors.email && "Email is required"}
             />
           
           </div>
-          <div className="flex w-full lg:flex-row flex-col items-center gap-3">
+          <div className="flex h-40 lg:h-20 w-full lg:flex-row flex-col items-center gap-3">
             <TextField
-              sx={{ width: "100%" }}
+              sx={InputStyle}
               id="phonenumber"
               type="number"
               label="Phone no."
@@ -152,10 +160,9 @@ const ApplyformComp = ({ handleClose }) => {
               value={formData.phonenumber}
               onChange={handleChange}
               error={errors.phonenumber}
-              helperText={errors.phonenumber && "Phone number is required"}
             />
             <TextField
-              sx={{ width: "100%" }}
+              sx={InputStyle}
               id="city"
               type="text"
               label="City"
@@ -163,50 +170,53 @@ const ApplyformComp = ({ handleClose }) => {
               value={formData.city}
               onChange={handleChange}
               error={errors.city}
-              helperText={errors.city && "City name is required"}
             />
           </div>
-          <div className="flex w-full lg:flex-row flex-col gap-3">
+          <div className="flex h-40 lg:h-20 w-full lg:flex-row flex-col gap-3">
             <Autocomplete
               disablePortal
               id="state"
               options={indianStates}
-              sx={{ width: "100%" }}
+              sx={InputStyle}
               renderInput={(params) => (
                 <TextField
+                {...params}
                   error={errors.state}
-                  helperText={errors.state && "State is required"}
-                  {...params}
-                  label="State"
-                />
+                  label='State'
+                  fullWidth             
+                  />
               )}
               value={formData.state}
               onChange={handleStateChange}
             />
-            <TextField
-              sx={{ width: "100%" }}
+             <Autocomplete
+              disablePortal
               id="country"
-              label="Country"
-              variant="outlined"
+              options={Countries}
+              sx={InputStyle}
+              renderInput={(params) => (
+                <TextField
+                {...params}
+                  error={errors.country}
+                  label="Country"
+                />
+              )}
               value={formData.country}
-              onChange={handleChange}
-              error={errors.country}
-              helperText={errors.country && "Country is required"}
+              onChange={handleCountryChange}
             />
           </div>
           <TextField
-            sx={{ width: "100%" }}
+            sx={InputStyle}
             id="course"
             label="Course name"
             variant="outlined"
             value={formData.course}
             onChange={handleChange}
             error={errors.course}
-            helperText={errors.course && "Course is required"}
           />
-          <div className="w-full mt-4">
+          <div className="w-full mt-1">
             <Button
-              sx={{ width: "100%", height: 50 }}
+              sx={{ width: "100%", height: 40 }}
               variant="contained"
               type="submit"
             >

@@ -24,6 +24,7 @@ export default function MentorCard({ data }) {
   };
   return (
     <Card
+     className="rounded-e-xl rounded-ss-xl overflow-hidden"
       sx={{
         width: 320,
         maxWidth: "100%",
