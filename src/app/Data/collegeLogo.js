@@ -97,6 +97,7 @@ export const collegeLogo = [
     logoimg: "/collegeLogoimage/uttaranchal.webp",
     collegename: "Uttaranchal University Online",
     Offeredcourse: 3,
+    route:'about-university/uttaranchal_university_online'
   },
   {
     logoimg: "/collegeLogoimage/shoolini.webp",

@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 const MentorComp = () => {
   return (
-    <div className='relative lg:h-[700px] h-[50vh]  mt-20 w-screen bg-slate-400'>
+    <div className='relative lg:h-[700px] h-[70vh]  mt-20 w-screen bg-slate-400'>
      <Image width={1580} alt="University Image" height={720} className='h-full object-cover' src='/image/mentorbg.png'></Image>
        <div className=' absolute flex flex-col items-center bottom-20 w-[100%] '>
         <h2 className=' lg:text-4xl text-xl text-white'>Get the best guidance from experts</h2>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { ImageFormat, ListFormat, ParagraphField, TableField } from "@/app/Components/Formats";
+import ApplyFormWIthoutImgH from "@/app/Components/ApplyFormWIthoutImgH";
 const Footer = dynamic (()=>import('@/app/Components/Footer'))
 const Blogpage = ({ params }) => {
   const [blog, setBlog] = useState();
@@ -55,7 +56,7 @@ const Blogpage = ({ params }) => {
               </div>
             ))
           }
-
+           <ApplyFormWIthoutImgH/>
          </div>
         </div>
       )}

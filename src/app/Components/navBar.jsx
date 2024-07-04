@@ -1,14 +1,17 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CgDetailsMore } from "react-icons/cg";
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { Button, Drawer } from '@mui/material';
+import { RxCross1 } from 'react-icons/rx';
 
 const NavBar = () => {
   const path =usePathname()
+  const [mobNavOpen,setmobNavOpen]=useState(false)
   gsap.registerPlugin(ScrollTrigger);
   useEffect(()=>{
     gsap.to('.mainNav',{
@@ -21,21 +24,44 @@ const NavBar = () => {
       }
     })
   })
+  function OpenNav(){
+    if (mobNavOpen === false) {
+      setmobNavOpen(true);
+    } else {
+      setmobNavOpen(false);
+    }
+  }
+  useEffect(()=>{
+    setmobNavOpen(false)
+  },[path])
   return (
-   <div className={`bg-white mainNav w-[100vw] left-0 lg:h-20 h-16 z-50 fixed top-0 flex justify-between items-center lg:px-10 px-6`}>
-    <div className='flex items-center gap-1'><Image priority width={120} height={70} className='w-auto h-auto rounded-full' src='/logo/College counsel.png' alt="College Counsel" /> <p className=' lg:text-md text-sm '>
+   <div className={`bg-white mainNav w-[100vw] left-0 lg:h-20 h-16 z-50 fixed top-0 flex justify-between items-center pr-2 lg:px-10`}>
+    <div className='flex items-center gap-1'><Image priority width={120} height={70} className='lg:w-auto h-20 object-contain lg:h-auto  rounded-full' src='/logo/College counsel.png' alt="College Counsel" /> <p className=' lg:text-md text-sm '>
     #ShikshaSeHiMilegiManzil
       </p> </div>
     <div className='lg:flex gap-5 hidden  min-w-[20%] '>
     <Link href='/'><button className={`text-primary text-lg font-semibold cursor-pointer rounded-e-full rounded-ss-full px-3 py-[1px] ${(path=='/')&&'bg-primary text-white'}`}>Home</button></Link>
     <Link href='/apply'  prefetch={true} ><button className={`text-primary text-lg font-semibold cursor-pointer rounded-e-full rounded-ss-full py-[1px] px-3  ${(path=='/apply')&&'bg-primary text-white'}`}>Apply</button></Link>
-    {/* <Link href='/apply'> <button className='text-white w-24 font-semibold cursor-pointer rounded-full px-3 py-1 bg-primary lg:hover:bg-hover'>UG</button></Link>
-    <Link href='/apply'> <button className='text-white w-24 font-semibold cursor-pointer rounded-full px-3 py-1 bg-primary lg:hover:bg-hover'>PG</button></Link> */}
     <Link href='/about'  prefetch={true} > <button className={`text-primary text-lg font-semibold cursor-pointer rounded-e-full rounded-ss-full px-3 py-[1px] ${(path=='/about')&&'bg-primary text-white'}`}>About us</button></Link>
     <Link href='/blog'  prefetch={true} > <button className={`text-primary text-lg font-semibold cursor-pointer rounded-e-full rounded-ss-full px-3 py-[1px] ${(path=='/blog')&&'bg-primary text-white'}`}>Blogs</button></Link>
-     {/* <button className='text-white w-24 font-semibold cursor-pointer rounded-full px-3 py-1 bg-red-800 lg:hover:bg-red-500'>College</button> */}
     </div>
-    <CgDetailsMore className='text-4xl lg:hidden'/>
+    <CgDetailsMore onClick={OpenNav} className='text-4xl lg:hidden'/>
+    <Drawer
+      anchor={'right'}
+      open={mobNavOpen}
+      onClose={OpenNav}
+    >
+       <RxCross1
+            onClick={OpenNav}
+            className=" text-3xl font-bold cursor-pointer absolute text-black right-4 top-4"
+          />
+    <div className='w-60 flex flex-col p-12'>
+    <Link href='/'><Button variant='text' className='text-primary text-lg font-semibold'>Home</Button></Link>
+    <Link href='/apply'  prefetch={true} ><Button variant='text' className='text-primary text-lg font-semibold'>Apply</Button></Link>
+    <Link href='/about'  prefetch={true} ><Button variant='text' className='text-primary text-lg font-semibold'>About us</Button></Link>
+    <Link href='/blog'  prefetch={true} ><Button variant='text' className='text-primary text-lg font-semibold'>Blog</Button></Link>
+    </div>
+    </Drawer>
    </div>
   )
 }

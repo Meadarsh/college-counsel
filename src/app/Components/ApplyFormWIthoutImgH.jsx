@@ -89,7 +89,7 @@ const ApplyFormWIthoutImgH = () => {
   }
 
   return (
-    <div className="lg:w-2/3 w-[80%] mt-32 z-50 lg:mt-20 lg:h-[80vh] flex flex-col overflow-hidden">
+    <div className="lg:w-2/3 w-[80%] mt-32 z-50 lg:mt-12 lg:h-[60vh] flex flex-col overflow-hidden">
      
         
         <div>

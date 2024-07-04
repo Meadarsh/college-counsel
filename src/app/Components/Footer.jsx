@@ -17,7 +17,7 @@ const Footer = () => {
            <p className='hidden'>click here for whatsapp account</p>
            </a>
             <FaFacebook/>
-            <a href="https://www.instagram.com/college_counsel/" target="_blank"><p className='hidden'>click here for instagram account</p><FaInstagram/></a>
+            <a href="https://www.instagram.com/collegecounselofficial/" target="_blank"><p className='hidden'>click here for instagram account</p><FaInstagram/></a>
             <RiTwitterXLine/>
         </div>
 

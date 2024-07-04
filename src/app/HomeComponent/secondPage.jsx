@@ -65,7 +65,7 @@ function Selection(e){
             Browse Courses
           </h1>
         </div>
-        <div className='lg:min-h-[10vh] h-[7vh] w-full justify-center lg:gap-7 gap-2 items-center flex-wrap flex mt-[1vh]'>
+        <div className='lg:min-h-[10vh] h-[7vh] w-full overflow-x-hidden justify-center lg:gap-7 gap-2 items-center flex-wrap flex mt-[1vh]'>
     <div onClick={()=>Selection('UG Courses')} className={`button font-semibold ${selectedCourse==='UG Courses'&&'bg-primary text-white'} lg:mt-0  cursor-pointer h-8 lg:h-12 border lg:hover:bg-hover  lg:hover:text-white  border-hover  lg:px-5 px-2 flex items-center justify-center lg:text-xl text-sm rounded-e-full rounded-ss-full `}>
         <h2>UG Courses</h2>
      </div>
