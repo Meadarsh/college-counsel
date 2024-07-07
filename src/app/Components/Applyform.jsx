@@ -102,7 +102,7 @@ const ApplyformComp = ({ handleClose }) => {
   }
 
   return (
-    <div className="lg:w-2/3 w-[90%] mt-24  z-50 h-[80vh] lg:mt-32 lg:h-[60vh] flex rounded-e-full  bg-slate-100  overflow-hidden rounded-ss-full shadow-xl">
+    <div className="lg:w-2/3 w-[90%] mt-10  z-50 h-[80vh] lg:mt-32 lg:h-[60vh] flex rounded-e-full  bg-slate-100  overflow-hidden rounded-ss-full shadow-xl">
       <div className="w-[40%] hidden lg:flex justify-center">
         <Image
          height={700}

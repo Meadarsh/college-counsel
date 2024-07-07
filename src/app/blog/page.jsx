@@ -9,6 +9,7 @@ import PostCard from "../Components/post-card";
 import PostSearch from "../Components/post-search";
 import PostSort from "../Components/post-sort";
 import CCLoader from "../Components/CCLoader";
+import AutoPopup from "../Components/AutoPopup";
 
 const Blogs = () => {
   
@@ -34,6 +35,7 @@ const Blogs = () => {
   return (
    
      <>
+      <AutoPopup />
     <Link href='apply'><Applyside/></Link>
       <div className="w-full h-full relative pt-24">
         <Container>
