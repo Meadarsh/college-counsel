@@ -56,8 +56,8 @@ const Blogpage = ({ params }) => {
               </div>
             ))
           }
-           <ApplyFormWIthoutImgH/>
          </div>
+         <ApplyFormWIthoutImgH/>
         </div>
       )}
       <Footer/>
