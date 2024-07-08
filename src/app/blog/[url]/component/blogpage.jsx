@@ -7,9 +7,11 @@ import dynamic from "next/dynamic";
 import { ImageFormat, ListFormat, ParagraphField, TableField } from "@/app/Components/Formats";
 import ApplyFormWIthoutImgH from "@/app/Components/ApplyFormWIthoutImgH";
 import AutoPopup from "@/app/Components/AutoPopup";
+const LatestBlogList = dynamic (()=>import('@/app/Components/LatestBlogList'))
 const Footer = dynamic (()=>import('@/app/Components/Footer'))
 const Blogpage = ({ params }) => {
-  const [blog, setBlog] = useState();
+  const [blog, setBlog] = useState([]);
+  const [latestList, setLatestList] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -19,7 +21,8 @@ const Blogpage = ({ params }) => {
         const data = await blogdata.json();
         if(blogdata.ok){
         setLoading(false);
-        setBlog(data);
+        setBlog(data?.specificBlog);
+        setLatestList(data?.latestBlogs)
         }
       } catch (error) {
         console.error(error);
@@ -34,7 +37,8 @@ const Blogpage = ({ params }) => {
       {loading ? (
         <CCLoader />
       ) : (
-        <div className=" university-ab blogpage flex flex-col w-full mt-20  p-2 lg:py-10 lg:px-20 gap-10 bg-white ">
+        <div className=" relative university-ab blogpage flex flex-col w-full mt-20  p-2 lg:py-10 lg:px-16 gap-10"> 
+          <div className="w-full flex gap-4">
           <div className="lg:w-[75%] w-full">
             <Image
               width={1200}
@@ -58,6 +62,10 @@ const Blogpage = ({ params }) => {
               </div>
             ))
           }
+         </div>
+         <div className="w-[30%]">
+            <LatestBlogList List={latestList}/>
+         </div>
          </div>
          <ApplyFormWIthoutImgH/>
         </div>

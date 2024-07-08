@@ -89,6 +89,7 @@ const ApplyformComp = ({ handleClose }) => {
     if (result.status) {
       setFormData(InitialState);
       StoreInLocal()
+      handleClose()
       toast.success('Submitted successfully', {
         autoClose: 2000, 
       });
