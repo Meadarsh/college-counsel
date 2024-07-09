@@ -63,7 +63,7 @@ const Blogpage = ({ params }) => {
             ))
           }
          </div>
-         <div className="w-[30%]">
+         <div className="w-[30%] hidden lg:block">
             <LatestBlogList List={latestList}/>
          </div>
          </div>

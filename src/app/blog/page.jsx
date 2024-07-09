@@ -10,6 +10,7 @@ import PostSearch from "../Components/post-search";
 import PostSort from "../Components/post-sort";
 import CCLoader from "../Components/CCLoader";
 import AutoPopup from "../Components/AutoPopup";
+import Head from "next/head";
 
 const Blogs = () => {
   
@@ -35,6 +36,10 @@ const Blogs = () => {
   return (
    
      <>
+      <Head>
+                <link rel="canonical" href={"https://collegecounsel.co.in/blog"} />
+                <title>Latest blogs for better guidance - College Counsel</title>
+            </Head>
       <AutoPopup />
     <Link href='apply'><Applyside/></Link>
       <div className="w-full h-full relative pt-24">
@@ -64,7 +69,7 @@ const Blogs = () => {
             />
           </Stack>
 
-          {loading ? <CCLoader /> :<> {blogs&&<Grid container spacing={3}>
+          {loading ? <CCLoader/> :<> {blogs&&<Grid container spacing={3}>
             {(shortBlog==='oldest')&&blogs.map((post, index) => (
              <PostCard key={post.id} post={post}  />
             ))}

@@ -4,10 +4,15 @@ import ListWithBlueTick from '../Components/ListWithBlueTick'
 import { List } from '@mui/material'
 import Footer from '../Components/Footer'
 import Image from 'next/image'
+import Head from 'next/head'
 
 const Page = () => {
   return (
     <>
+     <Head>
+                <link rel="canonical" href={"https://collegecounsel.co.in/about"} />
+                <title>Know about College Counsel - College Counsel</title>
+            </Head>
     <div className='mt-20 text-lg p-5 lg:p-10'>
     <Image className=' rounded-xl h-auto' priority alt="College counsel Image" width={1900} height={600}  src="/image/about-img.webp"  />
 
