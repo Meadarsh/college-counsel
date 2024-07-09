@@ -89,7 +89,7 @@ const ApplyformComp = ({ handleClose }) => {
     if (result.status) {
       setFormData(InitialState);
       StoreInLocal()
-      handleClose()
+      if(!(location == "/apply")){ handleClose()}
       toast.success('Submitted successfully', {
         autoClose: 2000, 
       });

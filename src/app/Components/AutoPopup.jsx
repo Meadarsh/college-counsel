@@ -1,3 +1,4 @@
+"use client"
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import ApplyForm from '../apply/page';
 
@@ -9,7 +10,7 @@ const AutoPopup = () => {
       return new Date(dateString);
     }
     
-    const [showForm, setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState(true);
     
     const isExpired = useCallback((storedDateString, currentDate) => {
       const storedDate = parseDateString(storedDateString);
@@ -30,7 +31,7 @@ const AutoPopup = () => {
         }
       };
     
-      const timer = setTimeout(checkExpiration, 7000);
+      const timer = setTimeout(checkExpiration, 30000);
     
       return () => clearTimeout(timer);
     }, [showForm, currentDate, isExpired]);
