@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
       <Link rel="canonical" href="https://www.collegecounsel.co.in/" />
+      </Head>
        <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-9CP19VTW20"
             strategy="lazyOnload"
@@ -35,7 +36,7 @@ export default function RootLayout({ children }) {
             `}
           </Script>
      <Script id="messenger-widget-b" defer src="https://cdn.botpenguin.com/website-bot.js" >6647981f07af820cc774bacd,664797f8881a65150d0aa425</Script>
-     </Head>
+    
       <body className={frankRuhlLibre.className}>
        <nav>
         <NavBar/>
