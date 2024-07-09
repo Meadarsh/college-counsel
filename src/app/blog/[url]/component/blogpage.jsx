@@ -29,7 +29,7 @@ const Blogpage = ({ params }) => {
       }
     }
     fetchh();
-  }, [params.id]);
+  }, [params.url]);
 
   return (
     <>

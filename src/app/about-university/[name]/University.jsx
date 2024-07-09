@@ -27,7 +27,7 @@ const Page = ({params}) => {
 
   useEffect(() => {
     fetchUniversity();
-  }, [params]);
+  }, [params.name]);
 
   const [expandCertificate, setExpandCertificate] = useState({
     status: false,
