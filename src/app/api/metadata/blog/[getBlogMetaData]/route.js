@@ -9,9 +9,9 @@ export async function GET(req, { params }) {
             return NextResponse.json({ message: "URL parameter is missing" });
         }
         await connectDb();
-        const blog = await Blogs.findOne({ url: url });
+        const blog = await Blogs.findOne({ url: url },{ _id: 0,meta: 1});
         if (blog) {
-            return NextResponse.json({meta:blog.meta});
+            return NextResponse.json({blog});
         } else {
             return NextResponse.json({ message: "Meta data not found" });
         }

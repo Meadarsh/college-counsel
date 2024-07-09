@@ -5,6 +5,7 @@ import { indianStates } from "../Data/data";
 import { usePathname } from "next/navigation";
 import Loader from "./Loader";
 import { toast } from "react-toastify";
+import { Countries } from "../Data/countrieslist";
 
 const ApplyFormWIthoutImgH = () => {
   const [loading, setLoading] = useState(false);
@@ -48,7 +49,10 @@ const ApplyFormWIthoutImgH = () => {
     setFormData({ ...formData, state: value });
     setErrors({ ...errors, state: !value });
   };
-
+  const handleCountryChange = (_, value) => {
+    setFormData({ ...formData, country: value });
+    setErrors({ ...errors, country: !value });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = {};
@@ -152,7 +156,7 @@ const ApplyFormWIthoutImgH = () => {
               disablePortal
               id="state"
               options={indianStates}
-              sx={{ width: "100%" }}
+              sx={{ width: "50%" }}
               renderInput={(params) => (
                 <TextField
                   error={errors.state}
@@ -164,15 +168,20 @@ const ApplyFormWIthoutImgH = () => {
               value={formData.state}
               onChange={handleStateChange}
             />
-            <TextField
-              sx={{ width: "100%" }}
+            <Autocomplete
+              disablePortal
               id="country"
-              label="Country"
-              variant="outlined"
+              options={Countries}
+              sx={{ width: "50%" }}
+              renderInput={(params) => (
+                <TextField
+                {...params}
+                  error={errors.country}
+                  label="Country"
+                />
+              )}
               value={formData.country}
-              onChange={handleChange}
-              error={errors.country}
-              helperText={errors.country && "Country is required"}
+              onChange={handleCountryChange}
             />
           </div>
           <TextField
