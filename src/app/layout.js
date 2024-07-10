@@ -11,9 +11,13 @@ const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: ["400", "5
 
 export const metadata = {
   title: "College Counsel | Expert Guidance for Your Academic Career",
-  description: "Discover College Counsel, your one-stop solution for navigating higher education! Get expert guidance, comprehensive course selection, and insider knowledge on top universities like Manipal, JAIN, and Amity. Simplify your college application process and boost your confidence with College Counsel's professional courses tailored for students and working professionals. Say goodbye to information overload and make informed decisions about your academic future today!",
+  description: "Discover College Counsel, your one-stop solution for navigating higher education! Get expert guidance, comprehensive course selection, and insider knowledge on top universities like Manipal, JAIN, and Amity.",
   author:'College Counsel',
-  keywords:"College Counsel, college guidance, higher education, undergraduate courses, postgraduate courses, professional courses, Manipal University, JAIN University, Amity University, college application process, college admission, career guide, BA, BCom, BBA, BCA, MA, MCA, MBA, MSc"
+  keywords:"College Counsel, college guidance, higher education, undergraduate courses, postgraduate courses, professional courses, Manipal University, JAIN University, Amity University, college application process, college admission, career guide, BA, BCom, BBA, BCA, MA, MCA, MBA, MSc",
+  ogTitle: "College Counsel | Expert Guidance for Your Academic Career",
+  ogDescription: "Discover College Counsel, your one-stop solution for navigating higher education! Get expert guidance, comprehensive course selection, and insider knowledge on top universities like Manipal, JAIN, and Amity.",
+  ogUrl: "https://collegecounsel.co.in",
+  ogImage: "https://collegecounsel.co.in/logo/DHF.png",
 };
 
 export default function RootLayout({ children }) {
@@ -21,7 +25,32 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
+      <meta name="robots" content="index, follow" />
       <link rel="canonical" href="https://www.collegecounsel.co.in/" />
+      <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "College Counsel",
+            "url": "https://collegecounsel.co.in",
+            "logo": "https://collegecounsel.co.in/logo/cc.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+919569822903", 
+              "contactType": "Customer Service",
+              "areaServed": "IN",
+              "availableLanguage": ["English", "Hindi"]
+            },
+            "sameAs": [
+              "https://www.linkedin.com/company/college-counsel",
+              "https://twitter.com/CollegeCounsel",
+              "https://www.facebook.com/CollegeCounsel",
+              "https://www.instagram.com/collegecounselofficial"
+            ]
+          }
+          `}
+        </script>
       </Head>
        <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-9CP19VTW20"

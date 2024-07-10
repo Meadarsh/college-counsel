@@ -6,7 +6,6 @@ import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { ImageFormat, ListFormat, ParagraphField, TableField } from "@/app/Components/Formats";
 import ApplyFormWIthoutImgH from "@/app/Components/ApplyFormWIthoutImgH";
-import AutoPopup from "@/app/Components/AutoPopup";
 const LatestBlogList = dynamic (()=>import('@/app/Components/LatestBlogList'))
 const Footer = dynamic (()=>import('@/app/Components/Footer'))
 const Blogpage = ({ params }) => {
@@ -33,7 +32,6 @@ const Blogpage = ({ params }) => {
 
   return (
     <>
-    <AutoPopup/>
       {loading ? (
         <CCLoader />
       ) : (

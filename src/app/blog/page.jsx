@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import Stack from "@mui/material/Stack";
 import Container from "@mui/material/Container";
@@ -9,48 +9,45 @@ import PostCard from "../Components/post-card";
 import PostSearch from "../Components/post-search";
 import PostSort from "../Components/post-sort";
 import CCLoader from "../Components/CCLoader";
-import AutoPopup from "../Components/AutoPopup";
 import Head from "next/head";
 
 const Blogs = () => {
-  
-  
   const [blogs, setBlogs] = useState([]);
-  const [shortBlog,setShortBlog]=useState('latest')
-  const [loading,setLoading]=useState(true)
-  const GetBlogs =(async () => {
-    try{
-      const response = await fetch('api/blog/getBlog',{cache:'no-store'});
+  const [shortBlog, setShortBlog] = useState("latest");
+  const [loading, setLoading] = useState(true);
+  const GetBlogs = async () => {
+    try {
+      const response = await fetch("api/blog/getBlog", { cache: "no-store" });
       const data = await response.json();
-      setLoading(false)
+      setLoading(false);
       return setBlogs(data);
     } catch (error) {
       console.error(error);
     }
-  })
-  useEffect(()=>{
-    GetBlogs()
-  },[])
+  };
+  useEffect(() => {
+    GetBlogs();
+  }, []);
 
- 
   return (
-   
-     <>
+    <>
       <Head>
-                <link rel="canonical" href={"https://collegecounsel.co.in/blog"} />
-                <title>Latest blogs for better guidance - College Counsel</title>
-            </Head>
-      <AutoPopup />
-    <Link href='apply'><Applyside/></Link>
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={"https://collegecounsel.co.in/blog"} />
+        <title>Latest blogs for better guidance - College Counsel</title>
+      </Head>
+      <Link href="apply">
+        <Applyside />
+      </Link>
       <div className="w-full h-full relative pt-24">
         <Container>
-        <div className="w-full flex flex-col ">
-        <h1 className="text-3xl font-semibold">Our blogs</h1>
-        <p className="text-primary">
-          Unlocking Boundless Opportunities: Your Path to Online Degrees with
-          College counsel
-        </p>
-      </div>
+          <div className="w-full flex flex-col ">
+            <h1 className="text-3xl font-semibold">Our blogs</h1>
+            <p className="text-primary">
+              Unlocking Boundless Opportunities: Your Path to Online Degrees
+              with College counsel
+            </p>
+          </div>
           <Stack
             mb={5}
             mt={5}
@@ -69,19 +66,31 @@ const Blogs = () => {
             />
           </Stack>
 
-          {loading ? <CCLoader/> :<> {blogs&&<Grid container spacing={3}>
-            {(shortBlog==='oldest')&&blogs.map((post, index) => (
-             <PostCard key={post.id} post={post}  />
-            ))}
+          {loading ? (
+            <CCLoader />
+          ) : (
+            <>
+              {" "}
+              {blogs && (
+                <Grid container spacing={3}>
+                  {shortBlog === "oldest" &&
+                    blogs.map((post, index) => (
+                      <PostCard key={post.id} post={post} />
+                    ))}
 
-            {(shortBlog==='latest')&& [...blogs].reverse().map((post, index) => (
-             <PostCard key={post.id} post={post} />
-            ))}
-          </Grid>}</>}
+                  {shortBlog === "latest" &&
+                    [...blogs]
+                      .reverse()
+                      .map((post, index) => (
+                        <PostCard key={post.id} post={post} />
+                      ))}
+                </Grid>
+              )}
+            </>
+          )}
         </Container>
       </div>
-      </>
-
+    </>
   );
 };
 export default Blogs;

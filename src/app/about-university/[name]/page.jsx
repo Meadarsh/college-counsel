@@ -12,9 +12,9 @@ const Page = async ({ params }) => {
 export async function generateMetadata({ params }) {
   let university
    try {
-     const res = await fetch(`${process.env.BASE_URL}/api/university/${params?.name}`);
+     const res = await fetch(`${process.env.BASE_URL}/api/metadata/university/${params?.name}`);
      const data = await res.json();
-     university= data.meta
+     university= data.university.meta
    } catch (error) {
     console.log(error);
    }
@@ -29,6 +29,7 @@ export async function generateMetadata({ params }) {
         description: university?.description,
         url: `${process.env.BASE_URL}/about-university/${params.name}`,
       },
+      robots: 'index, follow', 
     };
   }
 export default Page;

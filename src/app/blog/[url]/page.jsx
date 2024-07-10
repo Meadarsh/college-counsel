@@ -30,6 +30,7 @@ export async function generateMetadata({ params }) {
       description: blog?.description,
       url: `${process.env.BASE_URL}/blog/${params.url}`,
     },
+    robots: 'index, follow', 
   };
 }
 export default Page

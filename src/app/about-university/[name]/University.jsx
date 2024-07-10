@@ -1,7 +1,6 @@
 "use client";
 
 import ApplyFormWIthoutImgH from "@/app/Components/ApplyFormWIthoutImgH";
-import AutoPopup from "@/app/Components/AutoPopup";
 import CCLoader from "@/app/Components/CCLoader";
 import Footer from "@/app/Components/Footer";
 import {
@@ -49,7 +48,6 @@ const Page = ({ params }) => {
   }
   return (
     <>
-      <AutoPopup />
       {loading ? (
         <CCLoader />
       ) : (

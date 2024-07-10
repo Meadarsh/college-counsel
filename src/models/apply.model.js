@@ -3,9 +3,6 @@ const Apply = new Schema({
     name:String,
     email: String, 
     phonenumber:String,
-    city: String,   
-    state:String, 
-    country:String,
     course:String
  }, { timestamps: true },)
 

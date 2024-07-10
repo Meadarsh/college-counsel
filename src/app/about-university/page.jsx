@@ -12,6 +12,7 @@ const Page = () => {
           rel="canonical"
           href={"https://collegecounsel.co.in/about-university"}
         />
+        <meta name="robots" content="index, follow" />
         <title>Top universities for online degree - College Counsel</title>
       </Head>
       <div className=" flex flex-col mt-[8vh] lg:mt-[15vh] gap-4 items-center">

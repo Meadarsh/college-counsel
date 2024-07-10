@@ -51,42 +51,42 @@ const MentorComp = () => {
 }
 const mentorDetail=[
   {
-  name:'Karan Pandey',
+  name:'Karan',
   university:'Uttaranchal University',
   number:9569822903,
   exp:2,
   img:'/mentorImg/uttaranchal.png'
 },
   {
-  name:'Arjun Shukla',
+  name:'Arjun',
   university:'Manipal University',
   number:9560673252,
   exp:1,
   img:'/mentorImg/manipal.png'
 },
   {
-  name:'Adarsh Yadav',
+  name:'Adarsh',
   university:'Jain University',
   number:6392832171,
   exp:3,
   img:'/mentorImg/jain.png'
 },
   {
-  name:'Kamlesh Pandey',
+  name:'Kamlesh',
   university:'Amity University',
   number:9560673252,
   exp:2,
   img:'/mentorImg/amity.png'
 },
   {
-  name:'Vikshit Sharma',
+  name:'Vikshit',
   university:'Andhra University',
   number:7275610081,
   exp:4,
   img:'/mentorImg/andhra.png'
 },
   {
-  name:'Akash Sharma',
+  name:'Akash',
   university:'Jain University',
   number:9560673252,
   exp:3,
