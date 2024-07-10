@@ -6,7 +6,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Script from "next/script";
 import Head from "next/head";
-import Link from "next/link";
 import AutoPopup from "./Components/AutoPopup";
 const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
@@ -22,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-      <Link rel="canonical" href="https://www.collegecounsel.co.in/" />
+      <link rel="canonical" href="https://www.collegecounsel.co.in/" />
       </Head>
        <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-9CP19VTW20"
