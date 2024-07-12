@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
       <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://collegecounsel.co.in/" />
+      <link rel="canonical" href="https://collegecounsel.co.in" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content={metadata.ogTitle} />
         <meta property="og:description" content={metadata.ogDescription} />
