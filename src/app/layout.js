@@ -12,7 +12,7 @@ const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: ["400", "5
 
 export const metadata = {
   title: "College Counsel | Expert Guidance for Your Academic Career",
-  description: "Discover College Counsel, your one-stop solution for navigating higher education! Get expert guidance, comprehensive course selection, and insider knowledge on top universities like Manipal, JAIN, and Amity.",
+  description: "Get admission in your dream University and course through College Counsel and get expert counselling and guidance along with scholarship options.",
   author: 'College Counsel',
   keywords: "College Counsel, college guidance, higher education, undergraduate courses, postgraduate courses, professional courses, Manipal University, JAIN University, Amity University, college application process, college admission, career guide, BA, BCom, BBA, BCA, MA, MCA, MBA, MSc",
   ogTitle: "College Counsel | Expert Guidance for Your Academic Career",
