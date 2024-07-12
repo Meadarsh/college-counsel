@@ -12,12 +12,18 @@ const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: ["400", "5
 export const metadata = {
   title: "College Counsel | Expert Guidance for Your Academic Career",
   description: "Discover College Counsel, your one-stop solution for navigating higher education! Get expert guidance, comprehensive course selection, and insider knowledge on top universities like Manipal, JAIN, and Amity.",
-  author:'College Counsel',
-  keywords:"College Counsel, college guidance, higher education, undergraduate courses, postgraduate courses, professional courses, Manipal University, JAIN University, Amity University, college application process, college admission, career guide, BA, BCom, BBA, BCA, MA, MCA, MBA, MSc",
+  author: 'College Counsel',
+  keywords: "College Counsel, college guidance, higher education, undergraduate courses, postgraduate courses, professional courses, Manipal University, JAIN University, Amity University, college application process, college admission, career guide, BA, BCom, BBA, BCA, MA, MCA, MBA, MSc",
   ogTitle: "College Counsel | Expert Guidance for Your Academic Career",
   ogDescription: "Discover College Counsel, your one-stop solution for navigating higher education! Get expert guidance, comprehensive course selection, and insider knowledge on top universities like Manipal, JAIN, and Amity.",
   ogUrl: "https://collegecounsel.co.in",
   ogImage: "https://collegecounsel.co.in/logo/DHF.png",
+  twitterCard: "summary_large_image",
+  twitterSite: "@collegecounse1",
+  twitterCreator: "@collegecounse1",
+  twitterTitle: "College Counsel | Expert Guidance for Your Academic Career",
+  twitterDescription: "Discover College Counsel, your one-stop solution for navigating higher education! Get expert guidance, comprehensive course selection, and insider knowledge on top universities like Manipal, JAIN, and Amity.",
+  twitterImage: "https://collegecounsel.co.in/logo/DHF.png"
 };
 
 export default function RootLayout({ children }) {
@@ -27,31 +33,40 @@ export default function RootLayout({ children }) {
       <Head>
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href="https://www.collegecounsel.co.in/" />
-      <script type="application/ld+json">
-          {`
-          {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "College Counsel",
-            "url": "https://collegecounsel.co.in",
-            "logo": "https://collegecounsel.co.in/logo/cc.png",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+919569822903", 
-              "contactType": "Customer Service",
-              "areaServed": "IN",
-              "availableLanguage": ["English", "Hindi"]
-            },
-            "sameAs": [
-              "https://www.linkedin.com/company/college-counsel",
-              "https://twitter.com/CollegeCounsel",
-              "https://www.facebook.com/CollegeCounsel",
-              "https://www.instagram.com/collegecounselofficial"
-            ]
-          }
-          `}
-        </script>
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content={metadata.ogTitle} />
+        <meta property="og:description" content={metadata.ogDescription} />
+        <meta property="og:url" content={metadata.ogUrl} />
+        <meta property="og:image" content={metadata.ogImage} />
+        <meta name="twitter:card" content={metadata.twitterCard} />
+        <meta name="twitter:site" content={metadata.twitterSite} />
+        <meta name="twitter:creator" content={metadata.twitterCreator} />
+        <meta name="twitter:title" content={metadata.twitterTitle} />
+        <meta name="twitter:description" content={metadata.twitterDescription} />
+        <meta name="twitter:image" content={metadata.twitterImage} />
       </Head>
+      <Script type="application/ld+json" id="organization-schema">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "College Counsel",
+          "url": "https://collegecounsel.co.in",
+          "logo": "https://collegecounsel.co.in/logo/cc.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+919569822903",
+            "contactType": "Customer Service",
+            "areaServed": "IN",
+            "availableLanguage": ["English", "Hindi"]
+          },
+          "sameAs": [
+            "www.linkedin.com/in/college-counsel",
+            "https://twitter.com/CollegeCounsel",
+            "https://www.facebook.com/CollegeCounsel",
+            "https://www.instagram.com/collegecounselofficial"
+          ]
+        })}
+      </Script>
        <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-9CP19VTW20"
             strategy="lazyOnload"

@@ -81,7 +81,7 @@ const ApplyFormWIthoutImgH = () => {
   return (
     <div className="lg:w-2/3 w-[80%] mt-32 z-50 lg:mt-12 lg:h-[60vh] flex flex-col overflow-hidden">
         <div>
-        <h1 className=" text-lg md:text-xl lg:text-2xl font-semibold">Welcome to College Counsel- Fill this Application Form to Assist you better</h1></div>
+        <h3 className=" text-lg md:text-xl lg:text-2xl font-semibold">Welcome to College Counsel- Fill this Application Form to Assist you better</h3></div>
         <form
           className="w-full mt-4 lg:mt-10 flex flex-col gap-3"
           onSubmit={handleSubmit}

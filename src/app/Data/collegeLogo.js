@@ -40,6 +40,8 @@ export const collegeLogo = [
     logoimg: "/collegeLogoimage/upes.webp",
     collegename: "UPES Online",
     Offeredcourse: 2,
+    route:'about-university/upes-online'
+
   },
   {
     logoimg: "/collegeLogoimage/xlri.webp",
@@ -60,7 +62,7 @@ export const collegeLogo = [
     logoimg: "/collegeLogoimage/chandigarh.webp",
     collegename: "Chandigarh University Online",
     Offeredcourse: 48,
-    route:'about-university/'
+    route:'about-university/chandigarh-university-online'
   },
   {
     logoimg: "/collegeLogoimage/svu.webp",

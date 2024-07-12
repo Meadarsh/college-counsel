@@ -10,7 +10,7 @@ const AutoPopup = () => {
       return new Date(dateString);
     }
     
-    const [showForm, setShowForm] = useState(true);
+    const [showForm, setShowForm] = useState(false);
     
     const isExpired = useCallback((storedDateString, currentDate) => {
       const storedDate = parseDateString(storedDateString);
