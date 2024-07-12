@@ -94,4 +94,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-export const config = { amp: 'hybrid' };

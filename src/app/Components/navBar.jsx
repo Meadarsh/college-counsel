@@ -78,5 +78,5 @@ const NavBar = () => {
    </>
   )
 }
-
+export const config = { amp: 'hybrid' };
 export default NavBar
