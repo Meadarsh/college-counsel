@@ -8,8 +8,11 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Button, Drawer } from '@mui/material';
 import { RxCross1 } from 'react-icons/rx';
+import { useAmp } from 'next/amp';
+import Head from 'next/head';
 
 const NavBar = () => {
+  const isAmp = useAmp();
   const path =usePathname()
   const [mobNavOpen,setmobNavOpen]=useState(false)
   gsap.registerPlugin(ScrollTrigger);
@@ -35,8 +38,17 @@ const NavBar = () => {
     setmobNavOpen(false)
   },[path])
   return (
+  <>
+  <Head>
+  {isAmp && <link rel="amphtml" href="https://collegecounsel.co.in/amp" />}
+  </Head>
    <div className={`bg-white mainNav w-[100vw] left-0 lg:h-20 h-16 z-50 fixed top-0 flex justify-between items-center pr-2 lg:px-10`}>
-    <div className='flex items-center gap-1'><Image priority width={120} height={70} className='lg:w-auto h-20 object-contain lg:h-auto  rounded-full' src='/logo/College counsel.png' alt="College Counsel" /> <p className=' lg:text-md text-sm '>
+    <div className='flex items-center gap-1'>
+    {isAmp ? (
+          <amp-img src="/public/logo.png" className='lg:w-auto h-20 object-contain lg:h-auto ' width="200" height="50" layout="responsive" alt="College Counsel Logo" />
+        ) : (
+          <Image priority width={120} height={70} className='lg:w-auto h-20 object-contain lg:h-auto ' src='/logo/College counsel.png' alt="College Counsel" />        )}
+      <p className=' lg:text-md text-sm '>
     #ShikshaSeHiMilegiManzil
       </p> </div>
     <div className='lg:flex gap-5 hidden  min-w-[20%] '>
@@ -63,6 +75,7 @@ const NavBar = () => {
     </div>
     </Drawer>
    </div>
+   </>
   )
 }
 

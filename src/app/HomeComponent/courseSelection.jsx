@@ -39,7 +39,7 @@ const CourseSelection = ({ course }) => {
               selectedKey === key && "bg-primary text-white"
             } font-bold border-primary cursor-pointer justify-center rounded-e-full rounded-ss-full w-16 lg:w-36 border py-1 lg:py-3`}
           >
-            <h3>{key}</h3>
+            <h6>{key}</h6>
           </div>
         ))}
       </div>
@@ -59,9 +59,9 @@ const OfferingCollegesLIst = ({ college }) => {
       {college?.map((college,ind) => (
         <div key={ind} className="flex bg-white border w-32 lg:w-40 rounded-lg items-center text-nowrap overflow-hidden flex-col  justify-center p-2 border-primary">
           <Image width={80} alt={'college image'} height={50} className="w-auto h-auto" src={college.img} />
-          <p className="text-ellipsis w-[100%] overflow-hidden whitespace-nowrap">
+          <h4 className="text-ellipsis w-[100%] overflow-hidden whitespace-nowrap">
             {college.name}
-          </p>
+          </h4>
         </div>
       ))}
     </div>

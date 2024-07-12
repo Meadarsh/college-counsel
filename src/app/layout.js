@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Script from "next/script";
 import Head from "next/head";
 import AutoPopup from "./Components/AutoPopup";
+import { useAmp } from "next/amp";
 const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata = {
@@ -80,7 +81,6 @@ export default function RootLayout({ children }) {
             `}
           </Script>
      <Script id="messenger-widget-b" defer src="https://cdn.botpenguin.com/website-bot.js" >6647981f07af820cc774bacd,664797f8881a65150d0aa425</Script>
-    
       <body className={frankRuhlLibre.className}>
       <ThemeProvider>
       <ToastContainer/>
@@ -94,3 +94,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+export const config = { amp: 'hybrid' };
