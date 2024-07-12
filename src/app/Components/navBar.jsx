@@ -37,6 +37,7 @@ const NavBar = () => {
   useEffect(()=>{
     setmobNavOpen(false)
   },[path])
+  console.log(isAmp);
   return (
   <>
   <Head>
@@ -45,9 +46,9 @@ const NavBar = () => {
    <div className={`bg-white mainNav w-[100vw] left-0 lg:h-20 h-16 z-50 fixed top-0 flex justify-between items-center pr-2 lg:px-10`}>
     <div className='flex items-center gap-1'>
     {isAmp ? (
-          <amp-img src="/public/logo.png" className='lg:w-auto h-20 object-contain lg:h-auto ' width="200" height="50" layout="responsive" alt="College Counsel Logo" />
+          <amp-img src="/logo/College counsel.webp" className='lg:w-auto h-20 w-auto object-contain lg:h-auto ' width="200" height="50" layout="responsive" alt="College Counsel Logo" />
         ) : (
-          <Image priority width={120} height={70} className='lg:w-auto h-20 object-contain lg:h-auto ' src='/logo/College counsel.png' alt="College Counsel" />        )}
+          <Image priority width={120} height={70} className='lg:w-auto h-20 w-auto object-contain lg:h-auto ' src='/logo/College counsel.webp' alt="College Counsel" />        )}
       <p className=' lg:text-md text-sm '>
     #ShikshaSeHiMilegiManzil
       </p> </div>

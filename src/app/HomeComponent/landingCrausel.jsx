@@ -25,7 +25,7 @@ const LandingCrausel = () => {
         className="mySwiper w-[90%] mx-[5%] relative mt-20 mb-12 rounded-e-full overflow-hidden rounded-ss-full flex justify-center"
       >
         <SwiperSlide className='w-[100vw]'>
-            <Image className='w-[100vw]' priority="true" alt="College counsel Image" width={2000} height={600}  src="/homePage/landingCrausel/1.webp"  />
+            <Image className='w-[100vw]' priority alt="College counsel Image" width={2000} height={600}  src="/homePage/landingCrausel/1.webp"  />
         </SwiperSlide>
         <SwiperSlide>
             <Image  alt="About cc Image" width={2100} height={600}  src="/homePage/landingCrausel/2.webp"  />

@@ -56,7 +56,7 @@ function Selection(e){
         modules={[Pagination,Autoplay, Navigation]}
         className="mySwiper w-[80%] flex justify-center"
       >
-        {HomepageCrausel.map((url,index)=>(<SwiperSlide priority={index<3}  key={index}><Image width={600} height={400} src={url} alt="Benifits of  cc" /></SwiperSlide>))}
+        {HomepageCrausel.map((url,index)=>(<SwiperSlide priority  key={index}><Image width={600} height={400} src={url} alt="Benifits of  cc" /></SwiperSlide>))}
         
       </Swiper>
      </div>

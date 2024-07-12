@@ -1,9 +1,9 @@
 export const HomepageCrausel = [
-  "/homePage/carausel/1.png",
-  "/homePage/carausel/2.png",
-  "/homePage/carausel/3.png",
-  "/homePage/carausel/4.png",
-  "/homePage/carausel/5.png",
+  "/homePage/carausel/1.webp",
+  "/homePage/carausel/2.webp",
+  "/homePage/carausel/3.webp",
+  "/homePage/carausel/4.webp",
+  "/homePage/carausel/5.webp",
 ];
 
 export const coursesName = [
@@ -283,6 +283,7 @@ export const AccordionData = [
 ];
 
 export const CoursesList = [
+  "",
   "Other",
   "Bachelor of Arts (B.A.)",
   "Bachelor of Science (B.Sc.)",
