@@ -10,8 +10,17 @@ import { Button, Drawer } from '@mui/material';
 import { RxCross1 } from 'react-icons/rx';
 import { useAmp } from 'next/amp';
 import Head from 'next/head';
+import { cn } from '@/lib/utils';
 
 const NavBar = () => {
+  const pathname =usePathname()
+  const Links =[
+    {href:'/',name:'Home'},
+    {href:'/apply',name:'Apply'},
+    {href:'/about',name:'About us'},
+    {href:'/blog',name:'Blogs'},
+
+  ]
   const isAmp = useAmp();
   const path =usePathname()
   const [mobNavOpen,setmobNavOpen]=useState(false)
@@ -37,7 +46,6 @@ const NavBar = () => {
   useEffect(()=>{
     setmobNavOpen(false)
   },[path])
-  console.log(isAmp);
   return (
   <>
   <Head>
@@ -53,11 +61,21 @@ const NavBar = () => {
     #ShikshaSeHiMilegiManzil
       </p> </div>
     <div className='lg:flex gap-5 hidden  min-w-[20%] '>
-    <Link href='/'><button className={`text-primary text-lg font-semibold cursor-pointer rounded-e-full rounded-ss-full px-3 py-[1px] ${(path=='/')&&'bg-primary text-white'}`}>Home</button></Link>
-    <Link href='/apply'  prefetch={true} ><button className={`text-primary text-lg font-semibold cursor-pointer rounded-e-full rounded-ss-full py-[1px] px-3  ${(path=='/apply')&&'bg-primary text-white'}`}>Apply</button></Link>
-    <Link href='/about'  prefetch={true} > <button className={`text-primary text-lg font-semibold cursor-pointer rounded-e-full rounded-ss-full px-3 py-[1px] ${(path=='/about')&&'bg-primary text-white'}`}>About us</button></Link>
-    <Link href='/blog'  prefetch={true} > <button className={`text-primary text-lg font-semibold cursor-pointer rounded-e-full rounded-ss-full px-3 py-[1px] ${(path=='/blog')&&'bg-primary text-white'}`}>Blogs</button></Link>
-    </div>
+    {Links.map((example, index) => (
+            <Link
+              href={example.href}
+              key={example.href}
+              className={cn(
+                "flex h-7 items-center justify-center rounded-full px-4 text-center text-lg transition-colors hover:text-primary",
+                pathname === example.href ||
+                  (index === 0 && pathname === "/")
+                  ? "bg-muted font-medium text-primary"
+                  : "text-muted-foreground"
+              )}
+            >
+              {example.name}
+            </Link>
+          ))}  </div>
     <CgDetailsMore onClick={OpenNav} className='text-4xl lg:hidden'/>
     <Drawer
       anchor={'right'}

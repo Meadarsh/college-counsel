@@ -1,6 +1,5 @@
 import React from 'react'
 import FormatOfUniPage from './University';
-import { AboutCollege } from '@/app/Data/aboutCollege';
 
 const Page = async ({ params }) => {
 

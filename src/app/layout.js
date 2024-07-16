@@ -8,6 +8,7 @@ import Script from "next/script";
 import Head from "next/head";
 import AutoPopup from "./Components/AutoPopup";
 import { useAmp } from "next/amp";
+import Footer from "./Components/Footer";
 const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata = {
@@ -84,11 +85,16 @@ export default function RootLayout({ children }) {
       <body className={frankRuhlLibre.className}>
       <ThemeProvider>
       <ToastContainer/>
-       <nav>
+        <header>
+        <nav>
         <NavBar/>
        </nav>
-       <AutoPopup/>
-          { children }
+        </header>
+       {/* <AutoPopup/> */}
+        { children }
+         <footer>
+         <Footer/>
+         </footer>
           </ThemeProvider>
           </body>
     </html>

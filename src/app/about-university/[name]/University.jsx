@@ -137,7 +137,6 @@ const Page = ({ params }) => {
               <div className="w-full flex items-center justify-center">
                 <ApplyFormWIthoutImgH />
               </div>
-              <Footer />
             </div>
           ) : (
             <></>
