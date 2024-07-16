@@ -1,7 +1,6 @@
 import { Frank_Ruhl_Libre } from "next/font/google";
 import "./globals.css";
 import NavBar from "./Components/navBar";
-import ThemeProvider from "./theme";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Script from "next/script";
@@ -83,7 +82,6 @@ export default function RootLayout({ children }) {
           </Script>
      <Script id="messenger-widget-b" defer src="https://cdn.botpenguin.com/website-bot.js" >6647981f07af820cc774bacd,664797f8881a65150d0aa425</Script>
       <body className={frankRuhlLibre.className}>
-      <ThemeProvider>
       <ToastContainer/>
         <header>
         <nav>
@@ -95,7 +93,6 @@ export default function RootLayout({ children }) {
          <footer>
          <Footer/>
          </footer>
-          </ThemeProvider>
           </body>
     </html>
   );

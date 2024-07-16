@@ -1,6 +1,5 @@
 import React from 'react'
 import { collegeLogo } from '../Data/collegeLogo'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { HoverEffect } from '@/components/ui/card-hover-effect'
@@ -12,6 +11,7 @@ const CollegeBoard = () => {
        <div className='flex flex-wrap gap-4 justify-center'>
        <HoverEffect items={collegeLogo}/>
       </div>
+      <Link className='ml-auto mr-28 -mt-6' href={'about-university'}><Button varient="destructive" className="text-xl font-normal">MORE UNIVERSITIES</Button></Link>
     </div>
   )
 }

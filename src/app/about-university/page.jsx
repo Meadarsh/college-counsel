@@ -1,7 +1,6 @@
 import React from "react";
 import { collegeLogo } from "../Data/collegeLogo";
 import Head from "next/head";
-import { InterNational } from "../HomeComponent/International";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 const Page = () => {
@@ -22,7 +21,7 @@ const Page = () => {
         <div className="flex flex-wrap gap-4 justify-center">
         <HoverEffect items={collegeLogo}/>
         </div>
-        <div className="w-full flex justify-center"><InterNational/></div>
+        {/* <div className="w-full flex justify-center"><InterNational/></div> */}
       </div>
     </>
   );

@@ -70,7 +70,7 @@ const NavBar = () => {
                 pathname === example.href ||
                   (index === 0 && pathname === "/")
                   ? "bg-muted font-medium text-primary"
-                  : "text-muted-foreground"
+                  : "text-black"
               )}
             >
               {example.name}

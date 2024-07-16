@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && pm2 restart next-app",
-    "vercelbuild": "next build ",
+    "vercel:build": "next build ",
     "start": "next start",
     "lint": "next lint"
   },
