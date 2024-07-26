@@ -28,13 +28,30 @@ const nextConfig = {
       },
     ];
   },
-  webpack(config, { dev }) {
-    // The `dev` variable indicates if the build is for development (true) or production (false)
+  webpack(config, { dev, isServer }) {
     if (!dev) {
-      // Minimize JavaScript and CSS only in production
       config.optimization.minimize = true;
 
-      // CSS Minification
+      config.optimization.minimizer = [
+        new TerserPlugin({
+          terserOptions: {
+            compress: {
+              drop_console: true,
+            },
+          },
+        }),
+        new CssMinimizerPlugin({
+          minimizerOptions: {
+            preset: [
+              'default',
+              {
+                discardComments: { removeAll: true },
+              },
+            ],
+          },
+        }),
+      ];
+
       config.optimization.splitChunks = {
         cacheGroups: {
           styles: {
@@ -45,29 +62,6 @@ const nextConfig = {
           },
         },
       };
-
-      config.optimization.minimizer = [
-        new TerserPlugin({
-          terserOptions: {
-            compress: {
-              drop_console: true,
-            },
-          },
-        }),
-      ];
-
-      config.optimization.minimizer.push(
-        new CssMinimizerPlugin({
-          minimizerOptions: {
-            preset: [
-              'default',
-              {
-                discardComments: { removeAll: true },
-              },
-            ],
-          },
-        })
-      );
     }
 
     return config;

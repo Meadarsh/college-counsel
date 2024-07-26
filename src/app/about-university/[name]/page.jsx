@@ -29,6 +29,9 @@ export async function generateMetadata({ params }) {
         url: `${process.env.BASE_URL}/about-university/${params.name}`,
       },
       robots: 'index, follow', 
+      alternates: {
+        canonical: `${process.env.BASE_URL}/about-university/${params.name}`,
+      },
     };
   }
 export default Page;

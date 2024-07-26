@@ -6,248 +6,7 @@ export const HomepageCrausel = [
   "/homePage/carausel/5.webp",
 ];
 
-export const coursesName = [
-  "Online MBA",
-  "Online BBA",
-  "Online MCA",
-  "Online BCA",
-  "Online BA",
-  "Online BCOM",
-  "Online MBA",
-  "Online BBA",
-  "Online MCA",
-  "Online BCA",
-  "Online BA",
-  "Online BCOM",
-  "Online MBA",
-  "Online BBA",
-  "Online MCA",
-  "Online BCA",
-  "Online BA",
-  "Online BCOM",
-];
-export const homePageCourcesList = [
-  "UG Courses",
-  "PG Courses",
-  "Other Courses",
-];
 
-export const ugCourseData = {
-  BCom: [
-    { name: "Manipal University", img: "/collegeLogoimage/manipal.webp" },
-    { name: "GLA University", img: "/collegeLogoimage/gla.webp" },
-    {
-      name: "Lovely Professional University",
-      img: "/collegeLogoimage/lpu.webp",
-    },
-    { name: "Jain University", img: "/collegeLogoimage/jain.webp" },
-    { name: "Amity University", img: "/collegeLogoimage/amity.webp" },
-    { name: "Shoolini	University", img: "/collegeLogoimage/shoolini.webp" },
-    {
-      name: "Chandigarh University",
-      img: "/collegeLogoimage/chandigarh.webp",
-    },
-    {
-      name: "DY Patil University",
-      img: "/collegeLogoimage/dypatil.webp",
-    },
-    { name: "UPES University", img: "/collegeLogoimage/upes.webp" },
-    { name: "Amrita University", img: "/collegeLogoimage/amrita.webp" },
-  ],
-  BA: [
-    { name: "Manipal University", img: "/collegeLogoimage/manipal.webp" },
-    {
-      name: "Uttaranchal University",
-      img: "/collegeLogoimage/uttaranchal.webp",
-    },
-    {
-      name: "Lovely Professional University",
-      img: "/collegeLogoimage/lpu.webp",
-    },
-    { name: "Amity University", img: "/collegeLogoimage/amity.webp" },
-    { name: "Shoolini	University", img: "/collegeLogoimage/shoolini.webp" },
-    {
-      name: "Chandigarh University",
-      img: "/collegeLogoimage/chandigarh.webp",
-    },
-    { name: "Amrita University", img: "/collegeLogoimage/amrita.webp" },
-    {
-      name: "DY Patil University",
-      img: "/collegeLogoimage/dypatil.webp",
-    },
-    { name: "UPES University", img: "/collegeLogoimage/upes.webp" },
-  ],
-  BBA: [
-    { name: "Manipal University", img: "/collegeLogoimage/manipal.webp" },
-    {
-      name: "Uttaranchal University",
-      img: "/collegeLogoimage/uttaranchal.webp",
-    },
-    { name: "GLA University", img: "/collegeLogoimage/gla.webp" },
-    {
-      name: "Lovely Professional University",
-      img: "/collegeLogoimage/lpu.webp",
-    },
-    { name: "Jain University", img: "/collegeLogoimage/jain.webp" },
-    { name: "Amity University", img: "/collegeLogoimage/amity.webp" },
-    { name: "Vignan University", img: "/collegeLogoimage/vignan.webp" },
-    { name: "Shoolini	University", img: "/collegeLogoimage/shoolini.webp" },
-    {
-      name: "Chandigarh University",
-      img: "/collegeLogoimage/chandigarh.webp",
-    },
-    { name: "Amrita University", img: "/collegeLogoimage/amrita.webp" },
-    {
-      name: "DY Patil University",
-      img: "/collegeLogoimage/dypatil.webp",
-    },
-    { name: "UPES University", img: "/collegeLogoimage/upes.webp" },
-  ],
-  BCA: [
-    { name: "Manipal University", img: "/collegeLogoimage/manipal.webp" },
-    {
-      name: "Uttaranchal University",
-      img: "/collegeLogoimage/uttaranchal.webp",
-    },
-    { name: "GLA University", img: "/collegeLogoimage/gla.webp" },
-    {
-      name: "Lovely Professional University",
-      img: "/collegeLogoimage/lpu.webp",
-    },
-    { name: "Vignan University", img: "/collegeLogoimage/vignan.webp" },
-    { name: "Shoolini	University", img: "/collegeLogoimage/shoolini.webp" },
-    {
-      name: "Chandigarh University",
-      img: "/collegeLogoimage/chandigarh.webp",
-    },
-    { name: "Amrita University", img: "/collegeLogoimage/amrita.webp" },
-    {
-      name: "DY Patil University",
-      img: "/collegeLogoimage/dypatil.webp",
-    },
-    { name: "UPES University", img: "/collegeLogoimage/upes.webp" },
-    { name: "Amity University", img: "/collegeLogoimage/amity.webp" },
-  ],
-};
-export const pgCourseData = {
-  MCom: [
-    { name: "Manipal University", img: "/collegeLogoimage/manipal.webp" },
-    {
-      name: "Lovely Professional University",
-      img: "/collegeLogoimage/lpu.webp",
-    },
-    { name: "Shoolini	University", img: "/collegeLogoimage/shoolini.webp" },
-    {
-      name: "Chandigarh University",
-      img: "/collegeLogoimage/manipal.webp",
-    },
-    { name: "Amrita University", img: "/collegeLogoimage/amrita.webp" },
-    {
-      name: "DY Patil University",
-      img: "/collegeLogoimage/dypatil.webp",
-    },
-    { name: "UPES University", img: "/collegeLogoimage/upes.webp" },
-    { name: "Amity University", img: "/collegeLogoimage/amity.webp" },
-    { name: "Jain University", img: "/collegeLogoimage/jain.webp" },
-  ],
-  MA: [
-    { name: "Manipal University", img: "/collegeLogoimage/manipal.webp" },
-    {
-      name: "Lovely Professional University",
-      img: "/collegeLogoimage/lpu.webp",
-    },
-    { name: "Shoolini	University", img: "/collegeLogoimage/shoolini.webp" },
-    {
-      name: "Chandigarh University",
-      img: "/collegeLogoimage/chandigarh.webp",
-    },
-    { name: "Amrita University", img: "/collegeLogoimage/amrita.webp" },
-    {
-      name: "DY Patil University",
-      img: "/collegeLogoimage/dypatil.webp",
-    },
-    { name: "UPES University", img: "/collegeLogoimage/upes.webp" },
-    { name: "Amity University", img: "/collegeLogoimage/amity.webp" },
-  ],
-  MBA: [
-    { name: "Manipal University", img: "/collegeLogoimage/manipal.webp" },
-    {
-      name: "Lovely Professional University",
-      img: "/collegeLogoimage/lpu.webp",
-    },
-    { name: "Shoolini	University", img: "/collegeLogoimage/shoolini.webp" },
-    {
-      name: "Chandigarh University",
-      img: "/collegeLogoimage/chandigarh.webp",
-    },
-    { name: "Amrita University", img: "/collegeLogoimage/amrita.webp" },
-    {
-      name: "DY Patil University",
-      img: "/collegeLogoimage/dypatil.webp",
-    },
-    { name: "UPES University", img: "/collegeLogoimage/upes.webp" },
-    { name: "Amity University", img: "/collegeLogoimage/amity.webp" },
-    { name: "Jain University", img: "/collegeLogoimage/jain.webp" },
-    { name: "Vignan University", img: "/collegeLogoimage/vignan.webp" },
-    {
-      name: "Uttaranchal University",
-      img: "/collegeLogoimage/uttaranchal.webp",
-    },
-    { name: "GLA University", img: "/collegeLogoimage/gla.webp" },
-  ],
-  MCA: [
-    { name: "Manipal University", img: "/collegeLogoimage/manipal.webp" },
-    {
-      name: "Lovely Professional University",
-      img: "/collegeLogoimage/lpu.webp",
-    },
-    { name: "Shoolini	University", img: "/collegeLogoimage/shoolini.webp" },
-    {
-      name: "Chandigarh University",
-      img: "/collegeLogoimage/chandigarh.webp",
-    },
-    { name: "Amrita University", img: "/collegeLogoimage/amrita.webp" },
-    {
-      name: "DY Patil University",
-      img: "/collegeLogoimage/dypatil.webp",
-    },
-    { name: "UPES University", img: "/collegeLogoimage/upes.webp" },
-    { name: "Amity University", img: "/collegeLogoimage/amity.webp" },
-    { name: "Jain University", img: "/collegeLogoimage/jain.webp" },
-    { name: "Vignan University", img: "/collegeLogoimage/vignan.webp" },
-    {
-      name: "Uttaranchal University",
-      img: "/collegeLogoimage/uttaranchal.webp",
-    },
-    { name: "GLA University", img: "/collegeLogoimage/gla.webp" },
-  ],
-  MSc: [
-    { name: "Manipal University", img: "/collegeLogoimage/manipal.webp" },
-    {
-      name: "Lovely Professional University",
-      img: "/collegeLogoimage/lpu.webp",
-    },
-    { name: "Shoolini	University", img: "/collegeLogoimage/shoolini.webp" },
-    {
-      name: "Chandigarh University",
-      img: "/collegeLogoimage/chandigarh.webp",
-    },
-    { name: "Amrita University", img: "/collegeLogoimage/amrita.webp" },
-    {
-      name: "DY Patil University",
-      img: "/collegeLogoimage/dypatil.webp",
-    },
-    { name: "UPES University", img: "/collegeLogoimage/upes.webp" },
-    { name: "Amity University", img: "/collegeLogoimage/amity.webp" },
-    { name: "Jain University", img: "/collegeLogoimage/jain.webp" },
-    { name: "Vignan University", img: "/collegeLogoimage/vignan.webp" },
-    {
-      name: "Uttaranchal University",
-      img: "/collegeLogoimage/uttaranchal.webp",
-    },
-    { name: "GLA University", img: "/collegeLogoimage/gla.webp" },
-  ],
-};
 
 export const AccordionData = [
   {
@@ -281,6 +40,29 @@ export const AccordionData = [
       "With College Counsel on your side, you'll go into the college application process with information and confidence. Knowing you have the right resources and assistance will reduce tension and allow you to focus on what is most important: acing your exams and preparing for success in college!",
   },
 ];
+export const FaqsData = [
+  {"General":[{question:'What is College Counsel?',
+    answer:'College Counsel provides expert career counselling services for students who are seeking career guidance.'
+  },
+  {question:'How will College Counsel help me?',
+    answer:'We offer personalised career counselling services, course recommendation based on student performance and assistance to help you achieve your goals.'
+  },
+]},
+  {"Services":[{question:'What services do we offer?',
+    answer:'We offer career counselling and guidance to students.'
+  },
+  {question:'How can I book a counselling session?',
+    answer:'You can go to the &apos;Apply&apos; section on the top-right corner of the page and fill the details to book a counselling session.'
+  },
+]},
+  {"Courses":[{question:'How do I find the right course for myself?',
+    answer:'We have a top-notch team of experts who will guide you and help you select the best available courses for you.'
+  },
+  {question:'Do we offer information on online courses?',
+    answer:'Yes, We provide complete online assistance and information on online courses.'
+  },
+]},
+]
 
 export const CoursesList = [
   "",

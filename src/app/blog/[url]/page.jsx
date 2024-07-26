@@ -26,11 +26,13 @@ export async function generateMetadata({ params }) {
     keywords:blog?.keywords,
     openGraph: {
       title:` ${blog?.title} -  College Counsel`,
-
       description: blog?.description,
       url: `${process.env.BASE_URL}/blog/${params.url}`,
     },
     robots: 'index, follow', 
+    alternates: {
+      canonical: `${process.env.BASE_URL}/blog/${params.url}`,
+    },
   };
 }
 export default Page

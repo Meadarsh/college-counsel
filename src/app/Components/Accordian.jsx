@@ -1,27 +1,26 @@
-import * as React from 'react';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import * as React from "react";
 
-export default function AccordionExpandIcon({data}) {
+export default function AccordionExpandIcon({ data }) {
   return (
-    <div className='lg:w-[93%]'>
-     {data?.map((e,ind)=>( <Accordion key={ind}>
-        <AccordionSummary
-          expandIcon={<ArrowDropDownIcon />}
-          aria-controls="panel2-content"
-          id="panel2-header"
-        >
-          <Typography sx={{ fontWeight:700}}>{`${++ind}. ${e.Question}`}</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-         {e.Answer}
-          </Typography>
-        </AccordionDetails>
-      </Accordion>))}
+    <div className="w-full">
+      <Accordion type="single" collapsible>
+        {data?.map((e, ind) => (
+          <AccordionItem key={ind} value={++ind} >
+            <AccordionTrigger>
+              <h3 className="text-xl">{`${++ind}. ${e.Question}`}</h3>
+            </AccordionTrigger>
+            <AccordionContent>
+              <p className="text-lg">{e.Answer}</p>
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
     </div>
   );
 }

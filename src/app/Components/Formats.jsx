@@ -6,10 +6,8 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import ListWithBlueTick from "./ListWithBlueTick";
-import ListWithStep from "./ListWithStep";
-import ListWithStar from "./ListWithStar";
 import Image from "next/image";
+import List from "./List";
 
 export const PlacementPartners = ({ data, name }) => {
   return (
@@ -38,7 +36,7 @@ export const PlacementPartners = ({ data, name }) => {
 export const ParagraphField = ({ data }) => {
   return (
     <>
-      <h2>{data?.heading}</h2>
+      {data?.heading&&<h2>{data?.heading}</h2>}
       <div
         className="mt-5 mb-5 text-sm md:text-lg lg:text-xl"
         dangerouslySetInnerHTML={{
@@ -54,7 +52,9 @@ export const CertifiedBy = ({ data, name, Expand }) => {
     <>
       <h2>{data?.title || `${data?.name} online certificates`}</h2>
       <div className="flex lg:flex-row flex-col-reverse items-center pr-16 justify-between">
-        <ListWithStar heading={false} data={data?.list} />
+       <div>
+       <List heading={false} style={'star'} data={data?.list} />
+       </div>
         {data?.url && (
           <Image
             width={200}
@@ -73,24 +73,8 @@ export const CertifiedBy = ({ data, name, Expand }) => {
 export const ListFormat = ({ data }) => {
   return (
     <div>
-      {data.style === "star" && (
-        <>
           {data.title&&<h2>{data.title}</h2>}
-          <ListWithStar data={data.list} />
-        </>
-      )}
-      {data.style === "tick" && (
-        <>
-          {data.title&&<h2>{data.title}</h2>}
-          <ListWithBlueTick data={data.list} />
-        </>
-      )}
-      {data.style === "step" && (
-        <>
-          {data.title&&<h2>{data.title}</h2>}
-           <ListWithStep data={data.list} />
-        </>
-      )}
+          <List style={data.style} data={data.list} />
     </div>
   );
 };
@@ -99,7 +83,7 @@ export const TableField = ({ data }) => {
   return (
     <>
       {data?.title&&<h2>{data?.title}</h2>}
-      <TableContainer className="bg-white mt-10 text-black rounded-xl border">
+      <TableContainer className="bg-white mt-5 text-black rounded-xl border">
         <Table className="bg-white">
           <TableHead>
             <TableRow>

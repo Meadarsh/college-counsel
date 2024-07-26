@@ -2,7 +2,6 @@
 
 import ApplyFormWIthoutImgH from "@/app/Components/ApplyFormWIthoutImgH";
 import CCLoader from "@/app/Components/CCLoader";
-import Footer from "@/app/Components/Footer";
 import {
   CertifiedBy,
   ImageFormat,
@@ -11,6 +10,7 @@ import {
   PlacementPartners,
   TableField,
 } from "@/app/Components/Formats";
+import { GetUniversityDetail } from "@/app/utils/api-routes";
 import { Button, Card, Dialog } from "@mui/material";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -20,20 +20,15 @@ const Page = ({ params }) => {
   const [loading, setLoading] = useState(true);
 
   const fetchUniversity = async () => {
-    try {
       setLoading(true);
-      const university = await fetch(`/api/university/${params?.name}`);
-      const data = await university.json();
+      const data = await GetUniversityDetail(params?.name)
       setLoading(false);
       setData(data);
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   useEffect(() => {
     fetchUniversity();
-  }, [params.name]);
+  }, [params?.name]);
 
   const [expandCertificate, setExpandCertificate] = useState({
     status: false,

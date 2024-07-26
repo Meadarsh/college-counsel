@@ -12,3 +12,23 @@ export const ImageStack =[
      url:"/homePage/landingCrausel/4.webp"   
     },
 ]
+export const RatingShowcase = [
+    {
+      src: '/image/google-logo.png',
+      alt: 'google',
+      rating: '4.7/5',
+      description: 'Google rating',
+    },
+    {
+      src: '/icons/call-agent.png',
+      alt: 'Mentor',
+      rating: '10+',
+      description: 'Expert Mentors',
+    },
+    {
+      src: '/icons/admition.png',
+      alt: 'student',
+      rating: '100+',
+      description: 'Happy students',
+    },
+  ];

@@ -1,16 +1,13 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { CgDetailsMore } from "react-icons/cg";
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/src/ScrollTrigger';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Button, Drawer } from '@mui/material';
-import { RxCross1 } from 'react-icons/rx';
 import { useAmp } from 'next/amp';
 import Head from 'next/head';
 import { cn } from '@/lib/utils';
+import { Menu, X } from 'lucide-react';
 
 const NavBar = () => {
   const pathname =usePathname()
@@ -24,18 +21,6 @@ const NavBar = () => {
   const isAmp = useAmp();
   const path =usePathname()
   const [mobNavOpen,setmobNavOpen]=useState(false)
-  gsap.registerPlugin(ScrollTrigger);
-  useEffect(()=>{
-    gsap.to('.mainNav',{
-      backdropFilter: "blur(7px)",
-      duration:.8,
-      scrollTrigger:{
-        trigger:".mainNav",
-        start:"400% top",
-        scrub:true
-      }
-    })
-  })
   function OpenNav(){
     if (mobNavOpen === false) {
       setmobNavOpen(true);
@@ -51,7 +36,7 @@ const NavBar = () => {
   <Head>
   {isAmp && <link rel="amphtml" href="https://collegecounsel.co.in/amp" />}
   </Head>
-   <div className={`bg-white mainNav w-[100vw] left-0 lg:h-20 h-16 z-50 fixed top-0 flex justify-between items-center pr-2 lg:px-10`}>
+   <nav className={`bg-white mainNav w-[100vw] left-0 lg:h-20 h-16 z-50 fixed top-0 flex justify-between items-center pr-2 lg:px-10`}>
     <div className='flex items-center gap-1'>
     {isAmp ? (
           <amp-img src="/logo/College counsel.webp" className='lg:w-auto h-20 w-auto object-contain lg:h-auto ' width="200" height="50" layout="responsive" alt="College Counsel Logo" />
@@ -76,13 +61,13 @@ const NavBar = () => {
               {example.name}
             </Link>
           ))}  </div>
-    <CgDetailsMore onClick={OpenNav} className='text-4xl lg:hidden'/>
+    <Menu onClick={OpenNav} className='text-4xl lg:hidden'/>
     <Drawer
       anchor={'right'}
       open={mobNavOpen}
       onClose={OpenNav}
     >
-       <RxCross1
+       <X 
             onClick={OpenNav}
             className=" text-3xl font-bold cursor-pointer absolute text-black right-4 top-4"
           />
@@ -93,7 +78,7 @@ const NavBar = () => {
     <Link href='/blog'  prefetch={true} ><Button variant='text' className='text-primary text-lg font-semibold'>Blog</Button></Link>
     </div>
     </Drawer>
-   </div>
+   </nav>
    </>
   )
 }

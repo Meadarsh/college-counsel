@@ -1,19 +1,17 @@
 import React from "react";
-import ListWithStar from "../Components/ListWithStar";
-import ListWithBlueTick from "../Components/ListWithBlueTick";
-import { List } from "@mui/material";
-import Footer from "../Components/Footer";
 import Image from "next/image";
-import Head from "next/head";
+import List from "../Components/List";
 
+export const metadata = {
+  title: "What is College Counsel ? - College Counsel",
+  description: "Get admission in your dream University and course through College Counsel and get expert counselling and guidance along with scholarship options.",
+  alternates: {
+    canonical:`${process.env.BASE_URL}/about`,
+  },
+};
 const Page = () => {
   return (
     <>
-      <Head>
-        <link rel="canonical" href={"https://collegecounsel.co.in/about"} />
-        <title>Know about College Counsel - College Counsel</title>
-        <meta name="robots" content="index, follow" />
-      </Head>
       <div className="mt-20 text-lg p-5 lg:p-10">
         <Image
           className=" rounded-xl h-auto"
@@ -55,11 +53,11 @@ const Page = () => {
         <h2 className="text-2xl font-semibold mt-6">
           Why to Choose College Counsel as your Career Guide?
         </h2>
-        <ListWithBlueTick data={listData} />
+        <List style='tick' data={listData} />
         <h1 className="text-2xl font-semibold mt-6">
           We have tied-up with Top Universities like:
         </h1>
-        <ListWithStar data={CollegeList} />
+        <List style='star' data={CollegeList} />
         <p>
           Lost in a sea of universities? We understand it! College Counsel
           allows you to research many colleges and their courses all in one
@@ -82,7 +80,6 @@ const Page = () => {
           find your perfect academic match!
         </p>
       </div>
-      <Footer />
     </>
   );
 };

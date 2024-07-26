@@ -13,7 +13,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-2 md:grid-cols-4  lg:grid-cols-6  lg:p-10 ",
+        "grid grid-cols-2 sm:grid-cols-4  lg:grid-cols-6  lg:p-10 ",
         className
       )}
     >
@@ -28,7 +28,7 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-blue-700/20 dark:bg-slate-800/[0.5] block  rounded-2xl"
+                className="absolute inset-0 h-full w-full bg-blue-700/10 dark:bg-slate-800/[0.5] block  rounded-2xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -44,7 +44,7 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
           <div  className='flex overflow-clip bg-white flex-col px-2 w-40 lg:w-52 h-28  rounded-lg justify-center lg:items-center border'>
-        <Image height={60} width={120} src={item.logoimg} alt="College logo" className='w-auto h-auto mb-2' />
+        <Image height={60} width={120} src={item.logoimg} alt="College logo" className='w-20 h-auto mb-2' />
         <p className=' leading-tight font-bold text-gray-600 text-sm '>{item.Offeredcourse} Courses</p>
         <h4 className=' whitespace-nowrap text-[14px]'>{item.collegename}</h4>
        </div>

@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { ImageFormat, ListFormat, ParagraphField, TableField } from "@/app/Components/Formats";
 import ApplyFormWIthoutImgH from "@/app/Components/ApplyFormWIthoutImgH";
-const LatestBlogList = dynamic (()=>import('@/app/Components/LatestBlogList'))
+const LatestBlogList = dynamic (()=>import('@/app/blog/component/LatestBlogList'))
 const Footer = dynamic (()=>import('@/app/Components/Footer'))
 const Blogpage = ({ params }) => {
   const [blog, setBlog] = useState([]);
@@ -40,7 +40,7 @@ const Blogpage = ({ params }) => {
           <div className="lg:w-[75%] w-full">
             <Image
               width={1200}
-              height={200}
+              height={600}
               priority
               className="h-auto w-full object-cover  rounded-xl"
               src={blog?.imageUrl || "/image/default.jpg"}

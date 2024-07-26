@@ -1,13 +1,14 @@
 import { Frank_Ruhl_Libre } from "next/font/google";
 import "./globals.css";
 import NavBar from "./Components/navBar";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import Script from "next/script";
 import Head from "next/head";
 import AutoPopup from "./Components/AutoPopup";
 import { useAmp } from "next/amp";
 import Footer from "./Components/Footer";
+import { Toaster } from "@/components/ui/toaster";
+import { ReduxProvider } from "@/Redux/ReduxComponent";
+import { TooltipProvider } from "@/components/ui/tooltip";
 const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata = {
@@ -24,28 +25,18 @@ export const metadata = {
   twitterCreator: "@collegecounse1",
   twitterTitle: "College Counsel | Expert Guidance for Your Academic Career",
   twitterDescription: "Discover College Counsel, your one-stop solution for navigating higher education! Get expert guidance, comprehensive course selection, and insider knowledge on top universities like Manipal, JAIN, and Amity.",
-  twitterImage: "https://collegecounsel.co.in/logo/DHF.png"
+  twitterImage: "https://collegecounsel.co.in/logo/DHF.png",
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {
   
   return (
     <html lang="en">
-      <Head>
-      <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://collegecounsel.co.in" />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content={metadata.ogTitle} />
-        <meta property="og:description" content={metadata.ogDescription} />
-        <meta property="og:url" content={metadata.ogUrl} />
-        <meta property="og:image" content={metadata.ogImage} />
-        <meta name="twitter:card" content={metadata.twitterCard} />
-        <meta name="twitter:site" content={metadata.twitterSite} />
-        <meta name="twitter:creator" content={metadata.twitterCreator} />
-        <meta name="twitter:title" content={metadata.twitterTitle} />
-        <meta name="twitter:description" content={metadata.twitterDescription} />
-        <meta name="twitter:image" content={metadata.twitterImage} />
-      </Head>
+   
       <Script type="application/ld+json" id="organization-schema">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -80,19 +71,21 @@ export default function RootLayout({ children }) {
               gtag('config', 'G-9CP19VTW20');
             `}
           </Script>
-     <Script id="messenger-widget-b" defer src="https://cdn.botpenguin.com/website-bot.js" >6647981f07af820cc774bacd,664797f8881a65150d0aa425</Script>
+     {/* <Script id="messenger-widget-b" defer src="https://cdn.botpenguin.com/website-bot.js" >6647981f07af820cc774bacd,664797f8881a65150d0aa425</Script> */}
       <body className={frankRuhlLibre.className}>
-      <ToastContainer/>
+      <ReduxProvider>
+      <TooltipProvider>
+      <Toaster />
         <header>
-        <nav>
         <NavBar/>
-       </nav>
         </header>
        {/* <AutoPopup/> */}
-        { children }
+      { children }
          <footer>
          <Footer/>
          </footer>
+          </TooltipProvider>
+        </ReduxProvider>
           </body>
     </html>
   );

@@ -17,9 +17,8 @@ export const CardStack = ({
 
   useEffect(() => {
     startFlipping();
-
     return () => clearInterval(intervalRef.current);
-  }, []);
+  }, [image]);
 
   const startFlipping = () => {
     setNumber(cards.length)
@@ -51,7 +50,7 @@ export const CardStack = ({
               zIndex: cards.length - index, // decrease z-index for the cards that are behind
             }}
           >
-           {image?<Image width={900} height={600} className="h-full w-full object-cover" src={card.url} />:<> <div className="font-normal text-neutral-700 dark:text-neutral-200">
+           {image?<Image loading="eager" width={780} priority="true" height={520} className="h-full w-full object-cover" src={card.url} />:<> <div className="font-normal text-neutral-700 dark:text-neutral-200">
               {card.content}
             </div>
             <div className="p-4">
