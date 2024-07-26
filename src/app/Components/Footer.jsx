@@ -1,36 +1,102 @@
-import React from 'react'
-import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa'
-import { RiTwitterXLine } from 'react-icons/ri'
+import React from 'react';
+import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaArrowRight } from 'react-icons/fa';
+import { RiTwitterXLine } from 'react-icons/ri';
 
 const Footer = () => {
   return (
-    <div>
-    <div className=' select-text h-[30vh] lg:h-[25vh] pt-3 text-white flex w-full lg:flex-row flex-col gap-4 lg:gap-0 items-center bg-slate-900 mt-8'>
-    <div className='logo lg:w-1/3  lg:h-[80%] flex items-center pl-3'>
-      <h2 className=' text-3xl lg:text-[2.5vw]'>Collegecounsel.co.in</h2>
-    </div>
-    <div className='logo lg:w-1/3 lg:text-2xl lg:border-l lg:h-[80%] gap-4 flex flex-col items-center lg:items-start lg:justify-center pl-3'>
-        <h3>Connect with us</h3>
-        <div className='flex text-white text-3xl gap-3'>
-           <a href="https://wa.me/+916392832171" target="_blank">
-           <FaWhatsapp/>
-           <p className='hidden'>click here for whatsapp account</p>
-           </a>
-            <FaFacebook/>
-            <a href="https://www.instagram.com/collegecounselofficial/" target="_blank"><p className='hidden'>click here for instagram account</p><FaInstagram/></a>
-            <RiTwitterXLine/>
+    <footer className="border-t py-4 lg:h-[55vh] lg:py-20 relative">
+      <div className="container mx-auto flex flex-col lg:flex-row justify-between gap-10 lg:gap-96">
+        <div className="space-y-4">
+          <div className="flex items-center space-x-2">
+            <FaFacebook className="h-8 w-8" />
+            <FaInstagram className="h-8 w-8" />
+            <FaLinkedin className="h-8 w-8" />
+            <RiTwitterXLine className="h-8 w-8" />
+          </div>
+          <p className="text-gray-600">
+            Follow us to be part of our community
+          </p>
+          <a href="#" className="text-primary flex items-center">
+            collegeCounsel.group <FaArrowRight className="inline h-4 w-4 ml-2" />
+          </a>
         </div>
-
-    </div>
-    <div className='logo pb-4 lg:text-xl text-sm lg:w-1/3 lg:border-l lg:h-[80%] flex flex-col items-center lg:items-start lg:justify-center pl-3'>
-   
-       <p> Phone no: +919569822903, +916392832171 <br/>
-       Email: mail@collegecounsel.co.in</p>
-    </div>
-</div>
-<p className='text-center text-white bg-slate-900 px-3 pb-5'>all rights reserved. © copyright 2024 <a href="https://collegecounsel.co.in/about">collegecounsel.co.in</a> </p>
-</div>
-  )
+        <div className="grid grid-cols-3 gap-2 lg:gap-36">
+          <div>
+            <h3 className="text-lg font-semibold">Course</h3>
+            <ul className="mt-2 space-y-2">
+              <li>
+                <a href="#" className="text-gray-600">
+                  MCA
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600">
+                  MBA
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600">
+                  B.tech
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold">More</h3>
+            <ul className="mt-2 space-y-2">
+              <li>
+                <a href="#" className="text-gray-600 flex items-center">
+                  Blog{" "}
+                  <span className="ml-2 bg-secondary text-white px-2 py-1 rounded-full">1</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600">
+                  Online Counselling
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600">
+                  Tech
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600">
+                  Jobs
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold">Legal</h3>
+            <ul className="mt-2 space-y-2">
+              <li>
+                <a href="#" className="text-gray-600">
+                  Privacy
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600">
+                  Terms
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="absolute px-2 lg:bottom-0 text-center w-full text-[50px] lg:text-[200px] font-bold text-gray-200 pointer-events-none">
+        College Counsel
+      </div>
+      <div className="space-y-4 md:col-span-3 px-6 mt-44 text-center md:text-left">
+        <p className="text-black">© 2024 College Counsel</p>
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
