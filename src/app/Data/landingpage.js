@@ -14,19 +14,19 @@ export const ImageStack =[
 ]
 export const RatingShowcase = [
     {
-      src: '/image/google-logo.png',
+      src: '/icons/googleLogo.webp',
       alt: 'google',
       rating: '4.7/5',
       description: 'Google rating',
     },
     {
-      src: '/icons/call-agent.png',
+      src: '/icons/call-agent.webp',
       alt: 'Mentor',
       rating: '10+',
       description: 'Expert Mentors',
     },
     {
-      src: '/icons/admition.png',
+      src: '/icons/admition.webp',
       alt: 'student',
       rating: '100+',
       description: 'Happy students',

@@ -28,6 +28,13 @@ export const Courses ={
         type:"economy",
         Link:"#"
     },
+    {
+        id: 1,
+        name:"Online B.Sc",
+        duration:3,
+        type:"science",
+        Link:"#"
+    },
 ],
 "PG Courses":[
     {
@@ -58,11 +65,19 @@ export const Courses ={
         type:"economy",
         Link:"#"
     },
+    {
+        id: 1,
+        name:"Online M.Sc",
+        duration:2,
+        type:"science",
+        Link:"#"
+    },
 ]
 }
 
 export const CourseRepresentImage = {
-    economy:"/icons/economy.png",
-    tech:"/icons/computer.png",
-    flexible:"/icons/flexible.png",
+    economy:"/icons/economy.webp",
+    tech:"/icons/computer.webp",
+    flexible:"/icons/flexible.webp",
+    science:"/icons/science.webp",
 } 

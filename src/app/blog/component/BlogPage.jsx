@@ -5,6 +5,7 @@ import PostSort from "./post-sort";
 import PostCard from "./post-card";
 import CCLoader from "@/app/Components/CCLoader";
 import PaginationComponent from "./Pagination";
+import BlogLoader from "./BlogLoader";
 
 const ITEMS_PER_PAGE = 12;
 
@@ -82,9 +83,9 @@ const BlogPage = () => {
           ]}
         />
       </div>
-      <div className="min-h-[100vh]">
+      <div className="min-h-[60vh] ">
         {loading ? (
-          <CCLoader />
+          <BlogLoader />
         ) : (
           <>
             {currentBlogs && (

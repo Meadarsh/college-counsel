@@ -1,10 +1,19 @@
-import React from 'react'
-import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination'
+import React from 'react';
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
 
 const PaginationComponent = ({ currentPage, totalPages, onPageChange }) => {
   const handlePageClick = (page) => {
     onPageChange(page);
+    scrollToTop();
   };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
 
   const renderPageNumbers = () => {
     const pages = [];
@@ -25,26 +34,28 @@ const PaginationComponent = ({ currentPage, totalPages, onPageChange }) => {
   };
 
   return (
-    <Pagination className='flex justify-end'>
+    <Pagination className="flex justify-end">
       <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious 
-            href="#" 
-            onClick={(e) => { e.preventDefault(); handlePageClick(currentPage - 1); }} 
-            disabled={currentPage === 1}
-          />
-        </PaginationItem>
+        {currentPage > 1 && (
+          <PaginationItem>
+            <PaginationPrevious 
+              href="#" 
+              onClick={(e) => { e.preventDefault(); handlePageClick(currentPage - 1); }} 
+            />
+          </PaginationItem>
+        )}
         {renderPageNumbers()}
-        <PaginationItem>
-          <PaginationNext 
-            href="#" 
-            onClick={(e) => { e.preventDefault(); handlePageClick(currentPage + 1); }} 
-            disabled={currentPage === totalPages}
-          />
-        </PaginationItem>
+        {currentPage < totalPages && (
+          <PaginationItem>
+            <PaginationNext 
+              href="#" 
+              onClick={(e) => { e.preventDefault(); handlePageClick(currentPage + 1); }} 
+            />
+          </PaginationItem>
+        )}
       </PaginationContent>
     </Pagination>
-  )
-}
+  );
+};
 
 export default PaginationComponent;

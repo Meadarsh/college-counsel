@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -61,7 +62,7 @@ export function MentorCarausel({ data }) {
                     <div className="w-full lg:mt-2 flex justify-end">
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <Button onClick={() => copyToClipboard(_.number)}>
+                          <Button className="p-2" onClick={() => copyToClipboard(_.number)}>
                             +91 {_.number}
                           </Button>
                         </TooltipTrigger>

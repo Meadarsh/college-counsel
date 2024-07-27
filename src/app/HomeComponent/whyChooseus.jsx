@@ -12,7 +12,7 @@ const WhyChooseus = () => {
         </h2>
       </div>
      <div className="flex justify-evenly items-center  w-full lg:px-14 px-3 mt-10">
-      <Image className="lg:block hidden" src={'/homePage/student.png'} width={400} height={500} />
+      <Image className="lg:block hidden" src={'/homePage/student.webp'} width={400} height={500} />
      <div className="flex w-full lg:w-1/2  flex-col  gap-4 ">
         <div className=" z-10 bg-white/10 backdrop-blur-sm w-full lg:text-lg p-2 rounded-md border ">
           <h4 className="text-xl font-bold">Exceptional Faculty</h4>

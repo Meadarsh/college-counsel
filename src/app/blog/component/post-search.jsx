@@ -11,12 +11,11 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { BookOpenText} from "lucide-react";
+import { BookOpenText } from "lucide-react";
 
 export function SearchBar({ posts }) {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
-
 
   React.useEffect(() => {
     const down = (e) => {
@@ -73,7 +72,7 @@ export function SearchBar({ posts }) {
                 value={post.title}
                 onSelect={() => handleSelect(`/blog/${post.url}`)}
               >
-                 <BookOpenText className="mr-2 h-4 w-4" />
+                <BookOpenText className="mr-2 h-4 w-4" />
                 {post.title}
               </CommandItem>
             ))}
