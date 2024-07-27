@@ -8,11 +8,9 @@ import { ChevronRight } from 'lucide-react'
 
 const CollegeBoard = () => {
   return (
-    <div className=' flex flex-col mt-[8vh]m lg:mt-[15vh] gap-4 items-center'>
-      <h2 className='lg:text-3xl font-bold'>We have tied-up with Top Universities like</h2>
-       <div className='flex flex-wrap gap-4 justify-center'>
+    <div className=' flex flex-col mt-[8vh] xl:mt-[15vh] gap-4 items-center'>
+      <h2 className='lg:text-3xl font-bold'>We have tied-up with Top Universities like</h2>   
        <HoverEffect items={collegeLogo}/>
-      </div>
       <Link className='mx-auto lg:ml-auto lg:mr-[100px] lg:-mt-6' href={'about-university'}><Button varient="destructive" className="text-xl font-normal">MORE UNIVERSITIES<Badge className="p-0 ml-2 bg-muted text-blue-700"><ChevronRight/></Badge> </Button></Link>
     </div>
   )

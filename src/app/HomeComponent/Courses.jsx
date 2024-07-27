@@ -16,12 +16,12 @@ import {
 const CoursesComponent = () => {
   const [selectedCourse, setSelectedCourse] = useState("UG Courses");
   return (
-    <div className="lg:w-[70%] md:w-[80%] mx-auto flex mt-[15vh] flex-col lg:gap-8">
+    <div className="lg:w-[70%] md:w-[80%] mx-auto flex mt-[8vh] lg:mt-[10vh] xl:mt-[15vh] flex-col md:gap-6 lg:gap-10">
       <h2 className="lg:text-3xl text-xl mx-auto font-semibold">
       Discover the Best Courses for yourself
       </h2>
-      <div className="flex md:flex-row flex-col gap-4">
-        <Card className=" hidden md:block">
+      <div className="flex lg:flex-row flex-col gap-4">
+        <Card className=" hidden lg:block">
           <CardContent className="p-2 w-64 flex flex-col gap-2">
             {CourseList.map((data, index) => (
               <div
@@ -47,7 +47,7 @@ const CoursesComponent = () => {
             ))}
           </CardContent>
         </Card>
-        <Card className="md:hidden mt-8 flex flex-col gap-2 mx-auto w-[85%]">
+        <Card className="lg:hidden mt-8 flex flex-col gap-2 mx-auto w-[85%]">
             <Select
               value={selectedCourse}
               onValueChange={(val) => {setSelectedCourse(val)}}

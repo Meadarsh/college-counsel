@@ -1,102 +1,62 @@
-import React from 'react';
-import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaArrowRight } from 'react-icons/fa';
-import { RiTwitterXLine } from 'react-icons/ri';
+import Link from "next/link";
+import React from "react";
+import { CourseList, Legal, MoreList, SocialLinks } from "../Data/footer";
+import {Instagram,MessageCircleMore,Facebook,Linkedin, Twitter, Copyright } from "lucide-react";
+import Image from "next/image";
+import dayjs from "dayjs";
 
+const icons = {
+  instagram: Instagram,
+  facebook: Facebook,
+  twitter: Twitter,
+  linkedin: Linkedin,
+  whatsapp:MessageCircleMore
+};
+const currentYear = dayjs().year();
 const Footer = () => {
   return (
-    <footer className="border-t py-4 lg:h-[55vh] lg:py-20 relative">
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between gap-10 lg:gap-96">
-        <div className="space-y-4">
-          <div className="flex items-center space-x-2">
-            <FaFacebook className="h-8 w-8" />
-            <FaInstagram className="h-8 w-8" />
-            <FaLinkedin className="h-8 w-8" />
-            <RiTwitterXLine className="h-8 w-8" />
-          </div>
-          <p className="text-gray-600">
-            Follow us to be part of our community
-          </p>
-          <a href="#" className="text-primary flex items-center">
-            collegeCounsel.group <FaArrowRight className="inline h-4 w-4 ml-2" />
-          </a>
+    <div className="mt-10 border-t overflow-hidden bg-gray-200 pt-4 lg:pt-12 relative">
+     <div className="md:mb-[10vw] mb-10 mx-auto">
+     <div className=" container p-5 md:p-[2rem] z-20  flex flex-col-reverse lg:flex-row justify-between gap-10 ">
+        <div className="lg:w-[40%] pb-10 ">
+          <Image width={120} height={60} src="/logo/College counsel.webp" />
+          <p className="text-gray-600">Get admission in your dream University and course through College Counsel and get expert counselling and guidance along with scholarship options.</p>
+          <p className="hover:underline font-medium whitespace-nowrap flex"><Copyright className="w-4"/>&nbsp;<span>{currentYear}</span>&nbsp; All rights reserved</p>
         </div>
-        <div className="grid grid-cols-3 gap-2 lg:gap-36">
-          <div>
+        <div className="footerLinks grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:w-[50%] xl:w-[60%] gap-2 xl:gap-16">
+          <div className="flex flex-col gap-2">
+            <h3 className="text-lg font-semibold">Social links</h3>
+            {SocialLinks.map((social,ind)=>{
+            const Icon = icons[social.icon];
+             return( <Link target="#" className="flex gap-2 items-center" key={ind} href={social.path}><span><Icon className="w-4"/></span>{social.name}</Link>)
+            })}
+          </div>
+          <div className="flex flex-col gap-2">
             <h3 className="text-lg font-semibold">Course</h3>
-            <ul className="mt-2 space-y-2">
-              <li>
-                <a href="#" className="text-gray-600">
-                  MCA
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600">
-                  MBA
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600">
-                  B.tech
-                </a>
-              </li>
-            </ul>
+            {CourseList.map((course,ind)=>(
+              <Link key={ind} href={course.path}>{course.name}</Link>
+            ))}
           </div>
-          <div>
+          <div className="flex flex-col gap-2">
             <h3 className="text-lg font-semibold">More</h3>
-            <ul className="mt-2 space-y-2">
-              <li>
-                <a href="#" className="text-gray-600 flex items-center">
-                  Blog{" "}
-                  <span className="ml-2 bg-secondary text-white px-2 py-1 rounded-full">1</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600">
-                  Online Counselling
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600">
-                  Tech
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600">
-                  Jobs
-                </a>
-              </li>
-            </ul>
+            {MoreList.map((data,ind)=>(
+              <Link key={ind} href={data.path}>{data.name}</Link>
+            ))}
           </div>
-          <div>
-            <h3 className="text-lg font-semibold">Legal</h3>
-            <ul className="mt-2 space-y-2">
-              <li>
-                <a href="#" className="text-gray-600">
-                  Privacy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600">
-                  Terms
-                </a>
-              </li>
-            </ul>
+          <div className="flex flex-col gap-2"><h3 className="text-lg font-semibold">Legal</h3>
+            {Legal.map((data,ind) => (
+              <Link key={ind} href={data.path}>{data.name}</Link>
+            ))}
           </div>
         </div>
       </div>
-      <div className="absolute px-2 lg:bottom-0 text-center w-full text-[50px] lg:text-[200px] font-bold text-gray-200 pointer-events-none">
-        College Counsel
+      <div className="w-full flex justify-center ">Made in India, with ❤️</div>
+     </div>
+      <div className=" text-center w-full flex justify-center">
+        <span className=" whitespace-nowrap absolute z-10 bottom-0 font-bold leading-[80%] text-[35px] md:text-[10vw] uppercase bg-clip-text text-transparent bg-gradient-to-b from-slate-50 to-slate-200">College Counsel</span>
       </div>
-      <div className="space-y-4 md:col-span-3 px-6 mt-44 text-center md:text-left">
-        <p className="text-black">© 2024 College Counsel</p>
-      </div>
-    </footer>
+    </div>
   );
-}
+};
 
 export default Footer;

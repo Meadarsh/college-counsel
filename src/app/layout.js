@@ -1,8 +1,8 @@
 import { Frank_Ruhl_Libre } from "next/font/google";
 import "./globals.css";
+import "./customStyles.css";
 import NavBar from "./Components/navBar";
 import Script from "next/script";
-import Head from "next/head";
 import AutoPopup from "./Components/AutoPopup";
 import { useAmp } from "next/amp";
 import Footer from "./Components/Footer";

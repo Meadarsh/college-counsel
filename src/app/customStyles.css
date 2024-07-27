@@ -1,0 +1,108 @@
+.loader {
+    border: 4px solid #004fbd;
+    border-left-color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    animation: spin89345 1s linear infinite;
+  }
+  
+  .ccloader {
+    border: 4px solid #004fbd;
+    border-left-color: transparent;
+    height: inherit;
+    width: inherit;
+    border-radius: 50%;
+    animation: spin89345 1s linear infinite;
+  }
+  .blogpage a {
+    color: rgb(0, 0, 193);
+    font-weight: 600;
+  }
+  
+  .footerLinks a:hover {
+    text-decoration-line:underline;
+    color:rgb(55, 55, 55);
+  }
+  
+  @keyframes spin89345 {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .Blog-table-cont {
+    border: 1px solid rgb(131, 131, 131);
+    border-radius: 10px;
+  }
+  .blog-table-head {
+    border-bottom: 1px solid rgb(138, 138, 138);
+    background-color: #96969628;
+    font-weight: 600;
+    color: black;
+    font-size: 20px;
+  }
+  
+  .university-ab a{
+    color: #004fbd;
+    text-decoration: underline;
+  }
+  .university-ab a:hover {
+    color: #004fbd;
+    text-decoration: underline;
+  }
+  .university-ab h3{
+    font-weight: 600;
+  }
+  
+  /* Default styles for all screen sizes */
+  .university-ab h2 {
+    font-weight: bold;
+    margin-top: 4rem; 
+  }
+  
+  /* Default for large screens (desktops) */
+  @media (min-width: 1025px) {
+    .university-ab h3 {
+      font-size: 23px;
+    }
+    .university-ab h2 {
+      font-size: 2rem; /* Equivalent to text-4xl in Tailwind CSS */
+    }
+  }
+  
+  /* Medium screens (tablets in landscape mode) */
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .university-ab h3 {
+      font-size: 20px;
+    }
+    .university-ab h2 {
+      font-size: 2rem; /* Equivalent to text-4xl in Tailwind CSS */
+    }
+  }
+  
+  /* Small screens (tablets in portrait mode, large phones) */
+  @media (max-width: 767px) and (min-width: 481px) {
+    .university-ab h3 {
+      font-size: 18px;
+    }
+    .university-ab h2 {
+      font-size: 1.8rem; /* Equivalent to text-3xl in Tailwind CSS */
+    }
+  }
+  
+  /* Extra small screens (phones) */
+  @media (max-width: 480px) {
+    .university-ab h3 {
+      font-size: 16px;
+    }
+    .university-ab h2 {
+      font-size: 1.25rem; /* Equivalent to text-xl in Tailwind CSS */
+    }
+  }
+  
+  

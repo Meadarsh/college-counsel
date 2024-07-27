@@ -35,7 +35,7 @@ export const CardStack = ({
   };
 
   return (
-    <div className="relative lg:h-[50vh] lg:w-[40vw] w-[90vw] lg:m-0 m-auto h-[30vh] ">
+    <div className="relative md:h-[40vh] xl:h-[50vh] w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[40vw]  lg:m-0 m-auto h-[30vh] ">
      {cards?.slice(0,number).map((card, index) => {
         return (
           <motion.div
