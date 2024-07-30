@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Applyside from "../Components/Applyside";
-import Head from "next/head";
 import BlogPage from "./component/BlogPage";
 
 export const metadata = {

@@ -1,157 +1,146 @@
 "use client";
-import { Autocomplete, Button, TextField } from "@mui/material";
-import React, { useState } from "react";
-import { CoursesList } from "../Data/data";
-import Loader from "./Loader";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm, Controller } from "react-hook-form";
+import { z } from "zod";
 import { toast } from "react-toastify";
 
-const ApplyFormWIthoutImgH = () => {
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { CoursesList } from "../Data/data";
+import { useState } from "react";
+import Loader from "@/components/ui/loader";
+
+const FormSchema = z.object({
+  name: z.string().min(1, { message: "Name is required" }),
+  email: z.string().email({ message: "Invalid email address" }),
+  phonenumber: z.string().min(10, { message: "Phone number is required" }),
+  course: z.string().min(1, { message: "Course is required" }),
+});
+
+const ApplyFormWithoutImgH = () => {
   const [loading, setLoading] = useState(false);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phonenumber: "",
-    course: "",
+  const form = useForm({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phonenumber: "",
+      course: "",
+    },
   });
 
-  const [errors, setErrors] = useState({
-    name: false,
-    email: false,
-    phonenumber: false,
-    course: false,
-  });
-  const InitialState = {
-    name: "",
-    email: "",
-    phonenumber: "",
-    course: "",
-  };
-
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
-    setErrors({ ...errors, [id]: value.trim() === "" });
-  };
-
-  const handleCourseChange = (_, value) => {
-    setFormData({ ...formData, course: value });
-    setErrors({ ...errors, course: !value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const newErrors = {};
-    for (const key in formData) {
-      if (!formData[key]?.trim()) {
-        newErrors[key] = true;
-      }
-    }
-
-    setErrors(newErrors);
-
-    if (Object.keys(newErrors).length > 0) {
-      return;
-    }
-    setLoading(true)
-    const Send = await fetch("/api/apply", {
+  const onSubmit = async (data) => {
+    setLoading(true);
+    const response = await fetch("/api/apply", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(data),
     });
-    setLoading(false)
-    const result = await Send.json();
+    setLoading(false);
+    const result = await response.json();
     if (result.status) {
-      setFormData(InitialState);
-      StoreInLocal()
-      toast.success('Submitted successfully', {
-        autoClose: 2000, 
+      form.reset();
+      StoreInLocal();
+      toast.success("Submitted successfully", {
+        autoClose: 2000,
       });
     } else {
       toast.error("Unable to submit.");
     }
   };
-  function StoreInLocal (){
-    const date = new Date()
-    localStorage.setItem('Applied',date)
+
+  function StoreInLocal() {
+    const date = new Date();
+    localStorage.setItem("Applied", date);
   }
 
   return (
-    <div className="lg:w-2/3 w-[80%] mt-32 z-50 lg:mt-12 lg:h-[60vh] flex flex-col overflow-hidden">
-        <div>
-        <h3 className=" text-lg md:text-xl lg:text-2xl font-semibold">Welcome to College Counsel- Fill this Application Form to Assist you better</h3></div>
-        <form
-          className="w-full mt-4 lg:mt-10 flex flex-col gap-3"
-          onSubmit={handleSubmit}
-        >
-          <div className="flex w-[100%] lg:flex-row flex-col gap-3">
-            <TextField
-              sx={{ width: "100%" }}
-              id="name"
-              label="Name"
-              variant="outlined"
-              value={formData.name}
-              onChange={handleChange}
-              error={errors.name}
-              helperText={errors.name && "Name is required"}
+    <div className="lg:w-2/3 w-[80%] mt-32 z-50 lg:mt-12 flex flex-col">
+        <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">
+          Welcome to College Counsel- Fill this Application Form to Assist you
+          better
+        </h3>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full mt-4 lg:mt-10 flex flex-col p-4 gap-3">
+          <div className="flex w-full lg:flex-row flex-col gap-3">
+            <FormField
+            
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem  className="w-full">
+                  <FormLabel>Name</FormLabel>
+                  <FormControl>
+                    <Input  placeholder="Name" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-              <TextField
-              sx={{ width: "100%" }}
-              id="email"
-              type="email"
-              label="Email"
-              variant="outlined"
-              value={formData.email}
-              onChange={handleChange}
-              error={errors.email}
-              helperText={errors.email && "Email is required"}
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem  className="w-full">
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input type="email" placeholder="Email" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
           </div>
           <div className="flex w-full lg:flex-row flex-col items-center gap-3">
-            <TextField
-              sx={{ width: "50%" }}
-              id="phonenumber"
-              type="number"
-              label="Phone no."
-              variant="outlined"
-              value={formData.phonenumber}
-              onChange={handleChange}
-              error={errors.phonenumber}
-              helperText={errors.phonenumber && "Phone number is required"}
-            />
-             <Autocomplete
-              disablePortal
-              sx={{ width: "50%" }}
-              variant="outlined"
-              id="Course"
-              options={CoursesList}
-              renderInput={(params) => (
-                <TextField
-                {...params}
-                  error={errors.course}
-                  label='Course'
-                  fullWidth             
-                  />
+            <FormField
+              control={form.control}
+              name="phonenumber"
+              render={({ field }) => (
+                <FormItem  className="w-full">
+                  <FormLabel>Phone no.</FormLabel>
+                  <FormControl>
+                    <Input type="number" placeholder="Phone no." {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
               )}
-              value={formData.course}
-              onChange={handleCourseChange}
+            />
+            <FormField
+              control={form.control}
+              name="course"
+              render={({ field }) => (
+                <FormItem  className="w-full">
+                  <FormLabel>Course</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Course" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
           </div>
-          <div className="w-full mt-4">
-            <Button
-              sx={{ width: "100%", height: 50 }}
-              variant="contained"
-              type="submit"
-            >
-             {loading ? <Loader /> : "Apply for free"}
+          <div className="w-full mt-4 flex justify-end">
+            <Button variant="default"  disabled={loading} size='lg' type="submit">
+              {loading ? <Loader className="w-6 h-6" /> : "Apply for free"}
             </Button>
           </div>
         </form>
+      </Form>
     </div>
   );
 };
 
-
-export default ApplyFormWIthoutImgH
+export default ApplyFormWithoutImgH;

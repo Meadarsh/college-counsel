@@ -1,13 +1,6 @@
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-} from "@mui/material";
 import Image from "next/image";
 import List from "./List";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 export const PlacementPartners = ({ data, name }) => {
   return (
@@ -83,24 +76,19 @@ export const TableField = ({ data }) => {
   return (
     <>
       {data?.title&&<h2>{data?.title}</h2>}
-      <TableContainer className="bg-white mt-5 text-black rounded-xl border">
-        <Table className="bg-white">
-          <TableHead>
+        <Table className="bg-white mt-5 text-black rounded-xl border overflow-hidden">
+          <TableHeader>
             <TableRow>
               {data?.table[0].map((headCell, index) => (
-                <TableCell
-                  sx={{
-                    bgcolor: "#E5F0FF",
-                    color: "black",
-                    fontSize: 20,
-                  }}
+                <TableHead
+                 className="bg-blue-100 text-lg font-semibold text-black"
                   key={index}
                 >
                   {headCell}
-                </TableCell>
+                </TableHead>
               ))}
             </TableRow>
-          </TableHead>
+          </TableHeader>
           <TableBody>
             {data?.table.slice(1).map((row, rowIndex) => (
               <TableRow key={rowIndex}>
@@ -116,7 +104,6 @@ export const TableField = ({ data }) => {
             ))}
           </TableBody>
         </Table>
-      </TableContainer>
     </>
   );
 };

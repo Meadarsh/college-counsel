@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { HomepageCrausel } from "../Data/data";
 import Image from "next/image";
 import {
@@ -14,11 +14,6 @@ import { Card } from "@/components/ui/card-hover-effect";
 import { CardContent } from "@/components/ui/card";
 import { RatingShowcase } from "../Data/landingpage";
 const SecondPage = () => {
-  const [selectedCourse, setSelectedCourse] = useState("UG Courses");
-
-  function Selection(e) {
-    setSelectedCourse(e);
-  }
 
   return (
     <div className=" w-full mt-20">

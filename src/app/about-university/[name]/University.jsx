@@ -11,7 +11,9 @@ import {
   TableField,
 } from "@/app/Components/Formats";
 import { GetUniversityDetail } from "@/app/utils/api-routes";
-import { Button, Card, Dialog } from "@mui/material";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Dialog } from "@mui/material";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
@@ -56,7 +58,7 @@ const Page = ({ params }) => {
               alt={"Sample certificate"}
             />
           </Dialog>
-          {data ? (
+          {data &&
             <div className=" university-ab mt-20 bg-slate-50">
               <div className="relative">
                 <Image
@@ -85,7 +87,7 @@ const Page = ({ params }) => {
                 </div>
               </div>
               <div className="flex">
-                <div className="mt-1 p-4 lg:p-10  md:w-[calc(100vw-230px)]">
+                <div className="mt-1 p-4 lg:p-10 lg:w-[calc(100vw-30vw)]">
                   {data?.sequence?.map((value) => (
                     <>
                       {value.type === "text" && <ParagraphField data={value} />}
@@ -107,35 +109,31 @@ const Page = ({ params }) => {
                       {value.type === "img" && <ImageFormat data={value} />}
                     </>
                   ))}
+                   <ApplyFormWIthoutImgH />
                 </div>
-                <div className="h-[100vh] hidden md:block sticky px-2 top-0 right-0 lg:w-[400px]">
+                <div className="max-h-[60vh] hidden lg:block sticky px-2 top-0 right-0 lg:w-[30vw]">
                   <Card className="flex flex-col mt-24 p-2 gap-2">
-                    <Button className="text-lg font-light" variant="contained">
+                    <Button className=" font-light" variant='outline'>
                       About
                     </Button>
-                    <Button className="text-lg font-light">
-                      Benefits Of {data.name}
+                    <Button className=" font-light" variant='outline' >
+                      Benefits Of {data?.detail?.title}
                     </Button>
-                    <Button className="text-lg font-light">
+                    <Button className=" font-light" variant='outline'>
                       Fees Structure
                     </Button>
-                    <Button className="text-lg font-light">
-                      Facts about {data.name}
+                    <Button className=" font-light" variant='outline'>
+                      Facts about {data?.detail?.title}
                     </Button>
-                    <Button className="text-lg font-light">Certificates</Button>
-                    <Button className="text-lg font-light">
+                    <Button className=" font-light" variant='outline'>Certificates</Button>
+                    <Button className="font-light" variant='outline'>
                       Admission process
                     </Button>
                   </Card>
-                </div>
-              </div>
-              <div className="w-full flex items-center justify-center">
-                <ApplyFormWIthoutImgH />
+                </div> 
               </div>
             </div>
-          ) : (
-            <></>
-          )}
+          }
         </>
       )}
     </>

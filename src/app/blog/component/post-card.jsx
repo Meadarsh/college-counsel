@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { fDate } from "@/app/utils/format-time";
 import {
   Card,

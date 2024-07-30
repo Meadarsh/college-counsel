@@ -8,6 +8,8 @@ import {
   Linkedin,
   Twitter,
   Copyright,
+  Phone,
+  Mail,
 } from "lucide-react";
 import Image from "next/image";
 import dayjs from "dayjs";
@@ -22,12 +24,12 @@ const icons = {
 const currentYear = dayjs().year();
 const Footer = () => {
   return (
-    <div className="mt-10 border-t overflow-hidden bg-gray-200 pt-4 lg:pt-12 relative">
+    <div className=" border-t overflow-hidden bg-gray-200 pt-4 lg:pt-12 relative">
       <div className="md:mb-[10vw] mb-10 mx-auto">
         <div className=" container p-5 md:p-[2rem] z-20  flex flex-col-reverse lg:flex-row justify-between gap-10 ">
-          <div className="lg:w-[40%] pb-10 ">
-            <Image width={130} height={100} src="/logo/collegeCounsel.webp" />
-            <p className="text-gray-600 mt-6">
+          <div className="lg:w-[40%] pb-10">
+            <Image width={130} height={100} src="/logo/collegeCounsel.webp" alt="college counsel"/>
+            <p className="text-gray-600 text-sm mt-6">
               Get admission in your dream University and course through College
               Counsel and get expert counselling and guidance along with
               scholarship options.
@@ -36,6 +38,10 @@ const Footer = () => {
               <Copyright className="w-4" />
               &nbsp;<span>{currentYear}</span>&nbsp; All rights reserved
             </p>
+            <div className="flex flex-col justify-end mt-20 md:mt-14 gap-2">
+              <p className="gap-2 flex items-center"><span><Phone className="w-5"/></span>+919569822903, +916392832171</p>
+              <p className="flex gap-2 items-center"><span><Mail className="w-5"/></span>mail@collegecounsel.co.in</p>
+            </div>
           </div>
           <div className="footerLinks grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:w-[50%] xl:w-[60%] gap-2 xl:gap-16">
             <div className="flex flex-col gap-2">

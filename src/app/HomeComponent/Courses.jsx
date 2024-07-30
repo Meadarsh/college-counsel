@@ -27,7 +27,7 @@ const CoursesComponent = () => {
               <div
                 key={index}
                 onClick={() => setSelectedCourse(data.type)}
-                className={`${
+                className={`cursor-pointer ${
                   selectedCourse == data.type
                     ? "bg-primary text-primary-foreground"
                     : "bg-primary-foreground text-primary"

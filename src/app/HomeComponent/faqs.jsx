@@ -4,7 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 
 const Faqs = () => {
   return (
-    <div className=' w-full mt-[8vh] lg:mt-[15vh] flex flex-col items-center'>
+    <div className=' mb-10 w-full mt-[8vh] lg:mt-[15vh] flex flex-col items-center'>
          <h2 className=' lg:text-3xl font-bold text-xl'>
          FAQ's
         </h2>

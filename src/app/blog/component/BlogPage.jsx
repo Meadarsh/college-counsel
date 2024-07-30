@@ -19,7 +19,7 @@ const BlogPage = () => {
 
   const GetBlogs = async () => {
     try {
-      const response = await fetch("api/blog/getBlog", { cache: "no-store" });
+      const response = await fetch("api/blog/getBlog");
       const data = await response.json();
       setLoading(false);
       setBlogs(data);

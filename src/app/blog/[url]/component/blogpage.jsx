@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { ImageFormat, ListFormat, ParagraphField, TableField } from "@/app/Components/Formats";
 import ApplyFormWIthoutImgH from "@/app/Components/ApplyFormWIthoutImgH";
-const LatestBlogList = dynamic (()=>import('@/app/blog/component/LatestBlogList'))
+const LatestBlogList = dynamic (()=>import('@/app/Components/LatestBlogList'))
 const Blogpage = ({ params }) => {
   const [blog, setBlog] = useState([]);
   const [latestList, setLatestList] = useState([]);

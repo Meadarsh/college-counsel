@@ -20,6 +20,7 @@ export const CourseList = [
 export const MoreList = [
   { name: "Blog", path: "/blog" },
   { name: "Careers", path: "#" },
+  { name: "Verify certificate", path: "/certificate" },
   { name: "Online Counselling", path: "/apply" },
 ]
 
