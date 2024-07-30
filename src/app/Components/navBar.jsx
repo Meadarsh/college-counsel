@@ -50,7 +50,7 @@ const NavBar = () => {
             <SheetContent side="left">
               <div className="grid gap-4 py-6">
                 {Links.map((example, index) => (
-                  <SheetClose asChild>
+                  <SheetClose key={index} asChild>
                     <Link
                       href={example.href}
                       key={example.href}
