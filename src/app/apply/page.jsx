@@ -14,8 +14,7 @@ export default function Page() {
               Get Better University at affordable price
             </p>
             <div className="flex flex-col items-center gap-2 sm:flex-row">
-              <Button>Apply Now</Button>
-              <Link href="#" className="text-sm underline underline-offset-4" prefetch={false}>
+              <Link href="/about" className="text-sm underline underline-offset-4" prefetch={false}>
                 Learn More
               </Link>
             </div>
