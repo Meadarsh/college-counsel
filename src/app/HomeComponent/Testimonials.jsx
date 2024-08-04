@@ -65,6 +65,6 @@ const testimonials = [
   {
     quote:
       "The college counsel service is utilitarian and client centred in achieving the students’ objective. Their methodical analysis procedures and focused work was a huge improvement for my application. Therefore, I want to encourage everyone to consider their help if you want to get into college.",
-    name: "Gaurav Pandey",
+    name: "Kamlesh",
   },
 ];
