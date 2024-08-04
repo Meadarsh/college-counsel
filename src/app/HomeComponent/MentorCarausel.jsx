@@ -56,7 +56,7 @@ export function MentorCarausel({ data }) {
                     alt="Mentor Image"
                   />
                   <div className="relative mt-4">
-                    <h5 className="text-2xl font-semibold">{_.name}</h5>
+                    <p className="text-2xl font-semibold">{_.name}</p>
                     <p className="text-lg">{_.university}</p>
                     <p className="text-sm">{_.exp} Year Experience</p>
                     <div className="w-full lg:mt-2 flex justify-end">

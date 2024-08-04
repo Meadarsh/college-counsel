@@ -58,7 +58,7 @@ const BlogPage = () => {
   };
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentBlogs = sortedBlogs.slice(
+  const currentBlogs = sortedBlogs?.slice(
     startIndex,
     startIndex + ITEMS_PER_PAGE
   );
