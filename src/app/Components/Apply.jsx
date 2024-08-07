@@ -76,9 +76,8 @@ const Apply = () => {
         });
 
         const result = await response.json();
+        console.log(result);
         if (result.status) {
-          form.reset();
-          storeInLocal();
           toast.success("Submitted successfully", {
             autoClose: 2000,
           });
@@ -92,11 +91,6 @@ const Apply = () => {
       }
     }
   };
-
-  function storeInLocal() {
-    const date = new Date();
-    localStorage.setItem("Applied", date.toString());
-  }
 
   return (
     <div className="rounded-xl bg-background p-6 shadow-lg md:p-8 lg:p-10">

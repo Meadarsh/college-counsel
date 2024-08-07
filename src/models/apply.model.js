@@ -1,9 +1,12 @@
-import { Schema,model, models } from "mongoose";
-const Apply = new Schema({
-    name:String,
-    email: String, 
-    phonenumber:String,
-    course:String
- }, { timestamps: true },)
+import { Schema, model, models } from "mongoose";
 
- export const Applies =models.applies || model("applies",Apply)
+const ApplySchema = new Schema({
+  name: String,
+  email: String,
+  phone: String,
+  course: String,
+}, { timestamps: true });
+
+const Applies = models.applies || model("applies", ApplySchema);
+
+export default Applies;
