@@ -21,7 +21,6 @@ export async function generateMetadata({ params }) {
     return {
       title: `${university?.title} - College Counsel`,
       description: university?.description,
-      keywords:university?.keywords,
       openGraph: {
         title:` ${university?.title} -  College Counsel`,
   

@@ -13,7 +13,7 @@ export async function GET(res,{params}){
                         { $match: { url: url } }
                     ],
                     latestBlogs: [
-                        { $sort: { createdAt: -1 } },
+                        { $sort: { createdAt:-1} },
                         { $limit: 10 },
                         { $project: { url: 1, title: 1, imageUrl: 1, upload_time: 1 } }
                     ]
@@ -22,7 +22,7 @@ export async function GET(res,{params}){
         ]);
 
         const specificBlog = results[0].specificBlog[0];
-        const latestBlogs = results[0].latestBlogs;
+    const latestBlogs = results[0].latestBlogs.reverse();
 
         return NextResponse.json({
             specificBlog,

@@ -62,10 +62,10 @@
 /* Default for large screens (desktops) */
 @media (min-width: 1025px) {
   .university-ab h3 {
-    font-size: 23px;
+    font-size: 22px;
   }
   .university-ab h2 {
-    font-size: 2rem; /* Equivalent to text-4xl in Tailwind CSS */
+    font-size: 1.8rem; /* Equivalent to text-4xl in Tailwind CSS */
   }
 }
 
