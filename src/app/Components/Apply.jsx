@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -12,84 +13,76 @@ import {
 } from "@/components/ui/select";
 import { CoursesList } from "../Data/data";
 import { z } from "zod";
-import { toast } from "react-toastify";
+import { useForm, Controller } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import Loader from "@/components/ui/loader";
+import { useToast } from "@/components/ui/use-toast";
+import { X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const formSchema = z.object({
   name: z.string().nonempty("Name is required"),
   email: z.string().email("Email is invalid"),
-  phone: z.string().regex(/^\+?\d{10,15}$/, "Phone number is invalid"),
+  phonenumber: z.string().regex(/^\+?\d{10,15}$/, "Phone number is invalid"),
   course: z.string().nonempty("Course selection is required"),
 });
 
-const Apply = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    course: "",
-  });
-
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    course: "",
-  });
-
+const Apply = ({popup, handleClose }) => {
+  const location = usePathname();
+  const { toast } = useToast();
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
-  };
+  const {
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phonenumber: "",
+      course: "",
+    },
+  });
 
-  const handleSelectChange = (value) => {
-    setFormData({ ...formData, course: value });
-  };
-
-  const validate = () => {
+  const onSubmit = async (formData) => {
     try {
-      formSchema.parse(formData);
-      setErrors({ name: "", email: "", phone: "", course: "" });
-      return true;
-    } catch (e) {
-      const validationErrors = e.errors.reduce((acc, error) => {
-        acc[error.path[0]] = error.message;
-        return acc;
-      }, {});
-      setErrors(validationErrors);
-      return false;
-    }
-  };
+      setLoading(true);
+      const response = await fetch("/api/apply", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (validate()) {
-      try {
-        setLoading(true);
-        const response = await fetch("/api/apply", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
-
-        const result = await response.json();
-        if (result.status) {
-          form.reset();
-          storeInLocal();
-          toast.success("Submitted successfully", {
-            autoClose: 2000,
-          });
-        } else {
-          toast.error("Unable to submit.");
+      const result = await response.json();
+      if (result.status) {
+        reset();
+        storeInLocal();
+        if (location !== "/apply") {
+          handleClose();
         }
-      } catch (error) {
-        toast.error("An unexpected error occurred.");
-      } finally {
-        setLoading(false);
+        toast({
+          title: "Submitted successfully",
+        });
+        
+      } else {
+        toast({
+          title: "Unable to submit.",
+          variant: "destructive",
+        });
       }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -99,63 +92,94 @@ const Apply = () => {
   }
 
   return (
-    <div className="rounded-xl bg-background p-6 shadow-lg md:p-8 lg:p-10">
-      <h3 className="mb-4 text-2xl font-bold">
-        Welcome to College Counsel - Fill this Application Form to Assist you better
-      </h3>
-      <form className="space-y-4" onSubmit={handleSubmit}>
+    <div className="relative rounded-xl bg-background p-6 shadow-lg md:p-8 lg:p-10">
+      <div>
+        <h3 className="mb-4 text-2xl font-bold">
+          Welcome to College Counsel {(!popup)&&`- Fill this Application Form to Assist you
+          better`}
+        </h3>
+        {!(location == "/apply") && (
+          <X
+            className="absolute top-2 right-2 cursor-pointer"
+            onClick={handleClose}
+          />
+        )}
+      </div>
+      <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-1">
             <Label htmlFor="name">Name</Label>
-            <Input
-              id="name"
-              placeholder="John Doe"
-              value={formData.name}
-              onChange={handleChange}
+            <Controller
+              name="name"
+              control={control}
+              render={({ field }) => (
+                <Input id="name" placeholder="Name" {...field} />
+              )}
             />
-            {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+            {errors.name && (
+              <p className="text-red-500 text-sm">{errors.name.message}</p>
+            )}
           </div>
           <div className="space-y-1">
             <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="john@example.com"
-              value={formData.email}
-              onChange={handleChange}
+            <Controller
+              name="email"
+              control={control}
+              render={({ field }) => (
+                <Input id="email" type="email" placeholder="Email" {...field} />
+              )}
             />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email.message}</p>
+            )}
           </div>
         </div>
         <div className="space-y-1">
           <Label htmlFor="phone">Phone Number</Label>
-          <Input
-            id="phone"
-            type="tel"
-            placeholder="+91 989 989 989"
-            value={formData.phone}
-            onChange={handleChange}
+          <Controller
+            name="phonenumber"
+            control={control}
+            render={({ field }) => (
+              <Input
+                id="phone"
+                type="tel"
+                placeholder="+91 1234567890"
+                {...field}
+              />
+            )}
           />
-          {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
+          {errors.phone && (
+            <p className="text-red-500 text-sm">{errors.phone.message}</p>
+          )}
         </div>
         <div className="space-y-1">
           <Label htmlFor="course">Course</Label>
-          <Select value={formData.course} onValueChange={handleSelectChange}>
-            <SelectTrigger id="course">
-              <SelectValue placeholder="Select a course" />
-            </SelectTrigger>
-            <SelectContent>
-              {CoursesList.filter(course => course.trim() !== '').map((course, index) => (
-                <SelectItem key={index} value={course}>
-                  {course}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-          {errors.course && <p className="text-red-500 text-sm">{errors.course}</p>}
+          <Controller
+            name="course"
+            control={control}
+            render={({ field }) => (
+              <Select onValueChange={field.onChange} value={field.value}>
+                <SelectTrigger id="course">
+                  <SelectValue placeholder="Select a course" />
+                </SelectTrigger>
+                <SelectContent>
+                  {CoursesList.filter((course) => course.trim() !== "").map(
+                    (course, index) => (
+                      <SelectItem key={index} value={course}>
+                        {course}
+                      </SelectItem>
+                    )
+                  )}
+                </SelectContent>
+              </Select>
+            )}
+          />
+          {errors.course && (
+            <p className="text-red-500 text-sm">{errors.course.message}</p>
+          )}
         </div>
         <Button type="submit" className="w-full" disabled={loading}>
-          {loading ? "Submitting..." : "Submit Application"}
+          {loading ? <Loader className="w-6 h-6" /> : "Submit Application"}
         </Button>
       </form>
     </div>

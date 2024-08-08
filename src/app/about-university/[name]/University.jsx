@@ -22,10 +22,10 @@ const Page = ({ params }) => {
   const [loading, setLoading] = useState(true);
 
   const fetchUniversity = async () => {
-      setLoading(true);
-      const data = await GetUniversityDetail(params?.name)
-      setLoading(false);
-      setData(data);
+    setLoading(true);
+    const data = await GetUniversityDetail(params?.name);
+    setLoading(false);
+    setData(data);
   };
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const Page = ({ params }) => {
               alt={"Sample certificate"}
             />
           </Dialog>
-          {data &&
+          {data && (
             <div className=" university-ab mt-20 bg-slate-50">
               <div className="relative">
                 <Image
@@ -88,52 +88,41 @@ const Page = ({ params }) => {
               </div>
               <div className="flex">
                 <div className="mt-1 p-4 lg:p-10 lg:w-[calc(100vw-30vw)]">
-                  {data?.sequence?.map((value) => (
-                    <>
-                      {value.type === "text" && <ParagraphField data={value} />}
-                      {value.type === "certificate" && (
-                        <CertifiedBy
-                          data={value}
-                          name={data?.detail.title}
-                          Expand={Expand}
-                        />
-                      )}
-                      {value.type === "hiringPartner" && (
-                        <PlacementPartners
-                          data={value}
-                          name={data?.detail.title}
-                        />
-                      )}
-                      {value.type === "list" && <ListFormat data={value} />}
-                      {value.type === "table" && <TableField data={value} />}
-                      {value.type === "img" && <ImageFormat data={value} />}
-                    </>
+                  {data?.sequence?.map((data) => (
+                    <div key={data.id}>
+                      {data.type === "text" && <ParagraphField data={data} />}
+                      {data.type === "list" && <ListFormat data={data} />}
+                      {data.type === "table" && <TableField data={data} />}
+                      {data.type === "img" && <ImageFormat data={data} />}
+                    </div>
                   ))}
-                   <ApplyFormWIthoutImgH />
+                  <ApplyFormWIthoutImgH />
                 </div>
                 <div className="max-h-[60vh] hidden lg:block sticky px-2 top-0 right-0 lg:w-[30vw]">
                   <Card className="flex flex-col mt-24 p-2 gap-2">
-                    <Button className=" font-light" variant='outline'>
+                    <Button className=" font-light" variant="outline">
                       About
                     </Button>
-                    <Button className=" font-light" variant='outline' >
+                    <Button className=" font-light" variant="outline">
                       Benefits Of {data?.detail?.title}
                     </Button>
-                    <Button className=" font-light" variant='outline'>
+                    <Button className=" font-light" variant="outline">
                       Fees Structure
                     </Button>
-                    <Button className=" font-light" variant='outline'>
+                    <Button className=" font-light" variant="outline">
                       Facts about {data?.detail?.title}
                     </Button>
-                    <Button className=" font-light" variant='outline'>Certificates</Button>
-                    <Button className="font-light" variant='outline'>
+                    <Button className=" font-light" variant="outline">
+                      Certificates
+                    </Button>
+                    <Button className="font-light" variant="outline">
                       Admission process
                     </Button>
                   </Card>
-                </div> 
+                </div>
               </div>
             </div>
-          }
+          )}
         </>
       )}
     </>

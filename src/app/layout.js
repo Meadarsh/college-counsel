@@ -4,7 +4,6 @@ import "./customStyles.css";
 import NavBar from "./Components/navBar";
 import Script from "next/script";
 import AutoPopup from "./Components/AutoPopup";
-import { useAmp } from "next/amp";
 import Footer from "./Components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import { ReduxProvider } from "@/Redux/ReduxComponent";
@@ -79,7 +78,7 @@ export default function RootLayout({ children }) {
         <header>
         <NavBar/>
         </header>
-       {/* <AutoPopup/> */}
+       <AutoPopup/>
       { children }
          <footer>
          <Footer/>

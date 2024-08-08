@@ -15,10 +15,17 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { CoursesList } from "../Data/data";
 import { useState } from "react";
 import Loader from "@/components/ui/loader";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { CoursesList } from "../Data/data";
+import { useToast } from "@/components/ui/use-toast";
 
 const FormSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
@@ -28,6 +35,8 @@ const FormSchema = z.object({
 });
 
 const ApplyFormWithoutImgH = () => {
+  const { toast } = useToast();
+
   const [loading, setLoading] = useState(false);
 
   const form = useForm({
@@ -41,24 +50,37 @@ const ApplyFormWithoutImgH = () => {
   });
 
   const onSubmit = async (data) => {
-    setLoading(true);
-    const response = await fetch("/api/apply", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-    setLoading(false);
-    const result = await response.json();
-    if (result.status) {
-      form.reset();
-      StoreInLocal();
-      toast.success("Submitted successfully", {
-        autoClose: 2000,
+    try {
+      setLoading(true);
+      const response = await fetch("/api/apply", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       });
-    } else {
-      toast.error("Unable to submit.");
+      setLoading(false);
+      const result = await response.json();
+      if (result.status) {
+        form.reset();
+        StoreInLocal();
+        toast({
+          title: "Submitted successfully",
+        });
+      } else {
+        toast({
+          title: "Unable to submit.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -69,22 +91,24 @@ const ApplyFormWithoutImgH = () => {
 
   return (
     <div className="lg:w-2/3 w-[80%] mt-32 z-50 lg:mt-12 flex flex-col">
-        <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">
-          Welcome to College Counsel- Fill this Application Form to Assist you
-          better
-        </h3>
+      <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">
+        Welcome to College Counsel- Fill this Application Form to Assist you
+        better
+      </h3>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full mt-4 lg:mt-10 flex flex-col p-4 gap-3">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="w-full mt-4 lg:mt-10 flex flex-col p-4 gap-3"
+        >
           <div className="flex w-full lg:flex-row flex-col gap-3">
             <FormField
-            
               control={form.control}
               name="name"
               render={({ field }) => (
-                <FormItem  className="w-full">
+                <FormItem className="w-full">
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input  placeholder="Name" {...field} />
+                    <Input placeholder="Name" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -94,7 +118,7 @@ const ApplyFormWithoutImgH = () => {
               control={form.control}
               name="email"
               render={({ field }) => (
-                <FormItem  className="w-full">
+                <FormItem className="w-full">
                   <FormLabel>Email</FormLabel>
                   <FormControl>
                     <Input type="email" placeholder="Email" {...field} />
@@ -109,7 +133,7 @@ const ApplyFormWithoutImgH = () => {
               control={form.control}
               name="phonenumber"
               render={({ field }) => (
-                <FormItem  className="w-full">
+                <FormItem className="w-full">
                   <FormLabel>Phone no.</FormLabel>
                   <FormControl>
                     <Input type="number" placeholder="Phone no." {...field} />
@@ -122,18 +146,38 @@ const ApplyFormWithoutImgH = () => {
               control={form.control}
               name="course"
               render={({ field }) => (
-                <FormItem  className="w-full">
-                  <FormLabel>Course</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Course" {...field} />
-                  </FormControl>
+                <FormItem className="w-full">
+                  <FormLabel htmlFor="course">Course</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    value={field.value}
+                    defaultValue=""
+                  >
+                    <SelectTrigger id="course">
+                      <SelectValue placeholder="Select a course" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {CoursesList.filter((course) => course.trim() !== "").map(
+                        (course, index) => (
+                          <SelectItem key={index} value={course}>
+                            {course}
+                          </SelectItem>
+                        )
+                      )}
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
                 </FormItem>
               )}
             />
           </div>
           <div className="w-full mt-4 flex justify-end">
-            <Button variant="default"  disabled={loading} size='lg' type="submit">
+            <Button
+              variant="default"
+              disabled={loading}
+              size="lg"
+              type="submit"
+            >
               {loading ? <Loader className="w-6 h-6" /> : "Apply for free"}
             </Button>
           </div>
