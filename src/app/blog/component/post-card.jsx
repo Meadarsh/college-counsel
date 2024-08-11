@@ -13,7 +13,7 @@ import Link from "next/link";
 // ----------------------------------------------------------------------
 
 export default function PostCard({ post }) {
-  const { url, imageUrl, writter, title, upload_time } = post;
+  const { url, imageUrl, writer, title, upload_time } = post;
 
   return (
     <Link href={"/blog/" + url}>
@@ -37,9 +37,9 @@ export default function PostCard({ post }) {
         </CardContent>
         <CardFooter className="px-3 py-2 flex justify-between">
           <p className="text-[12px]">{fDate(upload_time)}</p>
-          <div className="flex items-center">
+          <div className="flex items-center gap-1">
             <PenLine className=" size-4 text-yellow-500" />
-            <span>{writter}</span>
+            <span className="text-sm">{writer}</span>
           </div>
         </CardFooter>
       </Card>

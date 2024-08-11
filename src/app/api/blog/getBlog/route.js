@@ -6,7 +6,7 @@ export const GET= async(req,res)=>{
    
     try {
       await connectDb();
-      const blogs = await Blogs.find({}, 'url title imageUrl upload_time');
+      const blogs = await Blogs.find({}, 'url title writer imageUrl upload_time');
       const response = new NextResponse(JSON.stringify(blogs), {
         headers: {
           'Content-Type': 'application/json',
