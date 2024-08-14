@@ -1,6 +1,5 @@
+"use server"
 import React from "react";
-import AccordionExpandIcon from "../Components/Accordian";
-import { AccordionData } from "../Data/data";
 import Image from "next/image";
 
 const WhyChooseus = () => {

@@ -76,12 +76,12 @@ export const TableField = ({ data }) => {
   return (
     <>
       {data?.title&&<h2>{data?.title}</h2>}
-        <Table className="bg-white mt-5 text-black rounded-xl border overflow-hidden">
+        <Table className="my-5 text-black rounded-lg overflow-hidden">
           <TableHeader>
             <TableRow>
               {data?.table[0].map((headCell, index) => (
                 <TableHead
-                 className="bg-blue-100 text-lg font-semibold text-black"
+                 className="bg-blue-100 lg:text-lg font-semibold text-black"
                   key={index}
                 >
                   {headCell}
@@ -89,7 +89,7 @@ export const TableField = ({ data }) => {
               ))}
             </TableRow>
           </TableHeader>
-          <TableBody>
+          <TableBody className="border shadow">
             {data?.table.slice(1).map((row, rowIndex) => (
               <TableRow key={rowIndex}>
                 {row.map((cell, cellIndex) => (

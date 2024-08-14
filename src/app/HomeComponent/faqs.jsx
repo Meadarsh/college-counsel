@@ -1,3 +1,4 @@
+"use server"
 import React from 'react'
 import { FaqsData } from '../Data/data'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'

@@ -8,16 +8,22 @@ import {
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PenLine } from "lucide-react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 // ----------------------------------------------------------------------
 
 export default function PostCard({ post }) {
   const { url, imageUrl, writer, title, upload_time } = post;
+ 
+  const router = useRouter();
+
+  const navigate = () => {
+    router.push("/blog/" + url); 
+  };
+
 
   return (
-    <Link href={"/blog/" + url}>
-      <Card className="h-full flex flex-col justify-between">
+      <Card  onClick={navigate} className="h-full flex flex-col justify-between">
         <CardHeader className="relative p-2">
           <Image
             alt={title}
@@ -43,6 +49,5 @@ export default function PostCard({ post }) {
           </div>
         </CardFooter>
       </Card>
-    </Link>
   );
 }

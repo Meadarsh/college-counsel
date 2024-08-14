@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import Apply from "../Components/Apply";
 
-export default function Page() {
+const Page = () => {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-12 lg:gap-16">
@@ -25,3 +24,4 @@ export default function Page() {
     </section>
   );
 }
+export default Page;

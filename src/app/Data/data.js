@@ -6,8 +6,6 @@ export const HomepageCrausel = [
   "/homePage/carausel/5.webp",
 ];
 
-
-
 export const AccordionData = [
   {
     Question: "Expert Guidance",
@@ -41,28 +39,48 @@ export const AccordionData = [
   },
 ];
 export const FaqsData = [
-  {"General":[{question:'What is College Counsel?',
-    answer:'College Counsel provides expert career counselling services for students who are seeking career guidance.'
+  {
+    General: [
+      {
+        question: "What is College Counsel?",
+        answer:
+          "College Counsel provides expert career counselling services for students who are seeking career guidance.",
+      },
+      {
+        question: "How will College Counsel help me?",
+        answer:
+          "We offer personalised career counselling services, course recommendation based on student performance and assistance to help you achieve your goals.",
+      },
+    ],
   },
-  {question:'How will College Counsel help me?',
-    answer:'We offer personalised career counselling services, course recommendation based on student performance and assistance to help you achieve your goals.'
+  {
+    Services: [
+      {
+        question: "What services do we offer?",
+        answer: "We offer career counselling and guidance to students.",
+      },
+      {
+        question: "How can I book a counselling session?",
+        answer:
+          "You can go to the &apos;Apply&apos; section on the top-right corner of the page and fill the details to book a counselling session.",
+      },
+    ],
   },
-]},
-  {"Services":[{question:'What services do we offer?',
-    answer:'We offer career counselling and guidance to students.'
+  {
+    Courses: [
+      {
+        question: "How do I find the right course for myself?",
+        answer:
+          "We have a top-notch team of experts who will guide you and help you select the best available courses for you.",
+      },
+      {
+        question: "Do we offer information on online courses?",
+        answer:
+          "Yes, We provide complete online assistance and information on online courses.",
+      },
+    ],
   },
-  {question:'How can I book a counselling session?',
-    answer:'You can go to the &apos;Apply&apos; section on the top-right corner of the page and fill the details to book a counselling session.'
-  },
-]},
-  {"Courses":[{question:'How do I find the right course for myself?',
-    answer:'We have a top-notch team of experts who will guide you and help you select the best available courses for you.'
-  },
-  {question:'Do we offer information on online courses?',
-    answer:'Yes, We provide complete online assistance and information on online courses.'
-  },
-]},
-]
+];
 
 export const CoursesList = [
   "",
@@ -79,4 +97,3 @@ export const CoursesList = [
   "Master of Business Administration (M.B.A.)",
   "Master of Education (M.Ed.)",
 ];
-

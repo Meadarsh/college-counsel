@@ -1,3 +1,4 @@
+"use server"
 import React from 'react'
 import { collegeLogo } from '../Data/collegeLogo'
 import Link from 'next/link'

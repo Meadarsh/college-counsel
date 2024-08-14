@@ -29,6 +29,9 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: `${process.env.BASE_URL}`,
+  },
 };
 
 export default function RootLayout({ children }) {

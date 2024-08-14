@@ -1,3 +1,4 @@
+"use server"
 import React from 'react'
 import { CardStack } from '@/components/ui/card-stack';
 import { ImageStack } from '../Data/landingpage';

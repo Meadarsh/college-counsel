@@ -1,3 +1,4 @@
+"use server"
 import React from 'react'
 import Blogpage from './component/blogpage';
 

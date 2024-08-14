@@ -59,7 +59,7 @@ const SecondPage = () => {
               >
                 <div className="p-1">
                   <Card className="rounded-lg border backdrop-blur-sm bg-[rgba(255,255,255,.1)]">
-                    <CardContent className="flex lg:p-4 p-3">
+                    <CardContent className="flex lg:p-4 md:p-3 p-2">
                       <Image
                         className="h-2/3 w-full rounded-lg object-cover"
                         width={333}

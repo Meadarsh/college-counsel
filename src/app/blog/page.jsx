@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import Applyside from "../Components/Applyside";
 import BlogPage from "./component/BlogPage";
 
@@ -15,9 +14,7 @@ const Blogs = () => {
  
   return (
     <>
-      <Link href="apply">
         <Applyside />
-      </Link>
      <BlogPage/>
     </>
   );

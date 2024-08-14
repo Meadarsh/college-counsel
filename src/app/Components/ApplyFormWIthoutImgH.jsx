@@ -90,7 +90,7 @@ const ApplyFormWithoutImgH = () => {
   }
 
   return (
-    <div className="lg:w-2/3 w-[80%] mt-32 z-50 lg:mt-12 flex flex-col">
+    <div className="lg:w-2/3 w-[80%] mt-3 z-50 lg:mt-12 flex flex-col">
       <h3 className="text-lg md:text-xl lg:text-2xl font-semibold">
         Welcome to College Counsel- Fill this Application Form to Assist you
         better

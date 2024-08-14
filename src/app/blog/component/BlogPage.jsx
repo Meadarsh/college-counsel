@@ -90,8 +90,8 @@ const BlogPage = () => {
           <>
             {currentBlogs && (
               <div className="grid gap-3 lg:gap-4 grid-cols-1 items-stretch sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                {currentBlogs.map((post) => (
-                  <PostCard key={post.id} post={post} />
+                {currentBlogs.map((post, index) => (
+                  <PostCard key={index} post={post} />
                 ))}
               </div>
             )}

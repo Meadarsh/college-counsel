@@ -18,7 +18,7 @@ const CoursesComponent = () => {
   return (
     <div className="lg:w-[70%] md:w-[80%] mx-auto flex mt-[8vh] lg:mt-[10vh] xl:mt-[15vh] flex-col md:gap-6 lg:gap-10">
       <h2 className="lg:text-3xl text-xl mx-auto font-semibold">
-      Discover the Best Courses for yourself
+        Discover the Best Courses for yourself
       </h2>
       <div className="flex lg:flex-row flex-col gap-4">
         <Card className=" hidden lg:block">
@@ -48,22 +48,25 @@ const CoursesComponent = () => {
           </CardContent>
         </Card>
         <Card className="lg:hidden mt-8 flex flex-col gap-2 mx-auto w-[85%]">
-            <Select
-              value={selectedCourse}
-              onValueChange={(val) => {setSelectedCourse(val)}}
-            >
-              <SelectTrigger className="w-full text-xl font-medium p-5">
-                <SelectValue placeholder="Course" />
-              </SelectTrigger>
-              <SelectContent >
-                <SelectItem value="PG Courses">PG Courses</SelectItem>
-                <SelectItem value="UG Courses">UG Courses</SelectItem>
-              </SelectContent>
-            </Select>
+          <Select
+          
+            value={selectedCourse}
+            onValueChange={(val) => {
+              setSelectedCourse(val);
+            }}
+          >
+            <SelectTrigger className="w-full text-xl font-medium p-5">
+              <SelectValue placeholder="Course" />
+            </SelectTrigger>
+            <SelectContent  >
+              <SelectItem value="PG Courses">PG Courses</SelectItem>
+              <SelectItem value="UG Courses">UG Courses</SelectItem>
+            </SelectContent>
+          </Select>
         </Card>
         <Card className="lg:w-[70%] w-[95%] shadow-none border-0  mx-auto">
           <CardContent className="p-3 w-full flex gap-2 lg:justify-start justify-center flex-wrap">
-            {Courses[selectedCourse].map((data,index) => (
+            {Courses[selectedCourse].map((data, index) => (
               <Link key={index} href={data.Link}>
                 <div
                   key={data.id}

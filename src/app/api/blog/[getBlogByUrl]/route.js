@@ -13,7 +13,7 @@ export async function GET(res,{params}){
                         { $match: { url: url } }
                     ],
                     latestBlogs: [
-                        { $sort: { createdAt:-1} },
+                        { $sort: { upload_time:-1} },
                         { $limit: 10 },
                         { $project: { url: 1, title: 1, imageUrl: 1, upload_time: 1 } }
                     ]
@@ -21,9 +21,13 @@ export async function GET(res,{params}){
             }
         ]);
 
-        const specificBlog = results[0].specificBlog[0];
-    const latestBlogs = results[0].latestBlogs.reverse();
+       
 
+    const specificBlog = results[0].specificBlog[0];
+    let latestBlogs = results[0].latestBlogs;
+    if (specificBlog) {
+        latestBlogs = latestBlogs.filter(blog => blog.url !== specificBlog.url);
+    }
         return NextResponse.json({
             specificBlog,
             latestBlogs
