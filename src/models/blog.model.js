@@ -10,6 +10,8 @@ const BlogModel= new Schema({
       required: true,
     },
     imageUrl: String,
+    writer: String,
+    meta:Object,
     sequence: Array,
     upload_time: {type: Date, default: Date.now}, 
     updatedTime:String, 

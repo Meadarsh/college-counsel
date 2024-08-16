@@ -118,3 +118,27 @@
     font-size: 15px;
   }
 }
+
+.contentParagraph table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid rgb(0, 48, 131);   
+}
+
+.contentParagraph table td {
+  border: 1px solid #a4a4a4; 
+  padding: 8px; 
+}
+.contentParagraph table thead {
+  background-color: rgb(0, 48, 131);
+  color: white !important;
+  align-items: center;
+}
+.contentParagraph table thead th {
+  align-items: center;
+}
+
+.contentParagraph table tr:nth-child(even) {
+  background-color: rgba(0, 94, 255, 0.171);
+}
+

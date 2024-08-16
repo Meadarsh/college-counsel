@@ -14,7 +14,9 @@ const Blogpage = async ({ params }) => {
   let blog;
   let latestList;
   try {
-    const res = await fetch(`${process.env.BASE_URL}/api/blog/${params?.url}`);
+    const res = await fetch(`${process.env.BASE_URL}/api/blog/${params?.url}`, {
+      cache: "no-store",
+    });
     const data = await res.json();
     if (res.ok) {
       blog = data?.specificBlog;

@@ -31,7 +31,7 @@ export const ParagraphField = ({ data }) => {
     <>
       {data?.heading&&<h2>{data?.heading}</h2>}
       <div
-        className="mt-2 mb-2 text-sm md:text-lg lg:text-xl"
+        className="contentParagraph mt-2 mb-2 text-sm md:text-lg lg:text-xl"
         dangerouslySetInnerHTML={{
           __html: `${data?.paragraph}`,
         }}
