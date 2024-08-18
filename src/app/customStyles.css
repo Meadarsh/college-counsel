@@ -8,7 +8,7 @@
 }
 .blogpage a {
   color: rgb(0, 0, 193);
-  font-weight: 600;
+  text-decoration: underline;
 }
 
 .footerLinks a:hover {
