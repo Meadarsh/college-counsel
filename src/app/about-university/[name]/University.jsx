@@ -4,6 +4,7 @@ import ApplyFormWIthoutImgH from "@/app/Components/ApplyFormWIthoutImgH";
 import CCLoader from "@/app/Components/CCLoader";
 import {
   CertifiedBy,
+  HiringPartnerFormat,
   ImageFormat,
   ListFormat,
   ParagraphField,
@@ -88,12 +89,13 @@ const Page = ({ params }) => {
               </div>
               <div className="flex">
                 <div className="mt-1 p-4 lg:p-10 lg:w-[calc(100vw-30vw)]">
-                  {data?.sequence?.map((data) => (
-                    <div key={data.id}>
-                      {data.type === "text" && <ParagraphField data={data} />}
-                      {data.type === "list" && <ListFormat data={data} />}
-                      {data.type === "table" && <TableField data={data} />}
-                      {data.type === "img" && <ImageFormat data={data} />}
+                  {data?.sequence?.map((value) => (
+                    <div key={value.id}>
+                      {value.type === "text" && <ParagraphField data={value} />}
+                      {value.type === "list" && <ListFormat data={value} />}
+                      {value.type === "table" && <TableField data={value} />}
+                      {value.type === "img" && <ImageFormat data={value} />}
+                      {value.type === "placement_partner" && <HiringPartnerFormat data={value} title={data?.detail?.title} />}
                     </div>
                   ))}
                   <ApplyFormWIthoutImgH />

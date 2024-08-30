@@ -11,52 +11,52 @@ export async function GET() {
     {
       url: 'https://collegecounsel.co.in',
       lastModified: new Date().toISOString(),
-      changeFrequency: 'yearly',
-      priority: 1,
+      changeFrequency: 'weekly',
+      priority: .9,
     },
     {
       url: 'https://collegecounsel.co.in/sitemap.xml',
       lastModified: new Date().toISOString(),
-      changeFrequency: 'hourly',
-      priority: 1,
+      changeFrequency: 'daily',
+      priority: .9,
     },
     {
       url: 'https://collegecounsel.co.in/about',
       lastModified: new Date().toISOString(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: .9,
     },
     {
       url: 'https://collegecounsel.co.in/about-university',
       lastModified: new Date().toISOString(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      changeFrequency: 'weekly',
+      priority: .9,
     },
     {
       url: 'https://collegecounsel.co.in/apply',
       lastModified: new Date().toISOString(),
       changeFrequency: 'monthly',
-      priority: 0.5,
+      priority: .9,
     },
     {
       url: 'https://collegecounsel.co.in/blog',
       lastModified: new Date().toISOString(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
+      changeFrequency: 'daily',
+      priority:.9,
     },
   ];
 
   const dynamicRoutes = blog.map((blog) => ({
     url: `https://collegecounsel.co.in/blog/${blog.url}`,
     lastModified: new Date(blog.upload_time).toISOString(),
-    changeFrequency: 'daily',
-    priority: 1,
+    changeFrequency: 'weekly',
+    priority: .9,
   }));
   const dynamicCollegeRoutes = university.map((university) => ({
     url: `https://collegecounsel.co.in/about-university/${university.url}`,
     lastModified: new Date(university.upload_time).toISOString(),
-    changeFrequency: 'daily',
-    priority: 1,
+    changeFrequency: 'weekly',
+    priority:.9,
   }));
 
   const allRoutes = [...staticRoutes, ...dynamicRoutes,...dynamicCollegeRoutes];

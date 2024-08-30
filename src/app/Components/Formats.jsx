@@ -121,3 +121,19 @@ export const ImageFormat = ({data}) => {
     </>
   );
 };
+export const HiringPartnerFormat = ({data,title}) => {
+  console.log(title);
+  
+  console.log(data);
+  
+  return (
+    <div className="flex flex-col justify-start ">
+     <h2>{title} hiring partners</h2>
+     <p>{data?.paragraph}</p>
+     <List style={"star"} data={data.list} />
+     <div className="my-4 text-xl font-semibold p-4 rounded whitespace-nowrap bg-primary/25">
+     
+     </div>
+    </div>
+  );
+};
