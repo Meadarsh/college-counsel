@@ -1,6 +1,7 @@
 import Image from "next/image";
 import List from "./List";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
 
 export const PlacementPartners = ({ data, name }) => {
   return (
@@ -121,19 +122,35 @@ export const ImageFormat = ({data}) => {
     </>
   );
 };
-export const HiringPartnerFormat = ({data,title}) => {
-  console.log(title);
-  
+export const HiringPartnerFormat = ({data,title,companies}) => {
   console.log(data);
-  
+
   return (
-    <div className="flex flex-col justify-start ">
+    <>
      <h2>{title} hiring partners</h2>
      <p>{data?.paragraph}</p>
      <List style={"star"} data={data.list} />
-     <div className="my-4 text-xl font-semibold p-4 rounded whitespace-nowrap bg-primary/25">
-     
+     <div className=" text-xl mt-5 flex flex-wrap lg:justify-evenly gap-2 font-semibold p-4 rounded bg-primary/15">
+     <p><span className=" text-primary text-4xl">3X</span> OPPORTUNITIES</p>
+     <p><span className=" text-primary text-4xl">250+</span> HIRING PARTNERS</p>
+     <p><span className=" text-primary text-4xl">45%</span> AVG SALLARY HIKE</p>
      </div>
-    </div>
+     <Button className="my-3 hover:bg-primary/90 pointer-events-none bg-primary/90">OUR STUDENTS WORK HERE</Button>
+     <div className=" flex my-1 md:gap-2">
+     {companies?.map((data) => (
+          <div className="border rounded-md bg-white  md:scale-100 scale-90 overflow-hidden" key={data.id}>
+            <Image
+              width={100}
+              height={150}
+              className="mx-2"
+              src={data?.logoUrl}
+            />
+            <div className=" text-ellipsis whitespace-nowrap bg-blue-200 justify-center flex w-full">
+              {<p className=" !text-[12px]">{data?.companyName}</p>}
+            </div>
+          </div>
+        ))}
+     </div>
+    </>
   );
 };

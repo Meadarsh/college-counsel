@@ -1,8 +1,6 @@
 import { Check, Star } from "lucide-react";
 
-const List = ({ style, data }) => {
-  console.log(style);
-  
+const List = ({ style, data }) => {  
   return (
     <>
       {data &&

@@ -11,19 +11,19 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata = {
-  title: "College Counsel | Expert Guidance for Your Academic Career",
-  description: "Get admission in your dream University and course through College Counsel and get expert counselling and guidance along with scholarship options.",
+  title: "College Counsel | The Path to Professional Fulfillment: Career Counseling",
+  description:`Discover "The Path to Professional Fulfillment" with College Counsel's expert career counseling services. Whether you're just starting out or seeking a career change, our tailored guidance helps you identify your strengths, passions, and goals. We provide personalized strategies to navigate your career journey with confidence. Unlock your full potential, make informed decisions, and achieve the professional fulfillment you've always dreamed of. Let College Counsel be your trusted partner in building a successful, fulfilling career.`,
   author: 'College Counsel',
   keywords: "College Counsel, college guidance, higher education, undergraduate courses, postgraduate courses, professional courses, Manipal University, JAIN University, Amity University, college application process, college admission, career guide, BA, BCom, BBA, BCA, MA, MCA, MBA, MSc",
   ogTitle: "College Counsel | Expert Guidance for Your Academic Career",
-  ogDescription: "Discover College Counsel, your one-stop solution for navigating higher education! Get expert guidance, comprehensive course selection, and insider knowledge on top universities like Manipal, JAIN, and Amity.",
+  ogDescription: `Discover "The Path to Professional Fulfillment" with College Counsel's expert career counseling services. Whether you're just starting out or seeking a career change, our tailored guidance helps you identify your strengths, passions, and goals. We provide personalized strategies to navigate your career journey with confidence. Unlock your full potential, make informed decisions, and achieve the professional fulfillment you've always dreamed of. Let College Counsel be your trusted partner in building a successful, fulfilling career.`,
   ogUrl: "https://collegecounsel.co.in",
   ogImage: "https://collegecounsel.co.in/logo/DHF.png",
   twitterCard: "summary_large_image",
-  twitterSite: "@collegecounse1",
-  twitterCreator: "@collegecounse1",
-  twitterTitle: "College Counsel | Expert Guidance for Your Academic Career",
-  twitterDescription: "Discover College Counsel, your one-stop solution for navigating higher education! Get expert guidance, comprehensive course selection, and insider knowledge on top universities like Manipal, JAIN, and Amity.",
+  twitterSite: "@CollegeCnslHQ",
+  twitterCreator: "@CollegeCnslHQ",
+  twitterTitle: "College Counsel | The Path to Professional Fulfillment: Career Counseling",
+  twitterDescription:`Discover "The Path to Professional Fulfillment" with College Counsel's expert career counseling services. Whether you're just starting out or seeking a career change, our tailored guidance helps you identify your strengths, passions, and goals. We provide personalized strategies to navigate your career journey with confidence. Unlock your full potential, make informed decisions, and achieve the professional fulfillment you've always dreamed of. Let College Counsel be your trusted partner in building a successful, fulfilling career.`,
   twitterImage: "https://collegecounsel.co.in/logo/DHF.png",
   robots: {
     index: true,
