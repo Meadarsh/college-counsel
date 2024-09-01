@@ -11,19 +11,19 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata = {
-  title: "College Counsel | The Path to Professional Fulfillment: Career Counseling",
-  description:`Discover "The Path to Professional Fulfillment" with College Counsel's expert career counseling services. Whether you're just starting out or seeking a career change, our tailored guidance helps you identify your strengths, passions, and goals. We provide personalized strategies to navigate your career journey with confidence. Unlock your full potential, make informed decisions, and achieve the professional fulfillment you've always dreamed of. Let College Counsel be your trusted partner in building a successful, fulfilling career.`,
+  title: "College Counsel | Empowering Your Career Choices Through Counseling",
+  description:`Unlock your true potential with College Counsel! Our expert team is dedicated to empowering your career choices through personalized counseling. Whether you're navigating your education, exploring career paths, or seeking to advance in your current role, we provide tailored guidance to align your passions with opportunities. With College Counsel by your side, you'll gain the confidence and clarity needed to make informed decisions, ensuring your career path is not just a choice but a journey to success. Let us help you shape a future that's uniquely yours—start your journey with College Counsel today!`,
   author: 'College Counsel',
   keywords: "College Counsel, college guidance, higher education, undergraduate courses, postgraduate courses, professional courses, Manipal University, JAIN University, Amity University, college application process, college admission, career guide, BA, BCom, BBA, BCA, MA, MCA, MBA, MSc",
-  ogTitle: "College Counsel | Expert Guidance for Your Academic Career",
-  ogDescription: `Discover "The Path to Professional Fulfillment" with College Counsel's expert career counseling services. Whether you're just starting out or seeking a career change, our tailored guidance helps you identify your strengths, passions, and goals. We provide personalized strategies to navigate your career journey with confidence. Unlock your full potential, make informed decisions, and achieve the professional fulfillment you've always dreamed of. Let College Counsel be your trusted partner in building a successful, fulfilling career.`,
+  ogTitle: "College Counsel | Empowering Your Career Choices Through Counseling",
+  ogDescription: `Unlock your true potential with College Counsel! Our expert team is dedicated to empowering your career choices through personalized counseling. Whether you're navigating your education, exploring career paths, or seeking to advance in your current role, we provide tailored guidance to align your passions with opportunities. With College Counsel by your side, you'll gain the confidence and clarity needed to make informed decisions, ensuring your career path is not just a choice but a journey to success. Let us help you shape a future that's uniquely yours—start your journey with College Counsel today!`,
   ogUrl: "https://collegecounsel.co.in",
   ogImage: "https://collegecounsel.co.in/logo/DHF.png",
   twitterCard: "summary_large_image",
   twitterSite: "@CollegeCnslHQ",
   twitterCreator: "@CollegeCnslHQ",
-  twitterTitle: "College Counsel | The Path to Professional Fulfillment: Career Counseling",
-  twitterDescription:`Discover "The Path to Professional Fulfillment" with College Counsel's expert career counseling services. Whether you're just starting out or seeking a career change, our tailored guidance helps you identify your strengths, passions, and goals. We provide personalized strategies to navigate your career journey with confidence. Unlock your full potential, make informed decisions, and achieve the professional fulfillment you've always dreamed of. Let College Counsel be your trusted partner in building a successful, fulfilling career.`,
+  twitterTitle: "College Counsel | Empowering Your Career Choices Through Counseling",
+  twitterDescription:`Unlock your true potential with College Counsel! Our expert team is dedicated to empowering your career choices through personalized counseling. Whether you're navigating your education, exploring career paths, or seeking to advance in your current role, we provide tailored guidance to align your passions with opportunities. With College Counsel by your side, you'll gain the confidence and clarity needed to make informed decisions, ensuring your career path is not just a choice but a journey to success. Let us help you shape a future that's uniquely yours—start your journey with College Counsel today!`,
   twitterImage: "https://collegecounsel.co.in/logo/DHF.png",
   robots: {
     index: true,
@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
           },
           "sameAs": [
             "www.linkedin.com/in/college-counsel",
-            "https://twitter.com/CollegeCounsel",
+            "https://x.com/CollegeCnslHQ",
             "https://www.facebook.com/CollegeCounsel",
             "https://www.instagram.com/collegecounselofficial"
           ]
