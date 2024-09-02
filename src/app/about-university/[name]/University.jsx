@@ -39,6 +39,8 @@ const Page = ({ params }) => {
   function Compress() {
     setExpandCertificate({ status: false, url: "" });
   }
+  console.log(data);
+  
   return (
         <>
           <Dialog onClose={Compress} open={expandCertificate.status}>
@@ -58,15 +60,15 @@ const Page = ({ params }) => {
                   height={600}
                   alt="University Image"
                   className="w-full h-[50vh] lg:h-[100vh]"
-                  src={data?.detail?.imageUrl}
+                  src={data?.university.detail?.imageUrl}
                   objectFit="cover"
                 ></Image>
                 <div className="absolute flex flex-col bottom-[20%] left-4 lg:left-14">
                   <h1 className="text-3xl lg:text-6xl font-bold text-white">
-                    {data?.detail?.title}
+                    {data?.university.detail?.title}
                   </h1>
                   <div className="flex overflow-clip justify-evenly max-w-[80%] rounded-lg lg:min-w-56 mt-6 bg-white p-1">
-                    {data?.detail?.certificates?.map((url, ind) => (
+                    {data?.university.detail?.certificates?.map((url, ind) => (
                       <Image
                         key={ind}
                         alt="University certificates Image"
