@@ -11,7 +11,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata = {
-  title: "College Counsel | Empowering Your Career Choices Through Counseling",
+  title: "College Counsel | Empowering Career Choices Through Counseling",
   description:`Unlock your true potential with College Counsel! Our expert team is dedicated to empowering your career choices through personalized counseling. Whether you're navigating your education, exploring career paths, or seeking to advance in your current role, we provide tailored guidance to align your passions with opportunities. With College Counsel by your side, you'll gain the confidence and clarity needed to make informed decisions, ensuring your career path is not just a choice but a journey to success. Let us help you shape a future that's uniquely yours—start your journey with College Counsel today!`,
   author: 'College Counsel',
   keywords: "College Counsel, college guidance, higher education, undergraduate courses, postgraduate courses, professional courses, Manipal University, JAIN University, Amity University, college application process, college admission, career guide, BA, BCom, BBA, BCA, MA, MCA, MBA, MSc",
