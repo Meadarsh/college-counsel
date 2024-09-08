@@ -1,25 +1,33 @@
 import Link from "next/link";
 import Apply from "../Components/Apply";
+import Image from "next/image";
+import { InfiniteMovingCards } from "@/components/ui/infiniteMovingCard";
+import { collegeLogo } from "../Data/collegeLogo";
 
 const Page = () => {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-12 lg:gap-16">
-        <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-[#0077b6] to-[#00b7ff] md:h-[500px]">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0077b6]/80 to-[#00b7ff]/80 backdrop-blur-sm" />
-          <div className="relative z-10 flex h-full flex-col items-center justify-center space-y-4 p-6 text-center text-primary-foreground">
-            <h2 className="text-3xl font-bold sm:text-4xl">College Counsel</h2>
-            <p className="max-w-md text-lg">
-              Get Better University at affordable price
-            </p>
-            <div className="flex flex-col items-center gap-2 sm:flex-row">
-              <Link href="/about" className="text-sm underline underline-offset-4" prefetch={false}>
-                Learn More
-              </Link>
-            </div>
-          </div>
+    <section className="w-full mt-14 relative lg:mt-20 bg-gray-400 h-screen lg:h-[calc(100vh-80px)]">
+      <Image className="object-cover" fill src={'/image/applybg.webp'}  />
+      <div className="absolute right-0 top-0 h-full border-transparent border-[20px] w-full">
+       <div className="h-full grid grid-cols-5 border-white box-border border-[12px] rounded-[20px]">
+       <div className="relative min-h-32 col-span-5 lg:col-span-3 overflow-hidden">
+         <InfiniteMovingCards
+        items={collegeLogo}
+        image={true}
+        pauseOnHover={false}
+        direction="right"
+        speed="very-slow"
+      />
+        <InfiniteMovingCards
+        items={collegeLogo}
+        pauseOnHover={false}
+        image={true}
+        direction="left"
+        speed="very-slow"
+      />
         </div>
         <Apply />
+       </div>
       </div>
     </section>
   );

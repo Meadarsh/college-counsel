@@ -62,8 +62,8 @@ const SecondPage = () => {
                     <CardContent className="flex lg:p-4 md:p-3 p-2">
                       <Image
                         className="h-2/3 w-full rounded-lg object-cover"
-                        width={333}
-                        height={218}
+                        width={400}
+                        height={250}
                         alt="College counsel"
                         src={_}
                       />

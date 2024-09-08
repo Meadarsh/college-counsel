@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import React from "react";
 import { CourseList, Legal, MoreList, SocialLinks } from "../Data/footer";
@@ -13,6 +14,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import dayjs from "dayjs";
+import { isMobile } from "react-device-detect";
+import { toast } from "@/components/ui/use-toast";
 
 const icons = {
   instagram: Instagram,
@@ -23,6 +26,22 @@ const icons = {
 };
 const currentYear = dayjs().year();
 const Footer = () => {
+
+  const handlePhoneClick = () => {
+    if (isMobile) {
+      window.location.href = 'tel:+919582767719';
+    } else {
+      navigator.clipboard.writeText('+919582767719');
+      toast({
+        title: "Copied to clipboard",
+      });
+    }
+  };
+
+  const handleMailClick = () => {
+    window.location.href = 'mailto:mail@collegecounsel.co.in';
+  };
+
   return (
     <div className=" border-t overflow-hidden bg-gray-200 pt-4 lg:pt-12 relative">
       <div className="md:mb-[10vw] mb-10 mx-auto">
@@ -39,8 +58,8 @@ const Footer = () => {
               &nbsp;<span>{currentYear}</span>&nbsp; All rights reserved
             </p>
             <div className="flex flex-col justify-end mt-20 md:mt-14 gap-2">
-              <p className="gap-2 flex items-center"><span><Phone className="w-5"/></span>+916392832171</p>
-              <p className="flex gap-2 items-center"><span><Mail className="w-5"/></span>mail@collegecounsel.co.in</p>
+              <p onClick={handlePhoneClick} className="gap-2 flex cursor-pointer hover:underline items-center"><span><Phone className="w-5"/></span>+919582767719</p>
+              <p onClick={handleMailClick} className="flex gap-2 cursor-pointer hover:underline items-center"><span><Mail className="w-5"/></span>mail@collegecounsel.co.in</p>
             </div>
           </div>
           <div className="footerLinks grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:w-[50%] xl:w-[60%] gap-2 xl:gap-16">

@@ -35,11 +35,12 @@ const CoursesComponent = () => {
               >
                 <h3 className="text-xl">{data.type}</h3>
                 <Badge
-                  className={
-                    selectedCourse != data.type
+                  className={`
+                    ${selectedCourse != data.type
                       ? "bg-primary text-primary-foreground"
-                      : "bg-primary-foreground text-primary"
-                  }
+                      : "bg-primary-foreground text-primary"}
+                       font-normal py-1
+                  `}
                 >
                   {data.Required}
                 </Badge>

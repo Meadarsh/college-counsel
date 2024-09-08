@@ -3,7 +3,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
-import { toast } from "react-toastify";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -25,7 +24,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { CoursesList } from "../Data/data";
-import { useToast } from "@/components/ui/use-toast";
+import { toast } from "@/components/ui/use-toast";
 
 const FormSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
@@ -35,7 +34,6 @@ const FormSchema = z.object({
 });
 
 const ApplyFormWithoutImgH = () => {
-  const { toast } = useToast();
 
   const [loading, setLoading] = useState(false);
 

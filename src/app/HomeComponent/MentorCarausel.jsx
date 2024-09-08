@@ -17,15 +17,20 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { isMobile } from "react-device-detect";
 
 export function MentorCarausel({ data }) {
   const { toast } = useToast();
 
   const copyToClipboard = (number) => {
-    navigator.clipboard.writeText(number);
-    toast({
-      title: "Copied to clipboard",
-    });
+    if (isMobile) {
+      window.location.href = 'tel:'+number;
+    } else {
+      navigator.clipboard.writeText(number);
+      toast({
+        title: "Copied to clipboard",
+      });
+    }
   };
   return (
     <Carousel

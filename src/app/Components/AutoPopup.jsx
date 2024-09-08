@@ -39,9 +39,22 @@ const AutoPopup = () => {
       return () => clearTimeout(timer);
     }, [showForm, currentDate,location, isExpired]);
     
+    useEffect(() => {
+      const handleRightClick = (e) => {
+        e.preventDefault(); 
+        if((location !== "/apply")){ setShowForm(true);}
+      };
+  
+      window.addEventListener('contextmenu', handleRightClick);
+  
+      return () => {
+        window.removeEventListener('contextmenu', handleRightClick);
+      };
+    }, []);
+
   return (
     <>
-    <div className={`${showForm?'block':'hidden'} fixed top-0 flex justify-center items-center h-screen bg-black/20 w-screen z-[50]`}><Apply popup={true}  handleClose={()=>setShowForm(false)}/></div>
+    <div className={`${showForm?'block':'hidden'} fixed top-0 flex justify-center items-center h-screen bg-black/20 w-screen z-[9999]`}><Apply popup={true}  handleClose={()=>setShowForm(false)}/></div>
     </>
   )
 }

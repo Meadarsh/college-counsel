@@ -50,7 +50,7 @@ export const CardStack = ({
               zIndex: cards.length - index, // decrease z-index for the cards that are behind
             }}
           >
-           {image?<Image loading="eager" alt="College counsel" width={780} priority="true" height={520} className="h-full w-full object-cover" src={card.url} />:<> <div className="font-normal text-neutral-700 dark:text-neutral-200">
+           {image?<Image loading="eager" alt="College counsel" width={800} priority="true" height={580} className="h-full w-full object-cover" src={card.url} />:<> <div className="font-normal text-neutral-700 dark:text-neutral-200">
               {card.content}
             </div>
             <div className="p-4">

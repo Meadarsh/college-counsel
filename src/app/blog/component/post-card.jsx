@@ -28,8 +28,8 @@ export default function PostCard({ post }) {
           <Image
             alt={title}
             src={imageUrl || "/image/default.jpg"}
-            width={360}
-            height={240}
+            width={450}
+            height={300}
             loading="lazy"
             className="w-full h-full object-cover rounded-md"
           />

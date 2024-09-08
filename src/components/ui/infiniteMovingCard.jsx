@@ -1,9 +1,11 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingCards = ({
+  image,
   items,
   direction = "left",
   speed = "fast",
@@ -54,6 +56,8 @@ export const InfiniteMovingCards = ({
         containerRef.current.style.setProperty("--animation-duration", "20s");
       } else if (speed === "normal") {
         containerRef.current.style.setProperty("--animation-duration", "40s");
+      } else if (speed === "very-slow") {
+        containerRef.current.style.setProperty("--animation-duration", "160s");
       } else {
         containerRef.current.style.setProperty("--animation-duration", "80s");
       }
@@ -75,7 +79,17 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {items.map((item, idx) => (
+        {image?<>
+        {items.map((item)=>(
+           <li
+           className=" w-24 lg:w-32 overflow-hidden bg-white relative rounded-lg border h-10 lg:h-12 p-1"
+           key={item.collegename}
+         >
+          <Image width={200} height={100} src={item?.logoimg}/>
+         </li>
+        ))}
+        
+        </>:<>{items.map((item, idx) => (
           <li
             className="w-[300px] bg-white/20 max-w-full relative rounded-2xl border flex-shrink-0 px-4 py-2 md:w-[450px]"
             key={item.name}
@@ -97,7 +111,7 @@ export const InfiniteMovingCards = ({
               </div>
             </blockquote>
           </li>
-        ))}
+        ))}</>}
       </ul>
     </div>
   );
