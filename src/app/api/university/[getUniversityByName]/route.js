@@ -1,4 +1,5 @@
 import connectDb from "@/databaseConnection/connect";
+import Approvals from "@/models/approvals";
 import HiringPartner from "@/models/hiring-partner.model";
 import Universities from "@/models/university.model";
 import { NextResponse } from "next/server";
@@ -29,8 +30,22 @@ export async function GET(res, { params }) {
         _id: { $in: placementPartner.company },
       }).select("companyName logoUrl");
     }
+    const approval = university.sequence.find(
+      (item) => item.type === "approvals"
+    );
+    let approvals = [];
+
+    if (
+      approval &&
+      approval.approvals &&
+      approval.approvals.length > 0
+    ) {
+      approvals = await Approvals.find({
+        _id: { $in: approval.approvals },
+      }).select("approvalName logoUrl");
+    }
     
-    return NextResponse.json({university,companyDetails});
+    return NextResponse.json({university,companyDetails,approvals});
   } catch (err) {
     console.log(err);
     return NextResponse.json({ err, message: "Internal server error" });

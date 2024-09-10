@@ -44,7 +44,7 @@ export const ParagraphField = ({ data }) => {
 export const CertifiedBy = ({ data, name, Expand }) => {
   return (
     <>
-      <h2>{data?.title || `${data?.name} online certificates`}</h2>
+      <h2 className="capitalize">{data?.title || `Sample Certificates of ${data?.name}`}</h2>
       <div className="flex lg:flex-row flex-col-reverse items-center pr-16 justify-between">
        <div>
        <List heading={false} style={'star'} data={data?.list} />
@@ -123,11 +123,10 @@ export const ImageFormat = ({data}) => {
   );
 };
 export const HiringPartnerFormat = ({data,title,companies}) => {
-  console.log(data);
 
   return (
     <>
-     <h2>{title} hiring partners</h2>
+     <h2 className="capitalize">{title} hiring partners</h2>
      <p>{data?.paragraph}</p>
      <List style={"star"} data={data.list} />
      <div className=" text-xl mt-5 flex flex-wrap lg:justify-evenly gap-2 font-semibold p-4 rounded bg-primary/15">
@@ -135,8 +134,8 @@ export const HiringPartnerFormat = ({data,title,companies}) => {
      <p><span className=" text-primary text-4xl">250+</span> HIRING PARTNERS</p>
      <p><span className=" text-primary text-4xl">45%</span> AVG SALLARY HIKE</p>
      </div>
-     <Button className="my-3 hover:bg-primary/90 pointer-events-none bg-primary/90">OUR STUDENTS WORK HERE</Button>
-     <div className=" flex my-1 md:gap-2">
+     <Button className="my-3 hover:bg-primary/90 rounded pointer-events-none bg-primary/90">OUR STUDENTS WORK HERE</Button>
+     <div className=" flex mt-1 mb-5 md:gap-2">
      {companies?.map((data) => (
           <div className="border rounded-md bg-white  md:scale-100 scale-90 overflow-hidden" key={data.id}>
             <Image
@@ -154,3 +153,23 @@ export const HiringPartnerFormat = ({data,title,companies}) => {
     </>
   );
 };
+export const Approvals = ({title,approvals}) => {
+      return(
+        <>
+         <h2 className="capitalize">{title} Approved By</h2>
+         <div className="flex gap-3 mt-2 lg:gap-2">
+         {approvals?.map((approval) =>(<div className="border rounded-md bg-white  md:scale-100 scale-90 overflow-hidden" key={approval.id}>
+            <Image
+              width={100}
+              height={150}
+              className="m-2 rounded"
+              src={approval?.logoUrl}
+            />
+            <div className=" text-ellipsis whitespace-nowrap bg-blue-200 justify-center flex w-full">
+              {<p className="!text-base font-medium">{approval?.approvalName}</p>}
+            </div>
+          </div>))}
+         </div>
+        </>
+      )
+}
