@@ -23,6 +23,9 @@ const AutoPopup = () => {
     const currentDate = useMemo(() => new Date(), []);
     
     useEffect(() => {
+      if((location === "/apply")){
+        setShowForm(false);
+      }
       const checkExpiration = () => {
         if (!showForm) {
           const data = localStorage.getItem('Applied');
@@ -43,6 +46,7 @@ const AutoPopup = () => {
       const handleRightClick = (e) => {
         e.preventDefault(); 
         if((location !== "/apply")){ setShowForm(true);}
+        return;
       };
   
       window.addEventListener('contextmenu', handleRightClick);
@@ -50,11 +54,11 @@ const AutoPopup = () => {
       return () => {
         window.removeEventListener('contextmenu', handleRightClick);
       };
-    }, []);
+    }, [location]);
 
   return (
     <>
-    <div className={`${showForm?'block':'hidden'} fixed top-0 flex justify-center items-center h-screen bg-black/20 w-screen z-[9999]`}><Apply popup={true}  handleClose={()=>setShowForm(false)}/></div>
+    <div className={`${showForm?'block':'hidden'} fixed top-0 flex justify-center items-center h-screen bg-black/20 w-screen z-[50]`}><Apply popup={true}  handleClose={()=>setShowForm(false)}/></div>
     </>
   )
 }

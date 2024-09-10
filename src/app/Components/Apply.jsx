@@ -91,7 +91,7 @@ const Apply = ({popup, handleClose }) => {
   }
 
   return (
-    <div className={`relative col-span-5 lg:col-span-2 border-white border bg-background p-3 md:p-4 lg:p-6 ${popup?'rounded-xl shadow-lg':'rounded-0'}`}>
+    <div className={`relative col-span-5 lg:col-span-2 border-white border bg-background p-5 md:p-5 lg:p-6 ${popup?'rounded-xl shadow-lg':'rounded-0'}`}>
       <div>
         <h3 className="mb-4 text-xl lg:text-2xl font-bold">
           Welcome to College Counsel {(!popup)&&`- Fill this Application Form to Assist you
