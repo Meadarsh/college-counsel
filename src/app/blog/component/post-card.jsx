@@ -23,7 +23,7 @@ export default function PostCard({ post }) {
 
 
   return (
-      <Card  onClick={navigate} className="h-full flex flex-col justify-between">
+      <Card  onClick={navigate} className="h-full flex flex-col cursor-pointer justify-between">
         <CardHeader className="relative p-2">
           <Image
             alt={title}

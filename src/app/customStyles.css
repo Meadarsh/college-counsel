@@ -121,8 +121,9 @@
 
 .contentParagraph table {
   width: 100%;
+  font-size:15px !important;
   border-collapse: collapse;
-  border: 2px solid rgb(0, 48, 131);   
+  border: 2px solid rgb(0, 48, 131) !important;   
 }
 
 .contentParagraph table td {
@@ -133,12 +134,10 @@
   background-color: rgb(0, 48, 131);
   color: white !important;
   align-items: center;
+  font-weight: 700;
 }
 .contentParagraph table thead th {
   align-items: center;
 }
 
-.contentParagraph table tr:nth-child(even) {
-  background-color: rgba(0, 94, 255, 0.171);
-}
 

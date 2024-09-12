@@ -14,7 +14,7 @@ const Blogs = () => {
  
   return (
     <>
-        <Applyside />
+    <Applyside />
      <BlogPage/>
     </>
   );
