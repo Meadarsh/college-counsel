@@ -42,35 +42,35 @@ export const Courses ={
         name:"Online MA",
         duration:2,
         type:"flexible",
-        Link:"#"
+        Link:"https://collegecounsel.co.in/blog/best-online-ma"
     },
     {
         id: 1,
         name:"Online MBA",
         duration:2,
         type:"economy",
-        Link:"#"
+        Link:"https://collegecounsel.co.in/blog/best-online-mba"
     },
     {
         id: 1,
         name:"Online MCA",
         duration:2,
         type:"tech",
-        Link:"#"
+        Link:"https://collegecounsel.co.in/blog/best-online-mca"
     },
     {
         id: 1,
         name:"Online M.Com",
         duration:2,
         type:"economy",
-        Link:"#"
+        Link:"https://collegecounsel.co.in/blog/best-online-m.com"
     },
     {
         id: 1,
         name:"Online M.Sc",
         duration:2,
         type:"science",
-        Link:"#"
+        Link:"https://collegecounsel.co.in/blog/best-online-msc"
     },
 ]
 }
