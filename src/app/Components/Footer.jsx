@@ -29,9 +29,9 @@ const Footer = () => {
 
   const handlePhoneClick = () => {
     if (isMobile) {
-      window.location.href = 'tel:+919582767719';
+      window.location.href = 'tel:+918882139684';
     } else {
-      navigator.clipboard.writeText('+919582767719');
+      navigator.clipboard.writeText('+918882139684');
       toast({
         title: "Copied to clipboard",
       });
