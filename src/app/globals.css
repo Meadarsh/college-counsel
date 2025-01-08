@@ -97,13 +97,7 @@ body {
   font-style: normal;
   background:#ffffff;
 }
-body {
-  -webkit-touch-callout: none; /* Disable iOS callouts */
-  -webkit-user-select: none; /* Disable text selection */
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+
 
 ::-webkit-scrollbar {
   width: 10px;
