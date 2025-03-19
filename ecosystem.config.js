@@ -1,7 +1,7 @@
 module.exports = {
     apps: [
       {
-        name: "backend",
+        name: "cc",
         script: "node_modules/next/dist/bin/next",
         args: "start -p 3270",
       },
