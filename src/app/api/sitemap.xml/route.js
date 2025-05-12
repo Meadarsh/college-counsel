@@ -2,10 +2,12 @@ import { NextResponse } from 'next/server';
 import connectDb from '@/databaseConnection/connect';
 import Blogs from '@/models/blog.model';
 import Universities from '@/models/university.model';
+import News from '@/models/news.model';
 export const dynamic='force-dynamic'
 export async function GET() {
     await connectDb();
     const blog = await Blogs.find({}, 'url upload_time')
+    const news = await News.find({}, 'url upload_time')
     const university = await Universities.find({}, 'url upload_time')
     const staticRoutes = [
     {
@@ -52,6 +54,12 @@ export async function GET() {
     changeFrequency: 'weekly',
     priority: .9,
   }));
+  const dynamicNewsRoutes = news.map((news) => ({
+    url: `https://collegecounsel.co.in/blog/${news.url}`,
+    lastModified: new Date(news.upload_time).toISOString(),
+    changeFrequency: 'weekly',
+    priority: .9,
+  }));
   const dynamicCollegeRoutes = university.map((university) => ({
     url: `https://collegecounsel.co.in/about-university/${university.url}`,
     lastModified: new Date(university.upload_time).toISOString(),
@@ -59,7 +67,7 @@ export async function GET() {
     priority:.9,
   }));
 
-  const allRoutes = [...staticRoutes, ...dynamicRoutes,...dynamicCollegeRoutes];
+  const allRoutes = [...staticRoutes, ...dynamicRoutes,...dynamicCollegeRoutes,...dynamicNewsRoutes];
 
   // Generate XML for sitemap
   const sitemap = `

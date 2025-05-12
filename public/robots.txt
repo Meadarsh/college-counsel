@@ -1,9 +1,4 @@
-# *
 User-agent: *
-Allow: /
+Disallow:
 
-# Host
-Host: https://collegecounsel.co.in
-
-# Sitemaps
 Sitemap: https://collegecounsel.co.in/sitemap.xml
