@@ -55,7 +55,7 @@ export async function GET() {
     priority: .9,
   }));
   const dynamicNewsRoutes = news.map((news) => ({
-    url: `https://collegecounsel.co.in/blog/${news.url}`,
+    url: `https://collegecounsel.co.in/news/${news.url}`,
     lastModified: new Date(news.upload_time).toISOString(),
     changeFrequency: 'weekly',
     priority: .9,
