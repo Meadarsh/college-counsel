@@ -5,28 +5,28 @@ export const Courses ={
         name:"Online BA",
         duration:3,
         type:"flexible",
-        Link:"#"
+        Link:"/blog/smu-online-ba"
     },
     {
         id: 1,
         name:"Online BBA",
         duration:3,
         type:"economy",
-        Link:"#"
+        Link:"/blog/manipal-university-online-bba"
     },
     {
         id: 1,
         name:"Online BCA",
         duration:3,
         type:"tech",
-        Link:"#"
+        Link:"/blog/amrita-online-bca"
     },
     {
         id: 1,
         name:"Online B.Com",
         duration:3,
         type:"economy",
-        Link:"#"
+        Link:"/blog/shoolini-university-online-b.com"
     },
     {
         id: 1,

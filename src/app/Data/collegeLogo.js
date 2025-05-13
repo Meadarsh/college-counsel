@@ -3,12 +3,13 @@ export const collegeLogo = [
     logoimg: "/collegeLogoimage/amity.webp",
     collegename: "Amity online university",
     Offeredcourse: 39,
-    route:'about-university/Amity_University'
+    route:'about-university/amity-university-online'
   },
   {
     logoimg: "/collegeLogoimage/manipal.webp",
     collegename: "Manipal online university",
     Offeredcourse: 22,
+     route:'about-university/manipal-university-jaipur-online'
   },
   {
     logoimg: "/collegeLogoimage/jain.webp",
@@ -35,6 +36,7 @@ export const collegeLogo = [
     logoimg: "/collegeLogoimage/dypatil.webp",
     collegename: "DY Patil online university",
     Offeredcourse: 2,
+     route:'about-university/dy-patil-university-online'
   },
   {
     logoimg: "/collegeLogoimage/upes.webp",
