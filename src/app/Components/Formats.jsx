@@ -2,6 +2,7 @@ import Image from "next/image";
 import List from "./List";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const PlacementPartners = ({ data, name }) => {
   return (
@@ -122,6 +123,32 @@ export const ImageFormat = ({data}) => {
     </>
   );
 };
+
+"use client";
+
+export const AccordionDisplay = ({ data }) => {
+  if (!data?.items?.length) return null;
+
+  return (
+    <div className="my-4">
+      <h2 className="text-xl font-semibold mb-2">FAQs / More Info</h2>
+      <Accordion type="multiple" className="w-full">
+        {data.items.map((item, index) => (
+          <AccordionItem value={`item-${index}`} key={item.id || index}>
+            <AccordionTrigger>{item.title}</AccordionTrigger>
+            <AccordionContent>
+              <div
+                className="text-muted-foreground text-sm md:text-base"
+                dangerouslySetInnerHTML={{ __html: item.description }}
+              />
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </div>
+  );
+};
+
 export const HiringPartnerFormat = ({data,title,companies}) => {
 
   return (

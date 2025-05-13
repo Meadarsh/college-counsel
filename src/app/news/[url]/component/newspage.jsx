@@ -44,11 +44,12 @@ const Newspage = async ({ params }) => {
               {blog?.title}
             </h1>
             {blog?.sequence?.map((data) => (
-              <div key={data.id} className="mt-4" >
+              <div key={data.id} className="mt-4">
                 {data.type === "text" && <ParagraphField data={data} />}
                 {data.type === "list" && <ListFormat data={data} />}
                 {data.type === "table" && <TableField data={data} />}
                 {data.type === "img" && <ImageFormat data={data} />}
+                {item.type === "accordion" && <AccordionDisplay data={data} />}
               </div>
             ))}
           </div>
