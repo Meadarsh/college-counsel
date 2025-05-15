@@ -3,6 +3,7 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import {
+  AccordionDisplay,
   ImageFormat,
   ListFormat,
   ParagraphField,
