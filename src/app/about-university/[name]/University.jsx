@@ -1,7 +1,6 @@
 "use client";
 
 import ApplyFormWIthoutImgH from "@/app/Components/ApplyFormWIthoutImgH";
-import CCLoader from "@/app/Components/CCLoader";
 import {
   Approvals,
   HiringPartnerFormat,

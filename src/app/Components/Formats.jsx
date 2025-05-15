@@ -124,8 +124,6 @@ export const ImageFormat = ({data}) => {
   );
 };
 
-"use client";
-
 export const AccordionDisplay = ({ data }) => {
   if (!data?.items?.length) return null;
 
@@ -164,12 +162,13 @@ export const HiringPartnerFormat = ({data,title,companies}) => {
      <Button className="my-3 hover:bg-primary/90 rounded pointer-events-none bg-primary/90">OUR STUDENTS WORK HERE</Button>
      <div className=" flex mt-1 mb-5 md:gap-2">
      {companies?.map((data) => (
-          <div className="border rounded-md bg-white  md:scale-100 scale-90 overflow-hidden" key={data.id}>
+          <div key={data?.companyName} className="border rounded-md bg-white  md:scale-100 scale-90 overflow-hidden">
             <Image
               width={100}
               height={150}
               className="mx-2"
               src={data?.logoUrl}
+              alt={data?.companyName}
             />
             <div className=" text-ellipsis whitespace-nowrap bg-blue-200 justify-center flex w-full">
               {<p className=" !text-[12px]">{data?.companyName}</p>}

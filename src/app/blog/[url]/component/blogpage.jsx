@@ -50,7 +50,7 @@ const Blogpage = async ({ params }) => {
                 {data.type === "list" && <ListFormat data={data} />}
                 {data.type === "table" && <TableField data={data} />}
                 {data.type === "img" && <ImageFormat data={data} />}
-                {item.type === "accordion" && <AccordionDisplay data={data} />}
+                {data.type === "accordion" && <AccordionDisplay data={data} />}
               </div>
             ))}
           </div>
