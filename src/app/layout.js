@@ -12,26 +12,44 @@ const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: ["400", "5
 
 export const metadata = {
   title: "College Counsel | Unlock your career with ultimate Online Learning Platform",
-  description:`College Counsel is your ultimate guide to online learning platforms. Unlock knowledge and elevate your education with expert insights and resources.`,
+  description: "College Counsel is your ultimate guide to online learning platforms. Unlock knowledge and elevate your education with expert insights and resources. Get admission in top universities like Manipal, JAIN, and Amity.",
   author: 'College Counsel',
-  keywords: "College Counsel, college guidance, higher education, undergraduate courses, postgraduate courses, professional courses, Manipal University, JAIN University, Amity University, college application process, college admission, career guide, BA, BCom, BBA, BCA, MA, MCA, MBA, MSc",
+  keywords: "College Counsel, college guidance, higher education, undergraduate courses, postgraduate courses, professional courses, Manipal University, JAIN University, Amity University, college application process, college admission, career guide, BA, BCom, BBA, BCA, MA, MCA, MBA, MSc, online education, distance learning, career counseling",
   ogTitle: "College Counsel | Unlock your career with ultimate Online Learning Platform",
-  ogDescription: `College Counsel is your ultimate guide to online learning platforms. Unlock knowledge and elevate your education with expert insights and resources.`,
+  ogDescription: "College Counsel is your ultimate guide to online learning platforms. Unlock knowledge and elevate your education with expert insights and resources. Get admission in top universities like Manipal, JAIN, and Amity.",
   ogUrl: "https://collegecounsel.co.in",
   ogImage: "https://collegecounsel.co.in/logo/DHF.png",
+  ogType: "website",
+  ogSiteName: "College Counsel",
   twitterCard: "summary_large_image",
   twitterSite: "@CollegeCnslHQ",
   twitterCreator: "@CollegeCnslHQ",
   twitterTitle: "College Counsel | Unlock your career with ultimate Online Learning Platform",
-  twitterDescription:`College Counsel is your ultimate guide to online learning platforms. Unlock knowledge and elevate your education with expert insights and resources.`,
+  twitterDescription: "College Counsel is your ultimate guide to online learning platforms. Unlock knowledge and elevate your education with expert insights and resources. Get admission in top universities like Manipal, JAIN, and Amity.",
   twitterImage: "https://collegecounsel.co.in/logo/DHF.png",
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   alternates: {
     canonical: `${process.env.BASE_URL}`,
   },
+  verification: {
+    google: 'your-google-site-verification',
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  themeColor: '#ffffff',
 };
 
 export default function RootLayout({ children }) {

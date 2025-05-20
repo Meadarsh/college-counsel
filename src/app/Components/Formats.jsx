@@ -133,10 +133,10 @@ export const AccordionDisplay = ({ data }) => {
       <Accordion type="multiple" className="w-full">
         {data.items.map((item, index) => (
           <AccordionItem value={`item-${index}`} key={item.id || index}>
-            <AccordionTrigger>{item.title}</AccordionTrigger>
+            <AccordionTrigger><h4>{item.title}</h4></AccordionTrigger>
             <AccordionContent>
               <div
-                className="text-muted-foreground text-sm md:text-base"
+                className="text-black text-sm md:text-base"
                 dangerouslySetInnerHTML={{ __html: item.description }}
               />
             </AccordionContent>

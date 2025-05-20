@@ -58,7 +58,7 @@ const Footer = () => {
               &nbsp;<span>{currentYear}</span>&nbsp; All rights reserved
             </p>
             <div className="flex flex-col justify-end mt-20 md:mt-14 gap-2">
-              <p onClick={handlePhoneClick} className="gap-2 flex cursor-pointer hover:underline items-center"><span><Phone className="w-5"/></span>+918882139684</p>
+              <p onClick={handlePhoneClick} className="gap-2 flex cursor-pointer hover:underline items-center"><span><Phone className="w-5"/></span>+919569822903</p>
               <p onClick={handleMailClick} className="flex gap-2 cursor-pointer hover:underline items-center"><span><Mail className="w-5"/></span>mail@collegecounsel.co.in</p>
             </div>
           </div>
