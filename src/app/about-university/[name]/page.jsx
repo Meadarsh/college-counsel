@@ -2,9 +2,17 @@ import React from 'react'
 import FormatOfUniPage from './University';
 
 const Page = async ({ params }) => {
-
+  let universityData;
+ try {
+       const res = await fetch(`${process.env.BASE_URL}/api/university/${params?.name}`,{cache: "no-store",});
+       universityData = await res.json()
+       console.log(universityData);
+       
+     } catch (err) {
+       console.error(err);
+     } 
   return (
-    <FormatOfUniPage params={params}/>
+    <FormatOfUniPage data={universityData}/>
   )
 }
 

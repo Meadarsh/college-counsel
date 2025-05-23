@@ -1,6 +1,10 @@
 import { Check, Star } from "lucide-react";
 
 const List = ({ style, data }) => {
+  console.log(style);
+  console.log(data);
+  
+  
   return (
     <>
       {data &&
@@ -29,7 +33,7 @@ const List = ({ style, data }) => {
               {style === "dot" && <span>●</span>}
             </span>
             <p className="font-medium text-md md:text-lg lg:text-xl">
-              {txt.value || txt}
+              {txt.value}
             </p>
           </div>
         ))}

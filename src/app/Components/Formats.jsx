@@ -45,18 +45,19 @@ export const ParagraphField = ({ data }) => {
 export const CertifiedBy = ({ data, name, Expand }) => {
   return (
     <>
-      <h2 className="capitalize">{data?.title || `Sample Certificates of ${data?.name}`}</h2>
+      <h2 className="capitalize">{`Sample Certificates of ${name}`}</h2>
       <div className="flex lg:flex-row flex-col-reverse items-center pr-16 justify-between">
+       <p>{data?.paragraph}</p>
        <div>
        <List heading={false} style={'star'} data={data?.list} />
        </div>
-        {data?.url && (
+        {data?.certificateUrl && (
           <Image
             width={200}
             height={180}
             className=" cursor-pointer w-auto h-auto object-cover"
-            onClick={() => Expand(data?.url)}
-            src={data?.url}
+            onClick={() => Expand(data?.certificateUrl)}
+            src={data?.certificateUrl}
             alt={"University certificate"}
           />
         )}
@@ -65,7 +66,7 @@ export const CertifiedBy = ({ data, name, Expand }) => {
   );
 };
 
-export const ListFormat = ({ data }) => {
+export const ListFormat = ({ data }) => {  
   return (
     <div>
           {data.title&&<h2>{data.title}</h2>}
@@ -184,7 +185,7 @@ export const Approvals = ({title,approvals}) => {
         <>
          <h2 className="capitalize">{title} Approved By</h2>
          <div className="flex gap-3 mt-2 lg:gap-2">
-         {approvals?.map((approval) =>(<div className="border rounded-md bg-white  md:scale-100 scale-90 overflow-hidden" key={approval.id}>
+         {approvals?.map((approval) =>(<div key={approval?.approvalName} className="border rounded-md bg-white  md:scale-100 scale-90 overflow-hidden">
             <Image
               width={100}
               height={150}
