@@ -20,6 +20,7 @@ export const collegeLogo = [
     logoimg: "/collegeLogoimage/lpu.webp",
     collegename: "LPU online university",
     Offeredcourse: 2,
+     route:'/about-university/lpu-university-online'
   },
   {
     logoimg: "/collegeLogoimage/amrita.webp",
@@ -31,6 +32,7 @@ export const collegeLogo = [
     logoimg: "/collegeLogoimage/manipal.webp",
     collegename: "MAHE manipal university",
     Offeredcourse: 2,
+     route:'/about-university/mahe-online-university'
   },
   {
     logoimg: "/collegeLogoimage/dypatil.webp",
