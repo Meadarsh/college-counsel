@@ -1,6 +1,7 @@
 "use client";
 import ApplyFormWIthoutImgH from "@/app/Components/ApplyFormWIthoutImgH";
 import {
+  AccordionDisplay,
   Approvals,
   CertifiedBy,
   HiringPartnerFormat,
@@ -101,6 +102,7 @@ const Page = ({ data }) => {
                       title={data?.university?.detail?.title}
                     />
                   )}
+                   {data.type === "accordion" && <AccordionDisplay data={data} />}
                 </div>
               );
             })}
