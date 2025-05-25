@@ -51,16 +51,19 @@ export const collegeLogo = [
     logoimg: "/collegeLogoimage/xlri.webp",
     collegename: "XLRI",
     Offeredcourse: 2,
+    route:"about-university/xlri-online-university"
   },
   {
     logoimg: "/collegeLogoimage/vivekananda.webp",
     collegename: "Vivekananda global university",
     Offeredcourse: 2,
+    route:"about-university/vgu-university-online"
   },
   {
     logoimg: "/collegeLogoimage/bimtech.webp",
     collegename: "BIMTECH Online",
     Offeredcourse: 15,
+    route:"about-university/bimtech-online-university"
   },
   {
     logoimg: "/collegeLogoimage/chandigarh.webp",
@@ -77,7 +80,7 @@ export const collegeLogo = [
     logoimg: "/collegeLogoimage/gla.webp",
     collegename: "GLA University Online",
     Offeredcourse: 27,
-    route:'about-university/'
+    route:'about-university/gla-online-university'
   },
   {
     logoimg: "/collegeLogoimage/kurukshetra.webp",

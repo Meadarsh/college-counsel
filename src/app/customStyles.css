@@ -66,12 +66,12 @@
     margin-top: 8px;
   }
   .university-ab h3 {
-    font-size: 22px;
-    margin-top: 10px;
+    font-size: 26px;
+    margin-top: 15px;
   }
   .university-ab h2 {
     font-size: 1.6rem; /* Equivalent to text-4xl in Tailwind CSS */
-    margin-top: 15px;
+    margin-top: 23px;
   }
   .university-ab p {
     font-size: 18px;
@@ -90,7 +90,7 @@
   }
   .university-ab h2 {
     font-size: 2rem; /* Equivalent to text-4xl in Tailwind CSS */
-    margin-top: 15px;
+    margin-top: 20px;
   }
   .university-ab p {
     font-size: 17px;
@@ -109,7 +109,7 @@
   }
   .university-ab h2 {
     font-size: 1.8rem; /* Equivalent to text-3xl in Tailwind CSS */
-    margin-top: 13px;
+    margin-top: 20px;
   }
   .university-ab p {
     font-size: 16px;

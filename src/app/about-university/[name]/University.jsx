@@ -102,7 +102,7 @@ const Page = ({ data }) => {
                       title={data?.university?.detail?.title}
                     />
                   )}
-                   {data.type === "accordion" && <AccordionDisplay data={data} />}
+                   {value.type === "accordion" && <AccordionDisplay data={value} />}
                 </div>
               );
             })}
