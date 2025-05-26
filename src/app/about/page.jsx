@@ -4,9 +4,10 @@ import List from "../Components/List";
 
 export const metadata = {
   title: "What is College Counsel ? - College Counsel",
-  description: "Get admission in your dream University and course through College Counsel and get expert counselling and guidance along with scholarship options.",
+  description:
+    "Get admission in your dream University and course through College Counsel and get expert counselling and guidance along with scholarship options.",
   alternates: {
-    canonical:`${process.env.BASE_URL}/about`,
+    canonical: `${process.env.BASE_URL}/about`,
   },
 };
 const Page = () => {
@@ -53,11 +54,11 @@ const Page = () => {
         <h2 className="text-2xl font-semibold mt-6">
           Why to Choose College Counsel as your Career Guide?
         </h2>
-        <List style='tick' data={listData} />
+        <List style="tick" data={listData} />
         <h1 className="text-2xl font-semibold mt-6">
           We have tied-up with Top Universities like:
         </h1>
-        <List style='star' data={CollegeList} />
+        <List style="star" data={CollegeList} />
         <p>
           Lost in a sea of universities? We understand it! College Counsel
           allows you to research many colleges and their courses all in one
@@ -87,22 +88,40 @@ const Page = () => {
 export default Page;
 
 const listData = [
-  `Our courses are prepared by experienced professionals who understand the changing nature of higher education. Here at College Counsel you will get the right information to make the right choice for your future career.`,
-  `We provide a wide variety of courses to meet different interests and career goals. We have something for everyone, whether you're interested in business (BBA, MBA), creativity (BA), technology (BCA, MCA), or everything in between!`,
-  ` College Counsel has partnerships with major universities such as Manipal University, JAIN University, Amity University, and more! As a result, you will receive useful knowledge about these schools' application processes and admission requirements.`,
-  `From creating an impressive personal statement to knowing deadlines and admission exams, College Counsel has you prepared. Our courses and methods will walk you through each stage of the application process, ensuring that you put your best foot forward and receive that acceptance letter. `,
-  `Stop visiting countless websites. College Counsel is a single point for everything college-related. You may compare organisations, view their courses, and learn about campus life all in one spot. No more information overload, just plain and concise instructions. `,
-  `With College Counsel on your side, you'll go into the college application process with information and confidence. Knowing you have the right resources and assistance will reduce tension and allow you to focus on what is most important: acing your exams and preparing for success in college!`,
+  {
+    id: 1,
+    value: `Our courses are prepared by experienced professionals who understand the changing nature of higher education. Here at College Counsel you will get the right information to make the right choice for your future career.`,
+  },
+  {
+    id: 2,
+    value: `We provide a wide variety of courses to meet different interests and career goals. We have something for everyone, whether you're interested in business (BBA, MBA), creativity (BA), technology (BCA, MCA), or everything in between!`,
+  },
+  {
+    id: 3,
+    value: ` College Counsel has partnerships with major universities such as Manipal University, JAIN University, Amity University, and more! As a result, you will receive useful knowledge about these schools' application processes and admission requirements.`,
+  },
+  {
+    id: 4,
+    value: `From creating an impressive personal statement to knowing deadlines and admission exams, College Counsel has you prepared. Our courses and methods will walk you through each stage of the application process, ensuring that you put your best foot forward and receive that acceptance letter. `,
+  },
+  {
+    id: 5,
+    value: `Stop visiting countless websites. College Counsel is a single point for everything college-related. You may compare organisations, view their courses, and learn about campus life all in one spot. No more information overload, just plain and concise instructions. `,
+  },
+  {
+    id: 6,
+    value: `With College Counsel on your side, you'll go into the college application process with information and confidence. Knowing you have the right resources and assistance will reduce tension and allow you to focus on what is most important: acing your exams and preparing for success in college!`,
+  },
 ];
 const CollegeList = [
-  "Amity University",
-  "Manipal University",
-  "JAIN University",
-  "Lovely University",
-  "DY Patil University",
-  "GLA University",
-  "Chandigarh University",
-  "UPES University",
-  "Shoolini University",
-  "Amrita University",
+  { id: 1, value: "Amity University" },
+  { id: 2, value: "Manipal University" },
+  { id: 3, value: "JAIN University" },
+  { id: 4, value: "Lovely University" },
+  { id: 5, value: "DY Patil University" },
+  { id: 6, value: "GLA University" },
+  { id: 7, value: "Chandigarh University" },
+  { id: 8, value: "UPES University" },
+  { id: 9, value: "Shoolini University" },
+  { id: 10, value: "Amrita University" },
 ];
