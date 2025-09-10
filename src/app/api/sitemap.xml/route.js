@@ -68,12 +68,14 @@ export async function GET() {
     changeFrequency: 'weekly',
     priority:.9,
   }));
-  const dynamicFeedRoutes = feed.map((feed) => ({
-    url: `https://collegecounsel.co.in/feed/${feed.slug}`,
-    lastModified: new Date(feed.upload_time).toISOString(),
-    changeFrequency: 'weekly',
-    priority:.9,
-  }));
+  const dynamicFeedRoutes = feed
+    .filter(feedItem => feedItem.slug) // Ensure slug exists
+    .map((feedItem) => ({
+      url: `https://collegecounsel.co.in/feed/${feedItem.slug}`,
+      lastModified: feedItem.upload_time ? new Date(feedItem.upload_time).toISOString() : new Date().toISOString(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    }));
 
   const allRoutes = [...staticRoutes, ...dynamicRoutes,...dynamicCollegeRoutes,...dynamicNewsRoutes,...dynamicFeedRoutes];
 
