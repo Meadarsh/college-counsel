@@ -44,12 +44,12 @@ export const metadata = {
   verification: {
     google: 'your-google-site-verification',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
-  themeColor: '#ffffff',
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({ children }) {
