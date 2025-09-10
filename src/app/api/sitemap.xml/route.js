@@ -3,10 +3,12 @@ import connectDb from '@/databaseConnection/connect';
 import Blogs from '@/models/blog.model';
 import Universities from '@/models/university.model';
 import News from '@/models/news.model';
+import AiBlog from '@/models/Ai-Blog';
 export const dynamic='force-dynamic'
 export async function GET() {
     await connectDb();
     const blog = await Blogs.find({}, 'url upload_time')
+    const feed = await AiBlog.find({}, 'slug upload_time')
     const news = await News.find({}, 'url upload_time')
     const university = await Universities.find({}, 'url upload_time')
     const staticRoutes = [
@@ -66,8 +68,14 @@ export async function GET() {
     changeFrequency: 'weekly',
     priority:.9,
   }));
+  const dynamicFeedRoutes = feed.map((feed) => ({
+    url: `https://collegecounsel.co.in/feed/${feed.slug}`,
+    lastModified: new Date(feed.upload_time).toISOString(),
+    changeFrequency: 'weekly',
+    priority:.9,
+  }));
 
-  const allRoutes = [...staticRoutes, ...dynamicRoutes,...dynamicCollegeRoutes,...dynamicNewsRoutes];
+  const allRoutes = [...staticRoutes, ...dynamicRoutes,...dynamicCollegeRoutes,...dynamicNewsRoutes,...dynamicFeedRoutes];
 
   // Generate XML for sitemap
   const sitemap = `
