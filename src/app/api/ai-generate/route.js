@@ -105,12 +105,13 @@ export async function GET() {
       
       Output format (strict JSON only, no extra text):
       {
-        "title": "The same blog title provided",
         "content": "<section>...well-structured HTML blog content...</section>",
         "imagePrompt": "Detailed description for a professional, high-quality header image."
       }
       
       Blog Content Guidelines:
+      - Write in a **human-like, natural, and engaging style**. The output should not feel AI-generated.
+      - Avoid repetitive phrases or robotic tone.
       - Write in a warm, conversational tone as if you're personally guiding the reader.
       - Use personal pronouns ("you", "we", "I") to create a friendly, approachable style.
       - Share relatable examples and real-world scenarios that online students might face.
@@ -142,7 +143,7 @@ export async function GET() {
           },
           {
             role: "user",
-            content: "Generate a blog using this title: {{BLOG_TITLE}}",
+            content: `Generate a blog using this title: ${uniqueTitle}`,
           },
         ],
       });
