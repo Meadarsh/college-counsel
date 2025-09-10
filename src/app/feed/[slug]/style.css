@@ -1,0 +1,119 @@
+.blogContent {
+    font-family: "Inter", "Segoe UI", sans-serif;
+    line-height: 1.7;
+    color: #333;
+    font-size: 1rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+  
+  /* Headings */
+  .blogContent h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem;
+    color: #1e293b; /* slate-800 */
+  }
+  
+  .blogContent h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 1.2rem 0 0.8rem;
+    color: #334155; /* slate-700 */
+  }
+  
+  /* Paragraphs */
+  .blogContent p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  /* Lists */
+  .blogContent ul,
+  .blogContent ol {
+    margin: 1rem 0 1rem 1.5rem;
+    padding: 0 0 0 1rem;
+  }
+  .blogContent ul {
+    list-style-type: disc;
+  }
+  .blogContent ol {
+    list-style-type: decimal;
+  }
+  .blogContent li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  .blogContent ul li::marker {
+    color: #4f46e5; /* indigo-600 */
+  }
+  .blogContent ol li::marker {
+    font-weight: 600;
+    color: #4f46e5; /* indigo-600 */
+  }
+  
+  /* Tables */
+  .blogContent table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    display: block;
+  }
+  
+  .blogContent th,
+  .blogContent td {
+    border: 1px solid #e2e8f0; /* slate-200 */
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.95rem;
+  }
+  
+  .blogContent th {
+    background: #f8fafc; /* slate-50 */
+    font-weight: 600;
+  }
+  
+  /* Images */
+  .blogContent img {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem auto;
+    display: block;
+    border-radius: 0.5rem;
+  }
+  
+  /* Blockquotes */
+  .blogContent blockquote {
+    border-left: 4px solid #2563eb; /* blue-600 */
+    padding-left: 1rem;
+    margin: 1rem 0;
+    color: #475569; /* slate-600 */
+    font-style: italic;
+  }
+  
+  /* Responsive Typography */
+  @media (max-width: 768px) {
+    .blogContent h2 {
+      font-size: 1.25rem;
+    }
+    .blogContent h3 {
+      font-size: 1.1rem;
+    }
+    .blogContent p,
+    .blogContent li,
+    .blogContent td {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .blogContent {
+      font-size: 0.9rem;
+    }
+    .blogContent table {
+      font-size: 0.85rem;
+    }
+  }
+  

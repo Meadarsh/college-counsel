@@ -1,0 +1,16 @@
+{
+  "name": "college-counsel-ai-scheduler",
+  "version": "1.0.0",
+  "description": "Scheduled AI generation tasks for College Counsel",
+  "main": "ai-generate.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ai-generate.js",
+    "generate": "node ai-generate.js --run-once"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "node-cron": "^3.0.2",
+    "node-fetch": "^3.3.2"
+  }
+}

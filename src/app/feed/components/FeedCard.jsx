@@ -12,13 +12,13 @@ import { useRouter } from "next/navigation";
 
 // ----------------------------------------------------------------------
 
-export default function PostCard({ post }) {
-  const { url, imageUrl, writer, title, upload_time } = post;
+export default function FeedCard({ post }) {
+  const { imageUrl, title,createdAt,slug } = post;
  
   const router = useRouter();
 
   const navigate = () => {
-    router.push("/blog/" + url); 
+    router.push("/feed/" + slug); 
   };
 
 
@@ -41,10 +41,10 @@ export default function PostCard({ post }) {
           <h2 className="font-semibold">{title}</h2>
         </CardContent>
         <CardFooter className="px-3 py-2 flex justify-between">
-          <p className="text-[12px]">{fDate(upload_time)}</p>
+          <p className="text-[12px]">{fDate(createdAt)}</p>
           <div className="flex items-center gap-1">
             <PenLine className=" size-4 text-yellow-500" />
-            <span className="text-sm">{writer}</span>
+            <span className="text-sm">AI</span>
           </div>
         </CardFooter>
       </Card>

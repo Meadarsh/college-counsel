@@ -32,7 +32,7 @@ export const CourseList = [
 export const MoreList = [
   { name: "Blog", path: "/blog" },
   { name: "News", path: "/news" },
-  { name: "Careers", path: "#" },
+  { name: "Feed", path: "/feed" },
   { name: "Verify certificate", path: "/certificate" },
   { name: "Online Counselling", path: "/apply" },
 ];

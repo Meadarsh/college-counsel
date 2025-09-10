@@ -1,15 +1,15 @@
 "use client";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState, useCallback } from "react";
-import { SearchBar } from "./post-search";
-import PostSort from "./post-sort";
-import PostCard from "./post-card";
-import PaginationComponent from "./Pagination";
-import BlogLoader from "./BlogLoader";
+import FeedPaginationComponent from "./FeedPagination";
+import BlogLoader from "../../blog/component/BlogLoader";
+import { SearchBar } from "@/app/blog/component/post-search";
+import PostSort from "@/app/blog/component/post-sort";
+import FeedCard from "./FeedCard";
 
 const ITEMS_PER_PAGE = 12;
 
-const BlogPage = () => {
+const FeedPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   
@@ -33,7 +33,7 @@ const BlogPage = () => {
         shortBlog
       });
       
-      const response = await fetch(`/api/blog/getBlog?${params.toString()}`);
+      const response = await fetch(`/api/ai-blog?${params.toString()}`);
       const { data } = await response.json();
       
       if (data && data.blogs) {
@@ -90,7 +90,7 @@ const BlogPage = () => {
   return (
     <div className="w-full h-full relative pt-24 px-2 sm:px-6 lg:px-[10%] md:px-10">
       <div className="w-full flex flex-col">
-        <h1 className="text-3xl font-semibold">Our blogs</h1>
+        <h1 className="text-3xl font-semibold">Our feed</h1>
         <p className="text-primary">
           Unlocking Boundless Opportunities: Your Path to Online Degrees with
           College Counsel
@@ -118,13 +118,13 @@ const BlogPage = () => {
               <>
                 <div className="grid gap-3 lg:gap-4 grid-cols-1 items-stretch sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                   {blogs.map((post, index) => (
-                    <PostCard key={post._id || index} post={post} />
+                    <FeedCard key={post._id || index} post={post} />
                   ))}
                 </div>
                 
                 {totalItems > ITEMS_PER_PAGE && (
                   <div className="py-10">
-                    <PaginationComponent
+                    <FeedPaginationComponent
                       currentPage={page}
                       totalPages={Math.ceil(totalItems / ITEMS_PER_PAGE)}
                       onPageChange={handlePageChange}
@@ -144,4 +144,4 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage;
+export default FeedPage;
