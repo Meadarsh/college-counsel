@@ -1,6 +1,7 @@
 import React from 'react'
 
-const page = ({id}) => {
+const Page = ({ params }) => {
+  const { Id: id } = params;
     
   return (
     <div className="h-[100vh] w-[100vw] bg-slate-200">
@@ -9,4 +10,4 @@ const page = ({id}) => {
   )
 }
 
-export default page
+export default Page
