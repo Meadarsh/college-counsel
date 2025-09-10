@@ -75,6 +75,8 @@ const nextConfig = {
     return config;
   },
   compress: true,
+  // Increase static page generation timeout to 5 minutes (300 seconds)
+  staticPageGenerationTimeout: 300,
 };
 
 export default withBundleAnalyzer({

@@ -6,6 +6,7 @@ import path from "path";
 import { v2 as cloudinary } from "cloudinary";
 import connectDb from "@/databaseConnection/connect";
 import AiBlog from "@/models/Ai-Blog";
+export const dynamic = 'force-dynamic';
 
 // Cloudinary config
 cloudinary.config({
