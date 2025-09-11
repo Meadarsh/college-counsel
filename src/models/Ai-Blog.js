@@ -20,6 +20,10 @@ const blogSchema = new mongoose.Schema({
     unique: true,
     trim: true
   },
+  embedding: {
+    type: Array,
+    default: []
+  },
   createdAt: {
     type: Date,
     default: Date.now

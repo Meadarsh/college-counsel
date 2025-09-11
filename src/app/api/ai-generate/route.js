@@ -25,64 +25,98 @@ export async function GET() {
 
     // --------------------------
     // Step 1: Generate Unique Title
-    // --------------------------
-    let uniqueTitle = null;
-    let attempts = 0;
-
-    while (!uniqueTitle && attempts < 5) {
-      attempts++;
-
-      const titleGen = await openai.chat.completions.create({
-        model: "gpt-5-mini",
-        messages: [
-          {
-            role: "system",
-            content: `
-      You are an expert blog writer for "College Counsel", specializing in online education, helping students explore and compare online degree programs and career opportunities.
-      
-      Task: Suggest ONE unique, catchy blog title (max 10 words) focused on online education.  
-      It must be fresh, student-friendly, and trending in online education.
-      
-      Focus areas:
-      - Online degree programs (Online MBA, Online BCA, Online MCA, etc.)
-      - Career advancement through online education
-      - Comparing online vs traditional education
-      - Specialized online master's degrees
-      - UGC/DEB approved online programs
-      - Working professionals' guide to online degrees
-      - Cost and ROI of online education
-      
-      Rules:
-      - Focus specifically on online/distance learning aspects
-      - Include degree levels (UG/PG/Diploma) and program types
-      - Keep it specific, clear, and appealing for working professionals and students
-      - Highlight benefits like flexibility, affordability, and career growth
-      
-      Output format (JSON only):
-      { "title": "your generated blog title" }
-            `,
-          },
-          {
-            role: "user",
-            content: "Generate a unique blog title for College Counsel.",
-          },
-        ],
+    // --------------------------    
+    // Helper: get embedding
+    async function getEmbedding(text) {
+      const response = await openai.embeddings.create({
+        model: "text-embedding-3-small", // cheap + fast
+        input: text,
       });
-      
-
-      const rawTitle = titleGen.choices[0].message.content ?? "{}";
-      let parsed;
-      try {
-        parsed = JSON.parse(rawTitle);
-      } catch {
-        continue; // retry if invalid
-      }
-
-      const exists = await AiBlog.findOne({ title: parsed.title });
-      if (!exists) {
-        uniqueTitle = parsed.title;
-      }
+      return response.data[0].embedding;
     }
+    
+    async function generateUniqueTitle() {
+      let uniqueTitle = null;
+      let attempts = 0;
+    
+      // Preload embeddings of existing titles from DB
+      const existingBlogs = await AiBlog.find({}, "title embedding"); // store embeddings in DB
+      const existingEmbeddings = existingBlogs.map(b => ({
+        title: b.title,
+        embedding: b.embedding,
+      }));
+    
+      while (!uniqueTitle && attempts < 5) {
+        attempts++;
+    
+        const titleGen = await openai.chat.completions.create({
+          model: "gpt-5-mini",
+          messages: [
+            {
+              role: "system",
+              content: `
+    You are an expert blog writer for "College Counsel", specializing in online education.
+    
+    🎯 Task:
+    Suggest ONE unique, catchy blog title (max 10 words) about online education.  
+    It must be fresh, trending, and appealing to students & professionals.
+    
+    Focus areas:
+    - Online degree programs (MBA, BCA, MCA, etc.)
+    - Career growth with online education
+    - Online vs traditional courses
+    - ROI and affordability of online degrees
+    
+    ⚠️ Rules:
+    - Must highlight flexibility, affordability, or career growth
+    - No generic titles ("The Future of Education")
+    - JSON output only:
+    { "title": "generated title" }
+              `,
+            },
+            {
+              role: "user",
+              content: "Generate a unique blog title for College Counsel.",
+            },
+          ],
+        });
+    
+        const rawTitle = titleGen.choices[0].message.content ?? "{}";
+        let parsed;
+        try {
+          parsed = JSON.parse(rawTitle);
+        } catch {
+          continue; // skip if invalid
+        }
+    
+        const newTitle = parsed.title;
+    
+        // Get embedding of new title
+        const newEmbedding = await getEmbedding(newTitle);
+    
+        // Compare with existing embeddings
+        let isDuplicate = false;
+        for (const { title, embedding } of existingEmbeddings) {
+          const sim = cosineSimilarity(newEmbedding, embedding);
+          if (sim > 0.6) { // threshold tweakable
+            isDuplicate = true;
+            break;
+          }
+        }
+    
+        if (!isDuplicate) {
+          uniqueTitle = newTitle;
+          await AiBlog.create({
+            title: uniqueTitle,
+            embedding: newEmbedding,
+          });
+        }
+      }
+    
+      return uniqueTitle;
+    }
+    
+    const uniqueTitle = await generateUniqueTitle();
 
     if (!uniqueTitle) {
       throw new Error("Failed to generate a unique blog title after retries");
