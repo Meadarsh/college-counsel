@@ -9,10 +9,7 @@ import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import "./style.css"
 
-export const metadata = {
-  title: title,
-  description: metaDescription,
-};
+
 
 async function getFeedPost(slug) {
   try {
@@ -33,6 +30,36 @@ async function getFeedPost(slug) {
     return null;
   }
 }
+export async function generateMetadata({ params }) {
+  let blog = {
+    metaTitle: "",
+    metaDescription: "",
+  };
+
+  try {
+    const res = await fetch(
+      `${process.env.BASE_URL}/api/metadata/feed/${params?.slug}`
+    );
+    const data = await res.json();
+    blog = data.blog.meta;
+  } catch (error) {
+    console.log(error);
+  }
+
+  return {
+    title: `${blog?.metaTitle} - College Counsel`,
+    description: blog?.metaDescription,
+    openGraph: {
+      title: ` ${blog?.metaTitle} -  College Counsel`,
+      description: blog?.metaDescription,
+      url: `${process.env.BASE_URL}/feed/${params.slug}`,
+    },
+    robots: "index, follow",
+    alternates: {
+      canonical: `${process.env.BASE_URL}/feed/${params.slug}`,
+    },
+  };
+}
 
 export default async function Page({ params }) {
   const { slug } = params;
@@ -42,7 +69,7 @@ export default async function Page({ params }) {
     notFound();
   }
   
-  const { title, content,metaDescription, imageUrl, createdAt, relatedBlogs } = response.data;
+  const { title, content, imageUrl, createdAt, relatedBlogs } = response.data;
   
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
