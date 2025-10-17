@@ -8,9 +8,10 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import "./style.css"
+
 export const metadata = {
-  title: 'Feed Post - College Counsel',
-  description: 'Read the latest feed post from College Counsel',
+  title: title,
+  description: metaDescription,
 };
 
 async function getFeedPost(slug) {
@@ -41,7 +42,7 @@ export default async function Page({ params }) {
     notFound();
   }
   
-  const { title, content, imageUrl, createdAt, relatedBlogs } = response.data;
+  const { title, content,metaDescription, imageUrl, createdAt, relatedBlogs } = response.data;
   
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">

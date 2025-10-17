@@ -24,6 +24,16 @@ const blogSchema = new mongoose.Schema({
     type: Array,
     default: []
   },
+  metaTitle: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  metaDescription: {
+    type: String,
+    required: true,
+    trim: true
+  },
   createdAt: {
     type: Date,
     default: Date.now

@@ -34,10 +34,19 @@ export async function GET() {
       });
       return response.data[0].embedding;
     }
+
+    function cosineSimilarity(vecA, vecB) {
+      const dotProduct = vecA.reduce((sum, a, i) => sum + a * vecB[i], 0);
+      const magA = Math.sqrt(vecA.reduce((sum, a) => sum + a * a, 0));
+      const magB = Math.sqrt(vecB.reduce((sum, b) => sum + b * b, 0));
+      return dotProduct / (magA * magB);
+    }
+    
     
     async function generateUniqueTitle() {
       let uniqueTitle = null;
       let attempts = 0;
+      let newEmbedding = null;
     
       // Preload embeddings of existing titles from DB
       const existingBlogs = await AiBlog.find({}, "title embedding"); // store embeddings in DB
@@ -58,7 +67,7 @@ export async function GET() {
     You are an expert blog writer for "College Counsel", specializing in online education.
     
     🎯 Task:
-    Suggest ONE unique, catchy blog title (max 10 words) about online education.  
+    Suggest ONE unique, catchy blog title (max 8 words) about online education.  
     It must be fresh, trending, and appealing to students & professionals.
     
     Focus areas:
@@ -92,7 +101,7 @@ export async function GET() {
         const newTitle = parsed.title;
     
         // Get embedding of new title
-        const newEmbedding = await getEmbedding(newTitle);
+        newEmbedding = await getEmbedding(newTitle);
     
         // Compare with existing embeddings
         let isDuplicate = false;
@@ -106,17 +115,13 @@ export async function GET() {
     
         if (!isDuplicate) {
           uniqueTitle = newTitle;
-          await AiBlog.create({
-            title: uniqueTitle,
-            embedding: newEmbedding,
-          });
         }
       }
     
-      return uniqueTitle;
+      return {uniqueTitle,newEmbedding};
     }
     
-    const uniqueTitle = await generateUniqueTitle();
+    const {uniqueTitle,newEmbedding} = await generateUniqueTitle();
 
     if (!uniqueTitle) {
       throw new Error("Failed to generate a unique blog title after retries");
@@ -140,7 +145,8 @@ export async function GET() {
       Output format (strict JSON only, no extra text):
       {
         "content": "<section>...well-structured HTML blog content...</section>",
-        "imagePrompt": "Detailed description for a professional, high-quality header image."
+        "imagePrompt": "Detailed description for a professional, high-quality header image.",
+        "metaDescription": "Blog description in 150 words"
       }
       
       Blog Content Guidelines:
@@ -241,12 +247,15 @@ export async function GET() {
       title: uniqueTitle,
       content: blogData.content,
       imageUrl: uploadResult.secure_url,
+      metaTitle: uniqueTitle,
+      metaDescription: blogData.metaDescription,
       slug: uniqueTitle
         .toLowerCase()
         .replace(/[^\w\s-]/g, "")
         .replace(/\s+/g, "-")
         .replace(/--+/g, "-")
         .substring(0, 60),
+      embedding: newEmbedding,
     });
 
     const savedBlog = await newBlog.save();

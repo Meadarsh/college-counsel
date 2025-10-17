@@ -56,6 +56,8 @@ export default function RootLayout({ children }) {
   
   return (
     <html lang="en">
+      <meta name="fast2sms" content="RXDZUkA5csHVqGV0olsFUg5mLswVMY9r"/>
+
    
       <Script type="application/ld+json" id="organization-schema">
         {JSON.stringify({
