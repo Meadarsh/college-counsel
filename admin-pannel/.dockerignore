@@ -1,0 +1,16 @@
+node_modules
+.next
+.git
+.gitignore
+# .env files are needed during build, then excluded from final image
+# .env
+# .env.*
+!.env.example
+*.md
+.vscode
+.idea
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+*.pem

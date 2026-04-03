@@ -1,0 +1,96 @@
+
+services:
+  # MongoDB Database (same as production)
+  mongodb:
+    image: mongo:7.0
+    container_name: unicompare-mongodb-dev
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: unicompare
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data_dev:/data/db
+      - mongodb_config_dev:/data/configdb
+    networks:
+      - unicompare-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+
+  # Admin Panel Application (Development Mode)
+  admin-pannel:
+    image: node:18-alpine
+    container_name: unicompare-admin-dev
+    restart: unless-stopped
+    working_dir: /app
+    ports:
+      - "3003:3003"
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=mongodb://mongodb:27017/unicompare
+      - WATCHPACK_POLLING=true
+    env_file:
+      - ./admin-pannel/.env
+    volumes:
+      # Mount source code for hot-reloading
+      - ./admin-pannel:/app
+      # Use named volumes for node_modules to avoid platform conflicts
+      - admin_node_modules:/app/node_modules
+      - admin_next:/app/.next
+    command: sh -c "npm install && npm run dev"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - unicompare-network
+
+  # UniCompare Frontend Application (Development Mode)
+  unicompare:
+    image: node:18-alpine
+    container_name: unicompare-frontend-dev
+    restart: unless-stopped
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=mongodb://mongodb:27017/unicompare
+      - WATCHPACK_POLLING=true
+    env_file:
+      - ./unicompare/.env
+    volumes:
+      # Mount source code for hot-reloading
+      - ./unicompare:/app
+      # Use named volumes for node_modules to avoid platform conflicts
+      - unicompare_node_modules:/app/node_modules
+      - unicompare_next:/app/.next
+    command: sh -c "npm install && npm run dev"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - unicompare-network
+
+# Networks
+networks:
+  unicompare-network:
+    driver: bridge
+
+# Volumes for data persistence
+volumes:
+  mongodb_data_dev:
+    driver: local
+  mongodb_config_dev:
+    driver: local
+  admin_node_modules:
+    driver: local
+  admin_next:
+    driver: local
+  unicompare_node_modules:
+    driver: local
+  unicompare_next:
+    driver: local

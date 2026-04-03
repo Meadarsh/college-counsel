@@ -1,0 +1,74 @@
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7.0
+    container_name: unicompare-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: unicompare
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - mongodb_config:/data/configdb
+    networks:
+      - unicompare-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+
+  # Admin Panel Application
+  admin-pannel:
+    build:
+      context: ./admin-pannel
+      dockerfile: Dockerfile
+    container_name: unicompare-admin
+    restart: unless-stopped
+    ports:
+      - "3003:3003"
+    environment:
+      - NODE_ENV=production
+      - MONGO_URI=mongodb://mongodb:27017/unicompare
+    env_file:
+      - ./admin-pannel/.env
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - unicompare-network
+
+  # UniCompare Frontend Application
+  unicompare:
+    build:
+      context: ./unicompare
+      dockerfile: Dockerfile
+    container_name: unicompare-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGO_URI=mongodb://mongodb:27017/unicompare
+    env_file:
+      - ./unicompare/.env
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - unicompare-network
+
+# Networks
+networks:
+  unicompare-network:
+    driver: bridge
+
+# Volumes for data persistence
+volumes:
+  mongodb_data:
+    driver: local
+  mongodb_config:
+    driver: local
