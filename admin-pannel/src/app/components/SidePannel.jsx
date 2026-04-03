@@ -96,7 +96,6 @@ export const AppSidebar = ({ toggleSidebar }) => {
         px={1}
       >
         <Stack direction={"row"} spacing={2}>
-          <Image src="/cc.png" style={{ filter: "grayscale(100%) brightness(100%) contrast(0%) invert(1)" }} width={30} height={30} alt="Logo" />
           <Typography
             color={"black"}
             variant="h6"

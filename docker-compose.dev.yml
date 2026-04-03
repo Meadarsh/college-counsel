@@ -28,7 +28,7 @@ services:
     restart: unless-stopped
     working_dir: /app
     ports:
-      - "3003:3003"
+      - "3842:3842"
     environment:
       - NODE_ENV=development
       - MONGO_URI=mongodb://mongodb:27017/unicompare
@@ -55,7 +55,7 @@ services:
     restart: unless-stopped
     working_dir: /app
     ports:
-      - "3000:3000"
+      - "8573:8573"
     environment:
       - NODE_ENV=development
       - MONGO_URI=mongodb://mongodb:27017/unicompare
