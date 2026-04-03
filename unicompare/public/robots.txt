@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://unicompare.co.in/sitemap.xml
